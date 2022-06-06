@@ -11,7 +11,20 @@
 		105C06A0284D50ED00B097F0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105C069F284D50ED00B097F0 /* ViewController.swift */; };
 		105C06A5284D50EF00B097F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 105C06A4284D50EF00B097F0 /* Assets.xcassets */; };
 		105C06A8284D50EF00B097F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 105C06A6284D50EF00B097F0 /* LaunchScreen.storyboard */; };
+		105D34FF284E3E9B000EF063 /* portfolyoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105D34FE284E3E9B000EF063 /* portfolyoTests.swift */; };
+		B62A80D49659F0979BA3DD22 /* Pods_portfolyo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C80D75F4256B7F26DFE37817 /* Pods_portfolyo.framework */; };
+		E6D26DD7B33A840C7EB25B42 /* Pods_portfolyoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F494D3C5EB6AF40A80810108 /* Pods_portfolyoTests.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		105D3500284E3E9B000EF063 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 105C0690284D50ED00B097F0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 105C0697284D50ED00B097F0;
+			remoteInfo = portfolyo;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		105C0698284D50ED00B097F0 /* portfolyo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = portfolyo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -20,6 +33,14 @@
 		105C06A4284D50EF00B097F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		105C06A7284D50EF00B097F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		105C06A9284D50EF00B097F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		105D34FC284E3E9B000EF063 /* portfolyoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = portfolyoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		105D34FE284E3E9B000EF063 /* portfolyoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = portfolyoTests.swift; sourceTree = "<group>"; };
+		322C46EAC35EFBCEC6AFD677 /* Pods-portfolyoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-portfolyoTests.debug.xcconfig"; path = "Target Support Files/Pods-portfolyoTests/Pods-portfolyoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4E784E3802B3B193072AB0CB /* Pods-portfolyo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-portfolyo.debug.xcconfig"; path = "Target Support Files/Pods-portfolyo/Pods-portfolyo.debug.xcconfig"; sourceTree = "<group>"; };
+		764CCA30352C22269A15FF61 /* Pods-portfolyoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-portfolyoTests.release.xcconfig"; path = "Target Support Files/Pods-portfolyoTests/Pods-portfolyoTests.release.xcconfig"; sourceTree = "<group>"; };
+		77006B66FD812CAB1418C10C /* Pods-portfolyo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-portfolyo.release.xcconfig"; path = "Target Support Files/Pods-portfolyo/Pods-portfolyo.release.xcconfig"; sourceTree = "<group>"; };
+		C80D75F4256B7F26DFE37817 /* Pods_portfolyo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_portfolyo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F494D3C5EB6AF40A80810108 /* Pods_portfolyoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_portfolyoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +48,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B62A80D49659F0979BA3DD22 /* Pods_portfolyo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		105D34F9284E3E9B000EF063 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6D26DD7B33A840C7EB25B42 /* Pods_portfolyoTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -37,7 +67,10 @@
 			isa = PBXGroup;
 			children = (
 				105C069A284D50ED00B097F0 /* portfolyo */,
+				105D34FD284E3E9B000EF063 /* portfolyoTests */,
 				105C0699284D50ED00B097F0 /* Products */,
+				5CB9D2B8FFD435CB670A7D45 /* Pods */,
+				177BCD669E074FAE0FA0FEB2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -45,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				105C0698284D50ED00B097F0 /* portfolyo.app */,
+				105D34FC284E3E9B000EF063 /* portfolyoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -85,6 +119,35 @@
 			path = "Support Files";
 			sourceTree = "<group>";
 		};
+		105D34FD284E3E9B000EF063 /* portfolyoTests */ = {
+			isa = PBXGroup;
+			children = (
+				105D34FE284E3E9B000EF063 /* portfolyoTests.swift */,
+			);
+			path = portfolyoTests;
+			sourceTree = "<group>";
+		};
+		177BCD669E074FAE0FA0FEB2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C80D75F4256B7F26DFE37817 /* Pods_portfolyo.framework */,
+				F494D3C5EB6AF40A80810108 /* Pods_portfolyoTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5CB9D2B8FFD435CB670A7D45 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4E784E3802B3B193072AB0CB /* Pods-portfolyo.debug.xcconfig */,
+				77006B66FD812CAB1418C10C /* Pods-portfolyo.release.xcconfig */,
+				322C46EAC35EFBCEC6AFD677 /* Pods-portfolyoTests.debug.xcconfig */,
+				764CCA30352C22269A15FF61 /* Pods-portfolyoTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -92,9 +155,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 105C06AC284D50EF00B097F0 /* Build configuration list for PBXNativeTarget "portfolyo" */;
 			buildPhases = (
+				C9194B9222162C3ADF032B5A /* [CP] Check Pods Manifest.lock */,
 				105C0694284D50ED00B097F0 /* Sources */,
 				105C0695284D50ED00B097F0 /* Frameworks */,
 				105C0696284D50ED00B097F0 /* Resources */,
+				58C1D0DC7D792DC443545906 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -104,6 +169,25 @@
 			productName = portfolyo;
 			productReference = 105C0698284D50ED00B097F0 /* portfolyo.app */;
 			productType = "com.apple.product-type.application";
+		};
+		105D34FB284E3E9B000EF063 /* portfolyoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 105D3504284E3E9B000EF063 /* Build configuration list for PBXNativeTarget "portfolyoTests" */;
+			buildPhases = (
+				E41FCBDF62177B49B6027EA7 /* [CP] Check Pods Manifest.lock */,
+				105D34F8284E3E9B000EF063 /* Sources */,
+				105D34F9284E3E9B000EF063 /* Frameworks */,
+				105D34FA284E3E9B000EF063 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				105D3501284E3E9B000EF063 /* PBXTargetDependency */,
+			);
+			name = portfolyoTests;
+			productName = portfolyoTests;
+			productReference = 105D34FC284E3E9B000EF063 /* portfolyoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -117,6 +201,10 @@
 				TargetAttributes = {
 					105C0697284D50ED00B097F0 = {
 						CreatedOnToolsVersion = 13.4;
+					};
+					105D34FB284E3E9B000EF063 = {
+						CreatedOnToolsVersion = 13.4;
+						TestTargetID = 105C0697284D50ED00B097F0;
 					};
 				};
 			};
@@ -134,6 +222,7 @@
 			projectRoot = "";
 			targets = (
 				105C0697284D50ED00B097F0 /* portfolyo */,
+				105D34FB284E3E9B000EF063 /* portfolyoTests */,
 			);
 		};
 /* End PBXProject section */
@@ -148,7 +237,78 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		105D34FA284E3E9B000EF063 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		58C1D0DC7D792DC443545906 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-portfolyo/Pods-portfolyo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-portfolyo/Pods-portfolyo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-portfolyo/Pods-portfolyo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C9194B9222162C3ADF032B5A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-portfolyo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E41FCBDF62177B49B6027EA7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-portfolyoTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		105C0694284D50ED00B097F0 /* Sources */ = {
@@ -160,7 +320,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		105D34F8284E3E9B000EF063 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				105D34FF284E3E9B000EF063 /* portfolyoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		105D3501284E3E9B000EF063 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 105C0697284D50ED00B097F0 /* portfolyo */;
+			targetProxy = 105D3500284E3E9B000EF063 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		105C06A6284D50EF00B097F0 /* LaunchScreen.storyboard */ = {
@@ -290,6 +466,7 @@
 		};
 		105C06AD284D50EF00B097F0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4E784E3802B3B193072AB0CB /* Pods-portfolyo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -321,6 +498,7 @@
 		};
 		105C06AE284D50EF00B097F0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 77006B66FD812CAB1418C10C /* Pods-portfolyo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -350,6 +528,44 @@
 			};
 			name = Release;
 		};
+		105D3502284E3E9B000EF063 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 322C46EAC35EFBCEC6AFD677 /* Pods-portfolyoTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = NNJ59FP3TJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.eren-celik.portfolyoTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/portfolyo.app/portfolyo";
+			};
+			name = Debug;
+		};
+		105D3503284E3E9B000EF063 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 764CCA30352C22269A15FF61 /* Pods-portfolyoTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = NNJ59FP3TJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.eren-celik.portfolyoTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/portfolyo.app/portfolyo";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -367,6 +583,15 @@
 			buildConfigurations = (
 				105C06AD284D50EF00B097F0 /* Debug */,
 				105C06AE284D50EF00B097F0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		105D3504284E3E9B000EF063 /* Build configuration list for PBXNativeTarget "portfolyoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				105D3502284E3E9B000EF063 /* Debug */,
+				105D3503284E3E9B000EF063 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

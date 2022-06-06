@@ -11,7 +11,20 @@
 		105C06A0284D50ED00B097F0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105C069F284D50ED00B097F0 /* ViewController.swift */; };
 		105C06A5284D50EF00B097F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 105C06A4284D50EF00B097F0 /* Assets.xcassets */; };
 		105C06A8284D50EF00B097F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 105C06A6284D50EF00B097F0 /* LaunchScreen.storyboard */; };
-		105D34FF284E3E9B000EF063 /* portfolyoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105D34FE284E3E9B000EF063 /* portfolyoTests.swift */; };
+		105D350B284E400E000EF063 /* UITableView+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105D3508284E400E000EF063 /* UITableView+Utility.swift */; };
+		105D350C284E400E000EF063 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105D3509284E400E000EF063 /* Array+Extension.swift */; };
+		105D350D284E400E000EF063 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105D350A284E400E000EF063 /* UIFont+Extension.swift */; };
+		105D3514284E405E000EF063 /* Analytics+Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105D3511284E405E000EF063 /* Analytics+Event.swift */; };
+		105D3515284E405E000EF063 /* Analytics+Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105D3512284E405E000EF063 /* Analytics+Manager.swift */; };
+		105D3516284E405E000EF063 /* Analytics+Engine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105D3513284E405E000EF063 /* Analytics+Engine.swift */; };
+		105D351C284E40B3000EF063 /* Network+Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105D3519284E40B3000EF063 /* Network+Manager.swift */; };
+		105D351D284E40B3000EF063 /* Network+Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105D351A284E40B3000EF063 /* Network+Provider.swift */; };
+		105D351E284E40B3000EF063 /* Network+Contracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105D351B284E40B3000EF063 /* Network+Contracts.swift */; };
+		105D3522284E40DF000EF063 /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105D3521284E40DF000EF063 /* NewsModel.swift */; };
+		105D3525284E414F000EF063 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105D3524284E414F000EF063 /* Constants.swift */; };
+		105D3528284E416D000EF063 /* Dummy+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105D3527284E416D000EF063 /* Dummy+Data.swift */; };
+		105D352F284E41D4000EF063 /* Network+Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105D352E284E41D4000EF063 /* Network+Test.swift */; };
+		105D3532284E41F7000EF063 /* Stub+Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105D3531284E41F7000EF063 /* Stub+Endpoints.swift */; };
 		B62A80D49659F0979BA3DD22 /* Pods_portfolyo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C80D75F4256B7F26DFE37817 /* Pods_portfolyo.framework */; };
 		E6D26DD7B33A840C7EB25B42 /* Pods_portfolyoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F494D3C5EB6AF40A80810108 /* Pods_portfolyoTests.framework */; };
 /* End PBXBuildFile section */
@@ -34,7 +47,20 @@
 		105C06A7284D50EF00B097F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		105C06A9284D50EF00B097F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		105D34FC284E3E9B000EF063 /* portfolyoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = portfolyoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		105D34FE284E3E9B000EF063 /* portfolyoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = portfolyoTests.swift; sourceTree = "<group>"; };
+		105D3508284E400E000EF063 /* UITableView+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Utility.swift"; sourceTree = "<group>"; };
+		105D3509284E400E000EF063 /* Array+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
+		105D350A284E400E000EF063 /* UIFont+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
+		105D3511284E405E000EF063 /* Analytics+Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Analytics+Event.swift"; sourceTree = "<group>"; };
+		105D3512284E405E000EF063 /* Analytics+Manager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Analytics+Manager.swift"; sourceTree = "<group>"; };
+		105D3513284E405E000EF063 /* Analytics+Engine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Analytics+Engine.swift"; sourceTree = "<group>"; };
+		105D3519284E40B3000EF063 /* Network+Manager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Network+Manager.swift"; sourceTree = "<group>"; };
+		105D351A284E40B3000EF063 /* Network+Provider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Network+Provider.swift"; sourceTree = "<group>"; };
+		105D351B284E40B3000EF063 /* Network+Contracts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Network+Contracts.swift"; sourceTree = "<group>"; };
+		105D3521284E40DF000EF063 /* NewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
+		105D3524284E414F000EF063 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		105D3527284E416D000EF063 /* Dummy+Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dummy+Data.swift"; sourceTree = "<group>"; };
+		105D352E284E41D4000EF063 /* Network+Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Network+Test.swift"; sourceTree = "<group>"; };
+		105D3531284E41F7000EF063 /* Stub+Endpoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Stub+Endpoints.swift"; sourceTree = "<group>"; };
 		322C46EAC35EFBCEC6AFD677 /* Pods-portfolyoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-portfolyoTests.debug.xcconfig"; path = "Target Support Files/Pods-portfolyoTests/Pods-portfolyoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4E784E3802B3B193072AB0CB /* Pods-portfolyo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-portfolyo.debug.xcconfig"; path = "Target Support Files/Pods-portfolyo/Pods-portfolyo.debug.xcconfig"; sourceTree = "<group>"; };
 		764CCA30352C22269A15FF61 /* Pods-portfolyoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-portfolyoTests.release.xcconfig"; path = "Target Support Files/Pods-portfolyoTests/Pods-portfolyoTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -87,6 +113,8 @@
 			isa = PBXGroup;
 			children = (
 				105C06B0284D512400B097F0 /* App */,
+				105D350E284E4035000EF063 /* Common */,
+				105D3517284E4088000EF063 /* Network */,
 				105C06AF284D511E00B097F0 /* Scenes */,
 				105C06B1284D512900B097F0 /* Support Files */,
 			);
@@ -122,9 +150,116 @@
 		105D34FD284E3E9B000EF063 /* portfolyoTests */ = {
 			isa = PBXGroup;
 			children = (
-				105D34FE284E3E9B000EF063 /* portfolyoTests.swift */,
+				105D3529284E4191000EF063 /* Network */,
+				105D3530284E41E8000EF063 /* Test+Helpers */,
 			);
 			path = portfolyoTests;
+			sourceTree = "<group>";
+		};
+		105D3507284E4005000EF063 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				105D3509284E400E000EF063 /* Array+Extension.swift */,
+				105D350A284E400E000EF063 /* UIFont+Extension.swift */,
+				105D3508284E400E000EF063 /* UITableView+Utility.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		105D350E284E4035000EF063 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				105D3526284E4161000EF063 /* Testing */,
+				105D3523284E4143000EF063 /* Utilites */,
+				105D350F284E4041000EF063 /* Manager */,
+				105D3507284E4005000EF063 /* Extension */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		105D350F284E4041000EF063 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				105D3510284E404A000EF063 /* LogManager */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		105D3510284E404A000EF063 /* LogManager */ = {
+			isa = PBXGroup;
+			children = (
+				105D3513284E405E000EF063 /* Analytics+Engine.swift */,
+				105D3511284E405E000EF063 /* Analytics+Event.swift */,
+				105D3512284E405E000EF063 /* Analytics+Manager.swift */,
+			);
+			path = LogManager;
+			sourceTree = "<group>";
+		};
+		105D3517284E4088000EF063 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				105D351F284E40CF000EF063 /* Models */,
+				105D3518284E409A000EF063 /* Manager */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		105D3518284E409A000EF063 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				105D351B284E40B3000EF063 /* Network+Contracts.swift */,
+				105D3519284E40B3000EF063 /* Network+Manager.swift */,
+				105D351A284E40B3000EF063 /* Network+Provider.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		105D351F284E40CF000EF063 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				105D3520284E40D6000EF063 /* News */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		105D3520284E40D6000EF063 /* News */ = {
+			isa = PBXGroup;
+			children = (
+				105D3521284E40DF000EF063 /* NewsModel.swift */,
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
+		105D3523284E4143000EF063 /* Utilites */ = {
+			isa = PBXGroup;
+			children = (
+				105D3524284E414F000EF063 /* Constants.swift */,
+			);
+			path = Utilites;
+			sourceTree = "<group>";
+		};
+		105D3526284E4161000EF063 /* Testing */ = {
+			isa = PBXGroup;
+			children = (
+				105D3527284E416D000EF063 /* Dummy+Data.swift */,
+			);
+			path = Testing;
+			sourceTree = "<group>";
+		};
+		105D3529284E4191000EF063 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				105D352E284E41D4000EF063 /* Network+Test.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		105D3530284E41E8000EF063 /* Test+Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				105D3531284E41F7000EF063 /* Stub+Endpoints.swift */,
+			);
+			path = "Test+Helpers";
 			sourceTree = "<group>";
 		};
 		177BCD669E074FAE0FA0FEB2 /* Frameworks */ = {
@@ -144,7 +279,6 @@
 				322C46EAC35EFBCEC6AFD677 /* Pods-portfolyoTests.debug.xcconfig */,
 				764CCA30352C22269A15FF61 /* Pods-portfolyoTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -204,6 +338,7 @@
 					};
 					105D34FB284E3E9B000EF063 = {
 						CreatedOnToolsVersion = 13.4;
+						LastSwiftMigration = 1340;
 						TestTargetID = 105C0697284D50ED00B097F0;
 					};
 				};
@@ -315,8 +450,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				105D3528284E416D000EF063 /* Dummy+Data.swift in Sources */,
+				105D3522284E40DF000EF063 /* NewsModel.swift in Sources */,
 				105C06A0284D50ED00B097F0 /* ViewController.swift in Sources */,
+				105D350B284E400E000EF063 /* UITableView+Utility.swift in Sources */,
+				105D351E284E40B3000EF063 /* Network+Contracts.swift in Sources */,
+				105D3516284E405E000EF063 /* Analytics+Engine.swift in Sources */,
 				105C069C284D50ED00B097F0 /* AppDelegate.swift in Sources */,
+				105D350D284E400E000EF063 /* UIFont+Extension.swift in Sources */,
+				105D3525284E414F000EF063 /* Constants.swift in Sources */,
+				105D351D284E40B3000EF063 /* Network+Provider.swift in Sources */,
+				105D351C284E40B3000EF063 /* Network+Manager.swift in Sources */,
+				105D3515284E405E000EF063 /* Analytics+Manager.swift in Sources */,
+				105D350C284E400E000EF063 /* Array+Extension.swift in Sources */,
+				105D3514284E405E000EF063 /* Analytics+Event.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,7 +471,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				105D34FF284E3E9B000EF063 /* portfolyoTests.swift in Sources */,
+				105D3532284E41F7000EF063 /* Stub+Endpoints.swift in Sources */,
+				105D352F284E41D4000EF063 /* Network+Test.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -533,14 +681,23 @@
 			baseConfigurationReference = 322C46EAC35EFBCEC6AFD677 /* Pods-portfolyoTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = NNJ59FP3TJ;
 				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.eren-celik.portfolyoTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_PRECOMPILE_BRIDGING_HEADER = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/portfolyo.app/portfolyo";
@@ -552,14 +709,22 @@
 			baseConfigurationReference = 764CCA30352C22269A15FF61 /* Pods-portfolyoTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = NNJ59FP3TJ;
 				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.eren-celik.portfolyoTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_PRECOMPILE_BRIDGING_HEADER = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/portfolyo.app/portfolyo";

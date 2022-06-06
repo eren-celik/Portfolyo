@@ -8,51 +8,67 @@
 import Moya
 
 enum AppAPI {
-    case users(perPage: Int)
+    case everything(keywords: String)
+    case topHeadlines(keywords: String)
 }
 
 extension AppAPI: TargetType {
     
     var baseURL: URL {
         switch self {
-        case .users:
+        case .everything, .topHeadlines:
             return URL(string: Constants.baseURL)!
         }
     }
     
     var path: String {
         switch self {
-        case .users:
-            return "/users"
+        case .everything:
+            return "/everything"
+        case .topHeadlines:
+            return "/top-headlines"
         }
     }
     
     var method: Method {
         switch self {
-        case .users:
+        default:
             return .get
+        }
+    }
+    
+    var parameters: [String: Any] {
+        switch self {
+        case .everything(let keywords):
+            return ["country": "tr",
+                    "q": keywords]
+        case .topHeadlines(let keywords):
+            return ["language": "tr",
+                    "pageSize": 7,
+                    "q": keywords]
         }
     }
     
     var task: Task {
         switch self {
-        case .users(let perPage):
-            return.requestParameters(parameters: ["per_page": perPage], encoding: URLEncoding.default)
+        default:
+            return .requestParameters(parameters: parameters, encoding: URLEncoding.default)
         }
     }
     
     var headers: [String : String]? {
         switch self {
-        case .users:
-            return ["Content-Type": "application/json; charset=utf-8",
-                    "Authorization": "Basic ZXJlbi1jZWxpazpnaHBfNlhDTVZKek5QUlVWZWF2YnNhcWs3TEVwNEFmZkt2MjhCYkx4"]
+        default:
+            return ["X-Api-Key": "a0471ca159db487e853ae61588261cc1"]
         }
     }
     
     var sampleData: Data {
         switch self {
-        case .users:
-            return DummyData.validUsersData
+        case .everything:
+            return DummyData.news
+        case .topHeadlines:
+            <#code#>
         }
     }
 }

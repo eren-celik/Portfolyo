@@ -21,7 +21,7 @@ fileprivate enum DummyDataFiles {
 
 struct DummyData {
     
-    static var validUsersData: Data { return jsonData(.users) }
+    static var news: Data { return jsonData(.users) }
 
     private static func jsonData(_ file: DummyDataFiles) -> Data {
         guard let filepath = Bundle.main.path(forResource: file.name, ofType: "json") else { return Data() }

@@ -169,10 +169,10 @@
 		105D350E284E4035000EF063 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				105D3507284E4005000EF063 /* Extension */,
+				105D350F284E4041000EF063 /* Manager */,
 				105D3526284E4161000EF063 /* Testing */,
 				105D3523284E4143000EF063 /* Utilites */,
-				105D350F284E4041000EF063 /* Manager */,
-				105D3507284E4005000EF063 /* Extension */,
 			);
 			path = Common;
 			sourceTree = "<group>";

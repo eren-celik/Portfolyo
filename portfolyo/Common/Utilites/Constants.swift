@@ -9,5 +9,5 @@ import Foundation
 
 struct Constants {
     
-    static var baseURL: String = "ttps://newsapi.org/v2"
+    static var baseURL: String = "https://newsapi.org/v2"
 }

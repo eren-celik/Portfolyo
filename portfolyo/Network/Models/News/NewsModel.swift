@@ -15,7 +15,7 @@ public struct NewsModel: Decodable {
 
 public struct Article: Decodable {
     public var source: Source?
-    public var author, title, articleDescription: String?
+    public var author, title, description: String?
     public var url: String?
     public var urlToImage: String?
     public var publishedAt, content: String?

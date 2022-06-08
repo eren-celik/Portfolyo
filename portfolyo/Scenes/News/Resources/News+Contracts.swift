@@ -9,9 +9,8 @@
 import UIKit
 
 //MARK: - VIEW
-
+// PRESENTER -> VIEW
 protocol NewsViewProtocol: AnyObject {
-    // PRESENTER -> VIEW
     func showNews(_ news: [Article])
     func showErrorMessage(_ message: String)
 }
@@ -20,7 +19,7 @@ protocol NewsViewProtocol: AnyObject {
 // VIEW -> PRESENTER
 
 protocol NewsPresenterProtocol: AnyObject {
-    func loadNews()
+    func loadNews(keywords: String)
     func showDetail(_ news: Article)
 }
 
@@ -33,8 +32,7 @@ enum NewsViewPresenterOutput {
 
 protocol NewsInteractorInputProtocol: AnyObject {
     var delegate: NewsViewInteractorDelegate? { get set }
-    func loadNews()
-    func showDetail(_ news: Article)
+    func getNews(keywords: String)
 }
 
 // INTERACTOR -> PRESENTER
@@ -46,7 +44,6 @@ enum HomeViewInteractorOutput {
 protocol NewsViewInteractorDelegate: AnyObject {
     func handleOutput(_ output: HomeViewInteractorOutput)
 }
-
 
 //MARK: - Router
 // PRESENTER -> ROUTER

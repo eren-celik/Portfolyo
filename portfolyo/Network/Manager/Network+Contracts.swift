@@ -12,8 +12,6 @@ protocol NetworkLayerProtocol {
     
     associatedtype T: TargetType
     var provider: MoyaProvider<T> { get }
-    
-    func getUsers(perPage: Int, completion: @escaping (Result<NewsModel, GUNetworkErrors>) -> Void)
 }
 
 protocol NetworkRequestProtocol: AnyObject {

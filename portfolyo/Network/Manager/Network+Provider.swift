@@ -40,7 +40,7 @@ extension AppAPI: TargetType {
     var parameters: [String: Any] {
         switch self {
         case .everything(let keywords):
-            return ["country": "tr",
+            return ["language": "tr",
                     "q": keywords]
         case .topHeadlines(let keywords):
             return ["language": "tr",
@@ -56,10 +56,10 @@ extension AppAPI: TargetType {
         }
     }
     
-    var headers: [String : String]? {
+    var headers: [String: String]? {
         switch self {
         default:
-            return ["X-Api-Key": "a0471ca159db487e853ae61588261cc1"]
+            return ["Authorization": "a0471ca159db487e853ae61588261cc1"]
         }
     }
     
@@ -67,8 +67,8 @@ extension AppAPI: TargetType {
         switch self {
         case .everything:
             return DummyData.news
-        case .topHeadlines:
-            <#code#>
+        default:
+            return Data()
         }
     }
 }

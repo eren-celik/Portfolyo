@@ -7,25 +7,7 @@
 
 import Moya
 
-enum GUNetworkErrors: Error {
-    
-    case invalidResponse(message: String)
-    case decodeError
-    case networkError(code: Int)
-    
-    var localizedDescription: String {
-        switch self {
-        case .invalidResponse(let message):
-            return "Invalid Response: \(message)"
-        case .decodeError:
-            return "Decode Error"
-        case .networkError(let code):
-            return "Network Error Code:\(code)"
-        }
-    }
-}
-
-final class NetworkManager: NetworkLayerProtocol {
+final class NetworkManager {
     typealias TargetType = AppAPI
     var provider: MoyaProvider<AppAPI>
     
@@ -34,16 +16,9 @@ final class NetworkManager: NetworkLayerProtocol {
     }
 }
 
-extension NetworkManager: NetworkRequestProtocol {
-    
-    func getUsers(perPage: Int, completion: @escaping (Result<NewsModel, GUNetworkErrors>) -> Void) {
-        request(target: .users(perPage: perPage), completion: completion)
-    }
-}
-
 //MARK: - General Request Extension
 
-extension NetworkManager {
+extension NetworkManager: NetworkRequestProtocol {
     
     func request<T: Decodable>(target: TargetType, completion: @escaping (Result<T, GUNetworkErrors>) -> Void) {
         provider.request(target) { (result) in

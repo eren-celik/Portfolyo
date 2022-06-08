@@ -6,14 +6,14 @@
 //  Copyright © 2022. All rights reserved.
 //
 
-import UIKit
+import Moya
 
 final class NewsInteractor: NewsInteractorInputProtocol {
     
     weak var delegate: NewsViewInteractorDelegate?
-    private var manager: NetworkManager?
+    private var manager: NetworkManager<AppAPI>?
     
-    init(manager: NetworkManager) {
+    init(manager: NetworkManager<AppAPI>) {
         self.manager = manager
     }
     
@@ -21,7 +21,6 @@ final class NewsInteractor: NewsInteractorInputProtocol {
         manager?.request(target: .everything(keywords: "apple")) { [weak self] (result: Result<NewsModel, GUNetworkErrors>) in
             switch result {
             case .success(let data):
-                print(data)
                 if data.articles?.isEmpty == false {
                     self?.delegate?.handleOutput(.showNews(data.articles!))
                 }else if data.status == "error" {

@@ -7,20 +7,23 @@
 
 import Moya
 
-final class NetworkManager {
-    typealias TargetType = AppAPI
-    var provider: MoyaProvider<AppAPI>
+protocol NetworkRequestProtocol: AnyObject {
+    associatedtype T: TargetType
+    func request<D: Decodable>(target: T, completion: @escaping (Result<D, GUNetworkErrors>) -> Void)
+}
+
+final class NetworkManager<T: TargetType> {
+    var provider: MoyaProvider<T>
     
-    init(provider: MoyaProvider<TargetType> = MoyaProvider<TargetType>()) {
+    init(provider: MoyaProvider<T>) {
         self.provider = provider
     }
 }
 
-//MARK: - General Request Extension
 
 extension NetworkManager: NetworkRequestProtocol {
     
-    func request<T: Decodable>(target: TargetType, completion: @escaping (Result<T, GUNetworkErrors>) -> Void) {
+    func request<D: Decodable>(target: T, completion: @escaping (Result<D, GUNetworkErrors>) -> Void) {
         provider.request(target) { (result) in
             switch result {
             case .success(let response):
@@ -29,7 +32,7 @@ extension NetworkManager: NetworkRequestProtocol {
                     return
                 }
                 do {
-                    let result = try JSONDecoder().decode(T.self, from: response.data)
+                    let result = try JSONDecoder().decode(D.self, from: response.data)
                     completion(.success(result))
                 }catch {
                     completion(.failure(.decodeError))

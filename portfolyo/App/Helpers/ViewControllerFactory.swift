@@ -5,7 +5,7 @@
 //  Created by Eren  Çelik on 8.06.2022.
 //
 
-import UIKit
+import Moya
 
 protocol ViewControllerFactory {
     func createNewsView() -> NewsViewController
@@ -13,11 +13,10 @@ protocol ViewControllerFactory {
 
 final class StoryboardViewControllerFactory {
     let storyboard: UIStoryboard
-    let manager = NetworkManager()
+    let manager = NetworkManager<AppAPI>(provider: MoyaProvider<AppAPI>())
 
-    init(storyboard: UIStoryboard, manager: NetworkManager) {
+    init(storyboard: UIStoryboard) {
         self.storyboard = storyboard
-        self.manager = manager
     }
 }
 

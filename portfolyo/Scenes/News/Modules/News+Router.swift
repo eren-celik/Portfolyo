@@ -16,22 +16,7 @@ final class NewsRouter: NewsRouterProtocol {
     init(view: UIViewController) {
         self.view = view
     }
-    
-    static func createTodoDetailRouterModule() -> UIViewController {
-        let storyBoard = UIStoryboard(name: "News", bundle: nil)
-        let view = storyBoard.instantiateViewController(identifier: "NewsViewController") as! NewsViewController
-        let router = NewsRouter(view: view)
-        let manager = NetworkManager()
-        let interactor = NewsInteractor(manager: manager)
-        let presenter = NewsPresenter(
-            view: view,
-            interactor: interactor,
-            router: router
-        )
-        view.presenter = presenter
-        return view
-    }
-    
+
     func navigate(to route: NewsViewRoute) {
         switch route {
         case .detail(let article):

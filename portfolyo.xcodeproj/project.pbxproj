@@ -33,6 +33,10 @@
 		105D3532284E41F7000EF063 /* Stub+Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105D3531284E41F7000EF063 /* Stub+Endpoints.swift */; };
 		108568B22850C383005EB39B /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108568B12850C383005EB39B /* AppCoordinator.swift */; };
 		108568B42850C393005EB39B /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108568B32850C393005EB39B /* ViewControllerFactory.swift */; };
+		108568B62850D108005EB39B /* NewsViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108568B52850D108005EB39B /* NewsViewController+TableView.swift */; };
+		108568BA2850D31B005EB39B /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108568B82850D31B005EB39B /* NewsTableViewCell.swift */; };
+		108568BB2850D31B005EB39B /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 108568B92850D31B005EB39B /* NewsTableViewCell.xib */; };
+		108E393E285137B3002C22DD /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108E393D285137B3002C22DD /* Date+Extension.swift */; };
 		B62A80D49659F0979BA3DD22 /* Pods_portfolyo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C80D75F4256B7F26DFE37817 /* Pods_portfolyo.framework */; };
 		E6D26DD7B33A840C7EB25B42 /* Pods_portfolyoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F494D3C5EB6AF40A80810108 /* Pods_portfolyoTests.framework */; };
 /* End PBXBuildFile section */
@@ -77,6 +81,10 @@
 		105D3531284E41F7000EF063 /* Stub+Endpoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Stub+Endpoints.swift"; sourceTree = "<group>"; };
 		108568B12850C383005EB39B /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		108568B32850C393005EB39B /* ViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
+		108568B52850D108005EB39B /* NewsViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NewsViewController+TableView.swift"; sourceTree = "<group>"; };
+		108568B82850D31B005EB39B /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
+		108568B92850D31B005EB39B /* NewsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsTableViewCell.xib; sourceTree = "<group>"; };
+		108E393D285137B3002C22DD /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		322C46EAC35EFBCEC6AFD677 /* Pods-portfolyoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-portfolyoTests.debug.xcconfig"; path = "Target Support Files/Pods-portfolyoTests/Pods-portfolyoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4E784E3802B3B193072AB0CB /* Pods-portfolyo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-portfolyo.debug.xcconfig"; path = "Target Support Files/Pods-portfolyo/Pods-portfolyo.debug.xcconfig"; sourceTree = "<group>"; };
 		764CCA30352C22269A15FF61 /* Pods-portfolyoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-portfolyoTests.release.xcconfig"; path = "Target Support Files/Pods-portfolyoTests/Pods-portfolyoTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -108,7 +116,9 @@
 		103ACCBA284E644400208AB7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				108568B72850D308005EB39B /* Cells */,
 				103ACCAB284E4B2E00208AB7 /* NewsViewController.swift */,
+				108568B52850D108005EB39B /* NewsViewController+TableView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -206,6 +216,7 @@
 				105D3509284E400E000EF063 /* Array+Extension.swift */,
 				105D350A284E400E000EF063 /* UIFont+Extension.swift */,
 				105D3508284E400E000EF063 /* UITableView+Utility.swift */,
+				108E393D285137B3002C22DD /* Date+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -326,6 +337,15 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		108568B72850D308005EB39B /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				108568B82850D31B005EB39B /* NewsTableViewCell.swift */,
+				108568B92850D31B005EB39B /* NewsTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		177BCD669E074FAE0FA0FEB2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -433,6 +453,7 @@
 			files = (
 				105C06A8284D50EF00B097F0 /* LaunchScreen.storyboard in Resources */,
 				103ACCB5284E598E00208AB7 /* News.storyboard in Resources */,
+				108568BB2850D31B005EB39B /* NewsTableViewCell.xib in Resources */,
 				105C06A5284D50EF00B097F0 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -520,14 +541,17 @@
 				103ACCB0284E4B2E00208AB7 /* News+Contracts.swift in Sources */,
 				103ACCAF284E4B2E00208AB7 /* News+Router.swift in Sources */,
 				103ACCAE284E4B2E00208AB7 /* News+Presenter.swift in Sources */,
+				108E393E285137B3002C22DD /* Date+Extension.swift in Sources */,
 				105D350B284E400E000EF063 /* UITableView+Utility.swift in Sources */,
 				105D351E284E40B3000EF063 /* Network+Contracts.swift in Sources */,
 				105D3516284E405E000EF063 /* Analytics+Engine.swift in Sources */,
+				108568BA2850D31B005EB39B /* NewsTableViewCell.swift in Sources */,
 				105C069C284D50ED00B097F0 /* AppDelegate.swift in Sources */,
 				105D350D284E400E000EF063 /* UIFont+Extension.swift in Sources */,
 				105D3525284E414F000EF063 /* Constants.swift in Sources */,
 				103ACCB2284E4B2E00208AB7 /* NewsViewController.swift in Sources */,
 				108568B22850C383005EB39B /* AppCoordinator.swift in Sources */,
+				108568B62850D108005EB39B /* NewsViewController+TableView.swift in Sources */,
 				105D351D284E40B3000EF063 /* Network+Provider.swift in Sources */,
 				105D351C284E40B3000EF063 /* Network+Manager.swift in Sources */,
 				108568B42850C393005EB39B /* ViewControllerFactory.swift in Sources */,

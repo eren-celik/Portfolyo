@@ -17,15 +17,12 @@ final class NewsInteractor: NewsInteractorInputProtocol {
         self.manager = manager
     }
     
-    func loadNews() {
-        manager?.request(target: .everything(keywords: "apple")) { [weak self] (result: Result<NewsModel, GUNetworkErrors>) in
+    func getNews(keywords: String) {
+        manager?.request(target: .everything(keywords: keywords)) { [weak self] (result: Result<[NewsModel], GUNetworkErrors>) in
             switch result {
             case .success(let data):
-                if data.articles?.isEmpty == false {
-                    self?.delegate?.handleOutput(.showNews(data.articles!))
-                }else if data.status == "error" {
-                    self?.delegate?.handleOutput(.showError(data.message ?? ""))
-                }
+                
+                self?.delegate?.handleOutput(.showNews(data.first?.articles ?? []))
             case .failure(let error):
                 self?.delegate?.handleOutput(.showError(error.localizedDescription))
             }
@@ -35,5 +32,4 @@ final class NewsInteractor: NewsInteractorInputProtocol {
     func showDetail(_ news: Article) {
         print("shooo")
     }
-    
 }

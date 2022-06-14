@@ -7,6 +7,7 @@ target 'portfolyo' do
   pod 'SDWebImage', '~> 5.0'
   pod 'Moya', '~> 15.0'
   pod 'JGProgressHUD'
+  pod 'Parchment', '~> 3.2'
 
   target 'portfolyoTests' do
     inherit! :search_paths

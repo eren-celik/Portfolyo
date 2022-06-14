@@ -31,6 +31,12 @@
 		105D3528284E416D000EF063 /* Dummy+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105D3527284E416D000EF063 /* Dummy+Data.swift */; };
 		105D352F284E41D4000EF063 /* Network+Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105D352E284E41D4000EF063 /* Network+Test.swift */; };
 		105D3532284E41F7000EF063 /* Stub+Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105D3531284E41F7000EF063 /* Stub+Endpoints.swift */; };
+		1078F1F42858995D00EBA884 /* WalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1078F1F32858995D00EBA884 /* WalletViewController.swift */; };
+		1078F1F9285899A600EBA884 /* Wallet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1078F1F8285899A600EBA884 /* Wallet.storyboard */; };
+		1078F1FB285899B700EBA884 /* Wallet+Contracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1078F1FA285899B700EBA884 /* Wallet+Contracts.swift */; };
+		1078F1FD28589BBF00EBA884 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1078F1FC28589BBF00EBA884 /* BaseTabBarController.swift */; };
+		1078F20128589F1A00EBA884 /* BaseTabBarBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1078F20028589F1A00EBA884 /* BaseTabBarBuilder.swift */; };
+		1078F20328589F7E00EBA884 /* TabBarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1078F20228589F7E00EBA884 /* TabBarRouter.swift */; };
 		108568B22850C383005EB39B /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108568B12850C383005EB39B /* AppCoordinator.swift */; };
 		108568B42850C393005EB39B /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108568B32850C393005EB39B /* ViewControllerFactory.swift */; };
 		108568B62850D108005EB39B /* NewsViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108568B52850D108005EB39B /* NewsViewController+TableView.swift */; };
@@ -79,6 +85,12 @@
 		105D3527284E416D000EF063 /* Dummy+Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dummy+Data.swift"; sourceTree = "<group>"; };
 		105D352E284E41D4000EF063 /* Network+Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Network+Test.swift"; sourceTree = "<group>"; };
 		105D3531284E41F7000EF063 /* Stub+Endpoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Stub+Endpoints.swift"; sourceTree = "<group>"; };
+		1078F1F32858995D00EBA884 /* WalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewController.swift; sourceTree = "<group>"; };
+		1078F1F8285899A600EBA884 /* Wallet.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Wallet.storyboard; sourceTree = "<group>"; };
+		1078F1FA285899B700EBA884 /* Wallet+Contracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Wallet+Contracts.swift"; sourceTree = "<group>"; };
+		1078F1FC28589BBF00EBA884 /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
+		1078F20028589F1A00EBA884 /* BaseTabBarBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarBuilder.swift; sourceTree = "<group>"; };
+		1078F20228589F7E00EBA884 /* TabBarRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarRouter.swift; sourceTree = "<group>"; };
 		108568B12850C383005EB39B /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		108568B32850C393005EB39B /* ViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
 		108568B52850D108005EB39B /* NewsViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NewsViewController+TableView.swift"; sourceTree = "<group>"; };
@@ -178,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				105D3533284E4834000EF063 /* News */,
+				1078F1F22858993900EBA884 /* Wallet */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -224,6 +237,7 @@
 		105D350E284E4035000EF063 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				1078F1FE28589EFC00EBA884 /* Base */,
 				105D3507284E4005000EF063 /* Extension */,
 				105D350F284E4041000EF063 /* Manager */,
 				105D3526284E4161000EF063 /* Testing */,
@@ -326,6 +340,58 @@
 				103ACCBA284E644400208AB7 /* View */,
 			);
 			path = News;
+			sourceTree = "<group>";
+		};
+		1078F1F22858993900EBA884 /* Wallet */ = {
+			isa = PBXGroup;
+			children = (
+				1078F1F72858999400EBA884 /* View */,
+				1078F1F62858998900EBA884 /* Modules */,
+				1078F1F52858997200EBA884 /* Resources */,
+			);
+			path = Wallet;
+			sourceTree = "<group>";
+		};
+		1078F1F52858997200EBA884 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1078F1F8285899A600EBA884 /* Wallet.storyboard */,
+				1078F1FA285899B700EBA884 /* Wallet+Contracts.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		1078F1F62858998900EBA884 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		1078F1F72858999400EBA884 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1078F1F32858995D00EBA884 /* WalletViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1078F1FE28589EFC00EBA884 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				1078F1FF28589F0100EBA884 /* Tabbar */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		1078F1FF28589F0100EBA884 /* Tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				1078F20028589F1A00EBA884 /* BaseTabBarBuilder.swift */,
+				1078F1FC28589BBF00EBA884 /* BaseTabBarController.swift */,
+				1078F20228589F7E00EBA884 /* TabBarRouter.swift */,
+			);
+			path = Tabbar;
 			sourceTree = "<group>";
 		};
 		108568B02850C374005EB39B /* Helpers */ = {
@@ -452,6 +518,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				105C06A8284D50EF00B097F0 /* LaunchScreen.storyboard in Resources */,
+				1078F1F9285899A600EBA884 /* Wallet.storyboard in Resources */,
 				103ACCB5284E598E00208AB7 /* News.storyboard in Resources */,
 				108568BB2850D31B005EB39B /* NewsTableViewCell.xib in Resources */,
 				105C06A5284D50EF00B097F0 /* Assets.xcassets in Resources */,
@@ -544,8 +611,11 @@
 				108E393E285137B3002C22DD /* Date+Extension.swift in Sources */,
 				105D350B284E400E000EF063 /* UITableView+Utility.swift in Sources */,
 				105D351E284E40B3000EF063 /* Network+Contracts.swift in Sources */,
+				1078F20128589F1A00EBA884 /* BaseTabBarBuilder.swift in Sources */,
 				105D3516284E405E000EF063 /* Analytics+Engine.swift in Sources */,
+				1078F1F42858995D00EBA884 /* WalletViewController.swift in Sources */,
 				108568BA2850D31B005EB39B /* NewsTableViewCell.swift in Sources */,
+				1078F1FD28589BBF00EBA884 /* BaseTabBarController.swift in Sources */,
 				105C069C284D50ED00B097F0 /* AppDelegate.swift in Sources */,
 				105D350D284E400E000EF063 /* UIFont+Extension.swift in Sources */,
 				105D3525284E414F000EF063 /* Constants.swift in Sources */,
@@ -553,10 +623,12 @@
 				108568B22850C383005EB39B /* AppCoordinator.swift in Sources */,
 				108568B62850D108005EB39B /* NewsViewController+TableView.swift in Sources */,
 				105D351D284E40B3000EF063 /* Network+Provider.swift in Sources */,
+				1078F1FB285899B700EBA884 /* Wallet+Contracts.swift in Sources */,
 				105D351C284E40B3000EF063 /* Network+Manager.swift in Sources */,
 				108568B42850C393005EB39B /* ViewControllerFactory.swift in Sources */,
 				105D3515284E405E000EF063 /* Analytics+Manager.swift in Sources */,
 				103ACCBE284E680100208AB7 /* Network+Helper.swift in Sources */,
+				1078F20328589F7E00EBA884 /* TabBarRouter.swift in Sources */,
 				105D350C284E400E000EF063 /* Array+Extension.swift in Sources */,
 				103ACCB1284E4B2E00208AB7 /* News+Interactor.swift in Sources */,
 				105D3514284E405E000EF063 /* Analytics+Event.swift in Sources */,

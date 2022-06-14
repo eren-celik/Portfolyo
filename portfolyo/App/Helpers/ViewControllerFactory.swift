@@ -14,7 +14,7 @@ protocol ViewControllerFactory {
 final class StoryboardViewControllerFactory {
     let storyboard: UIStoryboard
     let manager = NetworkManager<AppAPI>(provider: MoyaProvider<AppAPI>())
-
+    
     init(storyboard: UIStoryboard) {
         self.storyboard = storyboard
     }
@@ -32,6 +32,11 @@ extension StoryboardViewControllerFactory: ViewControllerFactory {
             router: router
         )
         view.presenter = presenter
+        return view
+    }
+    
+    func createWalletView() -> WalletViewController {
+        let view = storyboard.instantiateViewController(identifier: "WalletViewController") as! WalletViewController
         return view
     }
 }

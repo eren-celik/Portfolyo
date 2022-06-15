@@ -8,7 +8,7 @@
 import Moya
 
 protocol ViewControllerFactory {
-    func createNewsView() -> NewsViewController
+//    func createNewsView() -> NewsViewController
 }
 
 final class StoryboardViewControllerFactory {
@@ -22,10 +22,10 @@ final class StoryboardViewControllerFactory {
 
 extension StoryboardViewControllerFactory: ViewControllerFactory {
     
-    func createNewsView() -> NewsViewController {
+    func createNewsView(category: String) -> NewsViewController {
         let view = storyboard.instantiateViewController(identifier: "NewsViewController") as! NewsViewController
         let router = NewsRouter(view: view)
-        let interactor = NewsInteractor(manager: manager)
+        let interactor = NewsInteractor(manager: manager, category: category)
         let presenter = NewsPresenter(
             view: view,
             interactor: interactor,
@@ -37,6 +37,11 @@ extension StoryboardViewControllerFactory: ViewControllerFactory {
     
     func createWalletView() -> WalletViewController {
         let view = storyboard.instantiateViewController(identifier: "WalletViewController") as! WalletViewController
+        return view
+    }
+    
+    func createHomeView() -> HomeViewController {
+        let view = storyboard.instantiateViewController(identifier: "HomeViewController") as! HomeViewController
         return view
     }
 }

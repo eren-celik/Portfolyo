@@ -8,7 +8,7 @@
 import UIKit
 
 typealias BaseTabs = (
-    news: NewsViewController,
+    news: HomeViewController,
     wallet: WalletViewController
 )
 

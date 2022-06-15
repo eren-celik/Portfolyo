@@ -16,10 +16,10 @@ final class AppCoordinator {
     }
     
     func start() {
-        let newsfactory = StoryboardViewControllerFactory(storyboard: UIStoryboard(name: "News", bundle: nil))
+        let newsfactory = StoryboardViewControllerFactory(storyboard: UIStoryboard(name: "Home", bundle: nil))
         let walletfactory = StoryboardViewControllerFactory(storyboard: UIStoryboard(name: "Wallet", bundle: nil))
         
-        let newsViewController = newsfactory.createNewsView()
+        let newsViewController = newsfactory.createHomeView()
         let walletViewContoller = walletfactory.createWalletView()
         
         let modules = (

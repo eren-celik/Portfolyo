@@ -12,7 +12,7 @@ final class TabBarRouter {
     var viewController: UIViewController
     
     typealias SubModules = (
-        news: NewsViewController,
+        news: HomeViewController,
         wallet: WalletViewController
     )
     

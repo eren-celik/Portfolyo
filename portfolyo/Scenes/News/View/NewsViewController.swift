@@ -26,7 +26,7 @@ final class NewsViewController: UIViewController {
     }
     
     func setView() {
-        presenter.loadNews()
+//        presenter.loadNews()
         setTableView()
     }
 }

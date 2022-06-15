@@ -30,6 +30,7 @@ DerivedData/
 *.dSYM.zip
 *.dSYM
 *.xcshareddate
+**/portfolyo.xcodeproj/xcuserdata/
 
 ## Playgrounds
 timeline.xctimeline

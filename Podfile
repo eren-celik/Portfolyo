@@ -8,6 +8,7 @@ target 'portfolyo' do
   pod 'Moya', '~> 15.0'
   pod 'JGProgressHUD'
   pod 'Parchment', '~> 3.2'
+  pod 'Charts'
 
   target 'portfolyoTests' do
     inherit! :search_paths

@@ -14,6 +14,9 @@
 		103ACCB2284E4B2E00208AB7 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103ACCAB284E4B2E00208AB7 /* NewsViewController.swift */; };
 		103ACCB5284E598E00208AB7 /* News.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 103ACCB4284E598E00208AB7 /* News.storyboard */; };
 		103ACCBE284E680100208AB7 /* Network+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103ACCBD284E680100208AB7 /* Network+Helper.swift */; };
+		105A0E272859217900B4CDF9 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 105A0E262859217900B4CDF9 /* Home.storyboard */; };
+		105A0E292859218900B4CDF9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105A0E282859218900B4CDF9 /* HomeViewController.swift */; };
+		105A0E2B285927DC00B4CDF9 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105A0E2A285927DC00B4CDF9 /* UIView+Extension.swift */; };
 		105C069C284D50ED00B097F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105C069B284D50ED00B097F0 /* AppDelegate.swift */; };
 		105C06A5284D50EF00B097F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 105C06A4284D50EF00B097F0 /* Assets.xcassets */; };
 		105C06A8284D50EF00B097F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 105C06A6284D50EF00B097F0 /* LaunchScreen.storyboard */; };
@@ -65,6 +68,9 @@
 		103ACCAB284E4B2E00208AB7 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		103ACCB4284E598E00208AB7 /* News.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = News.storyboard; sourceTree = "<group>"; };
 		103ACCBD284E680100208AB7 /* Network+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Network+Helper.swift"; sourceTree = "<group>"; };
+		105A0E262859217900B4CDF9 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		105A0E282859218900B4CDF9 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		105A0E2A285927DC00B4CDF9 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		105C0698284D50ED00B097F0 /* portfolyo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = portfolyo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		105C069B284D50ED00B097F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		105C06A4284D50EF00B097F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -154,6 +160,31 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		105A0E232859214700B4CDF9 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				105A0E252859216800B4CDF9 /* Resources */,
+				105A0E242859216100B4CDF9 /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		105A0E242859216100B4CDF9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				105A0E282859218900B4CDF9 /* HomeViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		105A0E252859216800B4CDF9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				105A0E262859217900B4CDF9 /* Home.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		105C068F284D50ED00B097F0 = {
 			isa = PBXGroup;
 			children = (
@@ -189,6 +220,7 @@
 		105C06AF284D511E00B097F0 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				105A0E232859214700B4CDF9 /* Home */,
 				105D3533284E4834000EF063 /* News */,
 				1078F1F22858993900EBA884 /* Wallet */,
 			);
@@ -227,9 +259,10 @@
 			isa = PBXGroup;
 			children = (
 				105D3509284E400E000EF063 /* Array+Extension.swift */,
+				108E393D285137B3002C22DD /* Date+Extension.swift */,
 				105D350A284E400E000EF063 /* UIFont+Extension.swift */,
 				105D3508284E400E000EF063 /* UITableView+Utility.swift */,
-				108E393D285137B3002C22DD /* Date+Extension.swift */,
+				105A0E2A285927DC00B4CDF9 /* UIView+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -519,6 +552,7 @@
 			files = (
 				105C06A8284D50EF00B097F0 /* LaunchScreen.storyboard in Resources */,
 				1078F1F9285899A600EBA884 /* Wallet.storyboard in Resources */,
+				105A0E272859217900B4CDF9 /* Home.storyboard in Resources */,
 				103ACCB5284E598E00208AB7 /* News.storyboard in Resources */,
 				108568BB2850D31B005EB39B /* NewsTableViewCell.xib in Resources */,
 				105C06A5284D50EF00B097F0 /* Assets.xcassets in Resources */,
@@ -608,6 +642,7 @@
 				103ACCB0284E4B2E00208AB7 /* News+Contracts.swift in Sources */,
 				103ACCAF284E4B2E00208AB7 /* News+Router.swift in Sources */,
 				103ACCAE284E4B2E00208AB7 /* News+Presenter.swift in Sources */,
+				105A0E292859218900B4CDF9 /* HomeViewController.swift in Sources */,
 				108E393E285137B3002C22DD /* Date+Extension.swift in Sources */,
 				105D350B284E400E000EF063 /* UITableView+Utility.swift in Sources */,
 				105D351E284E40B3000EF063 /* Network+Contracts.swift in Sources */,
@@ -628,6 +663,7 @@
 				108568B42850C393005EB39B /* ViewControllerFactory.swift in Sources */,
 				105D3515284E405E000EF063 /* Analytics+Manager.swift in Sources */,
 				103ACCBE284E680100208AB7 /* Network+Helper.swift in Sources */,
+				105A0E2B285927DC00B4CDF9 /* UIView+Extension.swift in Sources */,
 				1078F20328589F7E00EBA884 /* TabBarRouter.swift in Sources */,
 				105D350C284E400E000EF063 /* Array+Extension.swift in Sources */,
 				103ACCB1284E4B2E00208AB7 /* News+Interactor.swift in Sources */,

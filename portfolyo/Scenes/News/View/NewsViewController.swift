@@ -25,9 +25,7 @@ final class NewsViewController: UIViewController {
     }
     
     func setView() {
-        presenter.loadNews(keywords: "apple")
+        presenter.loadNews()
         setTableView()
-        navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.title = "News"
     }
 }

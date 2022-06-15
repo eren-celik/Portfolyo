@@ -23,8 +23,8 @@ final class NewsPresenter: NewsPresenterProtocol {
         self.interactor.delegate = self
     }
     
-    func loadNews(keywords: String) {
-        interactor.getNews(keywords: keywords)
+    func loadNews() {
+        interactor.getNews()
     }
     
     func showDetail(_ news: Article) {

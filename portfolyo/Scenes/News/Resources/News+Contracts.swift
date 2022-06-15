@@ -19,7 +19,7 @@ protocol NewsViewProtocol: AnyObject {
 // VIEW -> PRESENTER
 
 protocol NewsPresenterProtocol: AnyObject {
-    func loadNews(keywords: String)
+    func loadNews()
     func showDetail(_ news: Article)
 }
 
@@ -32,7 +32,7 @@ enum NewsViewPresenterOutput {
 
 protocol NewsInteractorInputProtocol: AnyObject {
     var delegate: NewsViewInteractorDelegate? { get set }
-    func getNews(keywords: String)
+    func getNews()
 }
 
 // INTERACTOR -> PRESENTER

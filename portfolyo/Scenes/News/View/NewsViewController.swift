@@ -22,6 +22,7 @@ final class NewsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setView()
+        setupStyle()
     }
     
     func setView() {

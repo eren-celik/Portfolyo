@@ -7,10 +7,6 @@
 
 import Moya
 
-protocol ViewControllerFactory {
-//    func createNewsView() -> NewsViewController
-}
-
 final class StoryboardViewControllerFactory {
     let storyboard: UIStoryboard
     let manager = NetworkManager<AppAPI>(provider: MoyaProvider<AppAPI>())
@@ -20,7 +16,7 @@ final class StoryboardViewControllerFactory {
     }
 }
 
-extension StoryboardViewControllerFactory: ViewControllerFactory {
+extension StoryboardViewControllerFactory {
     
     func createNewsView(category: String) -> NewsViewController {
         let view = storyboard.instantiateViewController(identifier: "NewsViewController") as! NewsViewController

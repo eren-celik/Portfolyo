@@ -20,10 +20,10 @@ final class NewsInteractor: NewsInteractorInputProtocol {
     }
     
     func getNews() {
-        manager?.request(target: .everything(keywords: category)) { [weak self] (result: Result<[NewsModel], GUNetworkErrors>) in
+        manager?.request(target: .everything(keywords: category)) { [weak self] (result: Result<NewsModel, GUNetworkErrors>) in
             switch result {
             case .success(let data):
-                self?.delegate?.handleOutput(.showNews(data.first?.articles ?? []))
+                self?.delegate?.handleOutput(.showNews(data.articles ?? []))
             case .failure(let error):
                 self?.delegate?.handleOutput(.showError(error.localizedDescription))
             }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1003523A2859DBF600121730 /* NewsViewController+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100352392859DBF600121730 /* NewsViewController+Style.swift */; };
 		103ACCAE284E4B2E00208AB7 /* News+Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103ACCA7284E4B2E00208AB7 /* News+Presenter.swift */; };
 		103ACCAF284E4B2E00208AB7 /* News+Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103ACCA8284E4B2E00208AB7 /* News+Router.swift */; };
 		103ACCB0284E4B2E00208AB7 /* News+Contracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103ACCA9284E4B2E00208AB7 /* News+Contracts.swift */; };
@@ -61,6 +62,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		100352392859DBF600121730 /* NewsViewController+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NewsViewController+Style.swift"; sourceTree = "<group>"; };
 		103ACCA7284E4B2E00208AB7 /* News+Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "News+Presenter.swift"; sourceTree = "<group>"; };
 		103ACCA8284E4B2E00208AB7 /* News+Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "News+Router.swift"; sourceTree = "<group>"; };
 		103ACCA9284E4B2E00208AB7 /* News+Contracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "News+Contracts.swift"; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 			children = (
 				108568B72850D308005EB39B /* Cells */,
 				103ACCAB284E4B2E00208AB7 /* NewsViewController.swift */,
+				100352392859DBF600121730 /* NewsViewController+Style.swift */,
 				108568B52850D108005EB39B /* NewsViewController+TableView.swift */,
 			);
 			path = View;
@@ -654,6 +657,7 @@
 				105C069C284D50ED00B097F0 /* AppDelegate.swift in Sources */,
 				105D350D284E400E000EF063 /* UIFont+Extension.swift in Sources */,
 				105D3525284E414F000EF063 /* Constants.swift in Sources */,
+				1003523A2859DBF600121730 /* NewsViewController+Style.swift in Sources */,
 				103ACCB2284E4B2E00208AB7 /* NewsViewController.swift in Sources */,
 				108568B22850C383005EB39B /* AppCoordinator.swift in Sources */,
 				108568B62850D108005EB39B /* NewsViewController+TableView.swift in Sources */,

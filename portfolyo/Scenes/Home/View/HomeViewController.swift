@@ -12,8 +12,8 @@ final class HomeViewController: UIViewController {
 
     @IBOutlet weak var pagingView: UIView!
     
-    var categories = [
-        "business", "entertainment", "general"
+    let categories = [
+        "Altın", "Döviz", "Borsa", "Ekonomi", "Gündem"
     ]
     
     override func viewDidLoad() {

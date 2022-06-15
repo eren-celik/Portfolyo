@@ -8,8 +8,9 @@
 import UIKit
 import Charts
 
-class WalletViewController: UIViewController {
+class MarketViewController: UIViewController {
     
+    var presenter: MarketPresenterProtocol!
     @IBOutlet weak var chartView: LineChartView!
     
     override func viewDidLoad() {
@@ -17,10 +18,17 @@ class WalletViewController: UIViewController {
         navigationController?.visibleViewController?.title = "Wallet"
         navigationController?.navigationBar.prefersLargeTitles = true
         setupChartView()
+        presenter.getCoinList()
     }
-    
 }
-extension WalletViewController: ChartViewDelegate {
+
+extension MarketViewController: MarketViewProtocol {
+    func showCoinList() {
+        print("coins")
+    }
+}
+
+extension MarketViewController: ChartViewDelegate {
     
     func setupChartView() {
         chartView.delegate = self

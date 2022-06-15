@@ -9,14 +9,14 @@ import UIKit
 
 typealias BaseTabs = (
     news: HomeViewController,
-    wallet: WalletViewController
+    market: MarketViewController
 )
 
 final class BaseTabBarController: UITabBarController {
 
     init(tabs: BaseTabs) {
         super.init(nibName: nil, bundle: nil)
-        viewControllers = [tabs.news, tabs.wallet]
+        viewControllers = [tabs.news, tabs.market]
     }
     
     required init?(coder: NSCoder) {

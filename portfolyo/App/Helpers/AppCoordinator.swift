@@ -17,14 +17,14 @@ final class AppCoordinator {
     
     func start() {
         let newsfactory = StoryboardViewControllerFactory(storyboard: UIStoryboard(name: "Home", bundle: nil))
-        let walletfactory = StoryboardViewControllerFactory(storyboard: UIStoryboard(name: "Wallet", bundle: nil))
+        let marketfactory = StoryboardViewControllerFactory(storyboard: UIStoryboard(name: "Market", bundle: nil))
         
         let newsViewController = newsfactory.createHomeView()
-        let walletViewContoller = walletfactory.createWalletView()
+        let marketViewContoller = marketfactory.createMarketView()
         
         let modules = (
             news: newsViewController,
-            wallet: walletViewContoller
+            market: marketViewContoller
         )
         
         let tabbar = BaseTabbarBuilder.build(submodules: modules)

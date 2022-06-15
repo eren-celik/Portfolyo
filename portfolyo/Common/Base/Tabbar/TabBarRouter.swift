@@ -13,7 +13,7 @@ final class TabBarRouter {
     
     typealias SubModules = (
         news: HomeViewController,
-        wallet: WalletViewController
+        market: MarketViewController
     )
     
     init(viewController: UIViewController) {
@@ -25,14 +25,14 @@ extension TabBarRouter {
     
     static func tabs(usingSubmodules submodules: SubModules) -> BaseTabs {
         let newsItem = UITabBarItem(title: "News", image: UIImage(systemName: "house.fill"), tag: 0)
-        let walletItem = UITabBarItem(title: "Wallet", image: UIImage(systemName: "creditcard.fill"), tag: 1)
+        let marketItem = UITabBarItem(title: "Market", image: UIImage(systemName: "creditcard.fill"), tag: 1)
         
         submodules.news.tabBarItem = newsItem
-        submodules.wallet.tabBarItem = walletItem
+        submodules.market.tabBarItem = marketItem
         
         return (
             news: submodules.news,
-            wallet: submodules.wallet
+            market: submodules.market
         )
     }
 }

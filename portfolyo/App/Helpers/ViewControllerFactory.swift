@@ -31,8 +31,16 @@ extension StoryboardViewControllerFactory {
         return view
     }
     
-    func createWalletView() -> WalletViewController {
-        let view = storyboard.instantiateViewController(identifier: "WalletViewController") as! WalletViewController
+    func createMarketView() -> MarketViewController {
+        let view = storyboard.instantiateViewController(identifier: "MarketViewController") as! MarketViewController
+        let router = MarketRouter(view: view)
+        let interactor = MarketInteractor(manager: manager)
+        let presenter = MarketPresenter(
+            view: view,
+            interactor: interactor,
+            router: router
+        )
+        view.presenter = presenter
         return view
     }
     

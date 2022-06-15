@@ -29,8 +29,4 @@ final class NewsInteractor: NewsInteractorInputProtocol {
             }
         }
     }
-    
-    func showDetail(_ news: Article) {
-        print("shooo")
-    }
 }

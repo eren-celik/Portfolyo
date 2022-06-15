@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1003523A2859DBF600121730 /* NewsViewController+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100352392859DBF600121730 /* NewsViewController+Style.swift */; };
+		1003523E2859F40100121730 /* BaloonMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1003523D2859F40100121730 /* BaloonMarker.swift */; };
 		103ACCAE284E4B2E00208AB7 /* News+Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103ACCA7284E4B2E00208AB7 /* News+Presenter.swift */; };
 		103ACCAF284E4B2E00208AB7 /* News+Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103ACCA8284E4B2E00208AB7 /* News+Router.swift */; };
 		103ACCB0284E4B2E00208AB7 /* News+Contracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103ACCA9284E4B2E00208AB7 /* News+Contracts.swift */; };
@@ -63,6 +64,7 @@
 
 /* Begin PBXFileReference section */
 		100352392859DBF600121730 /* NewsViewController+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NewsViewController+Style.swift"; sourceTree = "<group>"; };
+		1003523D2859F40100121730 /* BaloonMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaloonMarker.swift; sourceTree = "<group>"; };
 		103ACCA7284E4B2E00208AB7 /* News+Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "News+Presenter.swift"; sourceTree = "<group>"; };
 		103ACCA8284E4B2E00208AB7 /* News+Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "News+Router.swift"; sourceTree = "<group>"; };
 		103ACCA9284E4B2E00208AB7 /* News+Contracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "News+Contracts.swift"; sourceTree = "<group>"; };
@@ -133,6 +135,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1003523C2859F3ED00121730 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				1003523D2859F40100121730 /* BaloonMarker.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		103ACCBA284E644400208AB7 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -381,6 +391,7 @@
 		1078F1F22858993900EBA884 /* Wallet */ = {
 			isa = PBXGroup;
 			children = (
+				1003523C2859F3ED00121730 /* Components */,
 				1078F1F72858999400EBA884 /* View */,
 				1078F1F62858998900EBA884 /* Modules */,
 				1078F1F52858997200EBA884 /* Resources */,
@@ -645,6 +656,7 @@
 				103ACCB0284E4B2E00208AB7 /* News+Contracts.swift in Sources */,
 				103ACCAF284E4B2E00208AB7 /* News+Router.swift in Sources */,
 				103ACCAE284E4B2E00208AB7 /* News+Presenter.swift in Sources */,
+				1003523E2859F40100121730 /* BaloonMarker.swift in Sources */,
 				105A0E292859218900B4CDF9 /* HomeViewController.swift in Sources */,
 				108E393E285137B3002C22DD /* Date+Extension.swift in Sources */,
 				105D350B284E400E000EF063 /* UITableView+Utility.swift in Sources */,

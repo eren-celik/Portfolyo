@@ -16,13 +16,28 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gl2-nc-PRV" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="44" width="414" height="454"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="gl2-nc-PRV" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="0cd-m4-mjH"/>
+                            <constraint firstItem="gl2-nc-PRV" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="0xl-hS-lo6"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="gl2-nc-PRV" secondAttribute="bottom" constant="364" id="E6s-ge-7pp"/>
+                            <constraint firstItem="gl2-nc-PRV" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="gfR-4W-G4L"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="chartView" destination="gl2-nc-PRV" id="DKh-sY-Z4b"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="133" y="117"/>
+            <point key="canvasLocation" x="131.8840579710145" y="116.51785714285714"/>
         </scene>
     </scenes>
     <resources>

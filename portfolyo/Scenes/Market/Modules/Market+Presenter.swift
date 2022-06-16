@@ -22,8 +22,9 @@ final class MarketPresenter: MarketPresenterProtocol {
         self.interactor.delegate = self
     }
     
-    func getCoinList() {
+    func getBaseData() {
         interactor.getCoinList()
+        interactor.getExchageList()
     }
     
     func showSearch() {

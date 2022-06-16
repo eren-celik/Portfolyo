@@ -33,7 +33,7 @@ extension StoryboardViewControllerFactory {
     
     func createMarketView() -> MarketViewController {
         let view = storyboard.instantiateViewController(identifier: "MarketViewController") as! MarketViewController
-        let manager = NetworkManager<MarketAPI>(provider: MoyaProvider<MarketAPI>())
+        let manager = NetworkManager<MarketAPI>(provider: MoyaProvider<MarketAPI>.init(plugins: [NetworkLoggerPlugin()]))
         let router = MarketRouter(view: view)
         let interactor = MarketInteractor(manager: manager)
         let presenter = MarketPresenter(

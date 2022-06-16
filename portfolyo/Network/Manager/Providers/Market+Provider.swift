@@ -10,12 +10,15 @@ import Moya
 enum MarketAPI {
     case coins(perPage: Int)
     case search(keyword: String)
+    case exchanges(currency: String)
 }
 
 extension MarketAPI: TargetType {
     
     var baseURL: URL {
         switch self {
+        case .exchanges:
+            return URL(string: "https://api.frankfurter.app")!
         default:
             return URL(string: Constants.coinMarketBaseURL)!
         }
@@ -27,6 +30,8 @@ extension MarketAPI: TargetType {
             return "/coins/markets"
         case .search:
             return "/search"
+        case .exchanges:
+            return "/latest"
         }
     }
     
@@ -47,6 +52,8 @@ extension MarketAPI: TargetType {
                     "sparkline": "false"]
         case .search(let keyword):
             return ["query": keyword]
+        case .exchanges(let currency):
+            return ["from": currency]
         }
     }
     

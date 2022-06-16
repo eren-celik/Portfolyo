@@ -16,7 +16,7 @@ protocol MarketViewProtocol: AnyObject {
 //MARK: - PRESENTER
 
 protocol MarketPresenterProtocol: AnyObject {
-    func getCoinList()
+    func getBaseData()
     func showSearch()
 }
 
@@ -25,6 +25,7 @@ protocol MarketPresenterProtocol: AnyObject {
 protocol MarketInteractorProtocol: AnyObject {
     var delegate: MarketViewInteractorDelegate? { get set }
     func getCoinList()
+    func getExchageList()
 }
 
 protocol MarketViewInteractorDelegate: AnyObject {

@@ -20,7 +20,7 @@ final class MarketViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        presenter.getCoinList()
+        presenter.getBaseData()
         setTableView()
     }
     

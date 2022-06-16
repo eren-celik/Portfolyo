@@ -27,4 +27,19 @@ final class MarketInteractor: MarketInteractorProtocol {
             }
         })
     }
+    
+    func getExchageList() {
+        typealias ExchangeResult = Result<ExchangeModel, GUNetworkErrors>
+        manager?.request(target: .exchanges(currency: "TRY"), completion: { [weak self] (result: ExchangeResult) in
+            switch result {
+            case .success(let data):
+                let dto = data.rates?.compactMap({ (key: String, value: Double) in
+                    return CoinListElement(name: key, currentPrice: value)
+                })
+                self?.delegate?.handleOutput(.showCoins(coins: dto ?? []))
+            case .failure(_):
+                self?.delegate?.handleOutput(.showError)
+            }
+        })
+    }
 }

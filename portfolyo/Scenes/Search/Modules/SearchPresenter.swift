@@ -23,7 +23,7 @@ final class SearchPresenter: SearchPresenterProtocol {
         self.interactor.delegate = self
     }
     
-    func searchItem() {
+    func searchItem(_ keyword: String) {
         interactor.searchCoins()
     }
 }

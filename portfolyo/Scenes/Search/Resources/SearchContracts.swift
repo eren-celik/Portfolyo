@@ -17,14 +17,14 @@ protocol SearchViewProtocol: AnyObject {
 //MARK: - PRESENTER
 
 protocol SearchPresenterProtocol: AnyObject {
-    func searchItem()
+    func searchItem(_ keyword: String)
 }
 
 //MARK: - INTERACTOR
 
 protocol SearchInteractorProtocol: AnyObject {
     var delegate: SearchViewInteractorDelegate? { get set }
-    func searchCoins()
+    func searchCoins(_ keyword: String)
 }
 
 protocol SearchViewInteractorDelegate: AnyObject {

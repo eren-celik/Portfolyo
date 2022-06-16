@@ -297,8 +297,9 @@
 		105C507E285B2572009339E3 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				105C507C285B251E009339E3 /* Search.storyboard */,
-				105C5071285B23F9009339E3 /* SearchContracts.swift */,
+				105C5072285B23F9009339E3 /* SearchInteractor.swift */,
+				105C506F285B23F9009339E3 /* SearchPresenter.swift */,
+				105C5070285B23F9009339E3 /* SearchRouter.swift */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -306,9 +307,8 @@
 		105C507F285B2578009339E3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				105C5072285B23F9009339E3 /* SearchInteractor.swift */,
-				105C506F285B23F9009339E3 /* SearchPresenter.swift */,
-				105C5070285B23F9009339E3 /* SearchRouter.swift */,
+				105C507C285B251E009339E3 /* Search.storyboard */,
+				105C5071285B23F9009339E3 /* SearchContracts.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";

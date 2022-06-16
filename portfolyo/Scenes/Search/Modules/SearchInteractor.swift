@@ -17,7 +17,7 @@ final class SearchInteractor: SearchInteractorProtocol {
         self.manager = manager
     }
     
-    func searchCoins() {
+    func searchCoins(_ keyword: String) {
         
     }
 }

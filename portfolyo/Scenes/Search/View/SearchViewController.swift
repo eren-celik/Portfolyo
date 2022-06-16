@@ -12,11 +12,23 @@ class SearchViewController: UIViewController {
     
     var presenter: SearchPresenterProtocol!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Search"
+        let searchController = UISearchController()
+        searchController.searchBar.delegate = self
+        navigationItem.searchController = searchController
     }
     
+}
+
+extension SearchViewController: UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let text = searchBar.text else { return }
+        presenter.searchItem(text)
+    }
 }
 
 extension SearchViewController: SearchViewProtocol {

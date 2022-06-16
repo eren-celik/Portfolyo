@@ -10,11 +10,10 @@ import Foundation
 extension NewsViewController {
     
     internal func setupStyle() {
-        setNavigation()
+        
     }
     
-    func setNavigation() {
+    func setNavigationBar() {
         navigationController?.visibleViewController?.title = "Haberler"
-        navigationController?.navigationBar.prefersLargeTitles = true
     }
 }

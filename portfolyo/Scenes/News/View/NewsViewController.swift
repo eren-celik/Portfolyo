@@ -22,11 +22,14 @@ final class NewsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setView()
-        setupStyle()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        setNavigationBar()
     }
     
     func setView() {
-//        presenter.loadNews()
         setTableView()
     }
 }

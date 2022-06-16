@@ -17,6 +17,7 @@ protocol MarketViewProtocol: AnyObject {
 
 protocol MarketPresenterProtocol: AnyObject {
     func getCoinList()
+    func showSearch()
 }
 
 //MARK: - INTERACTOR
@@ -38,9 +39,9 @@ enum MarketViewInteractorOutput {
 //MARK: - Router
 
 protocol MarketRouterProtocol: AnyObject {
-    func navigate(to route: NewsViewRoute)
+    func navigate(to route: MarketViewRoute)
 }
 
 enum MarketViewRoute {
-    
+    case search
 }

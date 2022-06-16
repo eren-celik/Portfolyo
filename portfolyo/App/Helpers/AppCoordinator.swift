@@ -29,6 +29,7 @@ final class AppCoordinator {
         
         let tabbar = BaseTabbarBuilder.build(submodules: modules)
         let navigationController = UINavigationController(rootViewController: tabbar)
+        navigationController.navigationBar.prefersLargeTitles = true
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
     }

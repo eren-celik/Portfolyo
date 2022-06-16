@@ -25,6 +25,10 @@ final class MarketPresenter: MarketPresenterProtocol {
     func getCoinList() {
         interactor.getCoinList()
     }
+    
+    func showSearch() {
+        router.navigate(to: .search)
+    }
 }
 
 extension MarketPresenter: MarketViewInteractorDelegate {

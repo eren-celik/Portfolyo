@@ -22,6 +22,8 @@
 		105C069C284D50ED00B097F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105C069B284D50ED00B097F0 /* AppDelegate.swift */; };
 		105C06A5284D50EF00B097F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 105C06A4284D50EF00B097F0 /* Assets.xcassets */; };
 		105C06A8284D50EF00B097F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 105C06A6284D50EF00B097F0 /* LaunchScreen.storyboard */; };
+		105C504C285B1C65009339E3 /* MarketViewController+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105C504B285B1C65009339E3 /* MarketViewController+Style.swift */; };
+		105C504E285B1C69009339E3 /* MarketViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105C504D285B1C69009339E3 /* MarketViewController+TableView.swift */; };
 		105D350B284E400E000EF063 /* UITableView+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105D3508284E400E000EF063 /* UITableView+Utility.swift */; };
 		105D350C284E400E000EF063 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105D3509284E400E000EF063 /* Array+Extension.swift */; };
 		105D350D284E400E000EF063 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105D350A284E400E000EF063 /* UIFont+Extension.swift */; };
@@ -84,6 +86,8 @@
 		105C06A4284D50EF00B097F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		105C06A7284D50EF00B097F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		105C06A9284D50EF00B097F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		105C504B285B1C65009339E3 /* MarketViewController+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MarketViewController+Style.swift"; sourceTree = "<group>"; };
+		105C504D285B1C69009339E3 /* MarketViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MarketViewController+TableView.swift"; sourceTree = "<group>"; };
 		105D34FC284E3E9B000EF063 /* portfolyoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = portfolyoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		105D3508284E400E000EF063 /* UITableView+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Utility.swift"; sourceTree = "<group>"; };
 		105D3509284E400E000EF063 /* Array+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
@@ -430,6 +434,8 @@
 			isa = PBXGroup;
 			children = (
 				1078F1F32858995D00EBA884 /* MarketViewController.swift */,
+				105C504B285B1C65009339E3 /* MarketViewController+Style.swift */,
+				105C504D285B1C69009339E3 /* MarketViewController+TableView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -689,6 +695,7 @@
 				1003523E2859F40100121730 /* BaloonMarker.swift in Sources */,
 				10DEB16F285A8D5D0005BC59 /* CoinList.swift in Sources */,
 				105A0E292859218900B4CDF9 /* HomeViewController.swift in Sources */,
+				105C504E285B1C69009339E3 /* MarketViewController+TableView.swift in Sources */,
 				108E393E285137B3002C22DD /* Date+Extension.swift in Sources */,
 				105D350B284E400E000EF063 /* UITableView+Utility.swift in Sources */,
 				1078F20128589F1A00EBA884 /* BaseTabBarBuilder.swift in Sources */,
@@ -711,6 +718,7 @@
 				10DEB169285A888E0005BC59 /* Market+Presenter.swift in Sources */,
 				105D3515284E405E000EF063 /* Analytics+Manager.swift in Sources */,
 				103ACCBE284E680100208AB7 /* Network+Helper.swift in Sources */,
+				105C504C285B1C65009339E3 /* MarketViewController+Style.swift in Sources */,
 				105A0E2B285927DC00B4CDF9 /* UIView+Extension.swift in Sources */,
 				1078F20328589F7E00EBA884 /* TabBarRouter.swift in Sources */,
 				105D350C284E400E000EF063 /* Array+Extension.swift in Sources */,

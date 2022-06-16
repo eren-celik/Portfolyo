@@ -15,7 +15,10 @@ final class MarketRouter: MarketRouterProtocol {
         self.view = view
     }
     
-    func navigate(to route: NewsViewRoute) {
-        print("DEBUG: rout")
+    func navigate(to route: MarketViewRoute) {
+        switch route {
+        case .search:
+            break
+        }
     }
 }

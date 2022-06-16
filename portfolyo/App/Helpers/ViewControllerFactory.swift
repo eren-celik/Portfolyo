@@ -49,4 +49,18 @@ extension StoryboardViewControllerFactory {
         let view = storyboard.instantiateViewController(identifier: "HomeViewController") as! HomeViewController
         return view
     }
+    
+    func createSeachView() -> SearchViewController {
+        let view = storyboard.instantiateViewController(identifier: "SearchViewController") as! SearchViewController
+        let manager = NetworkManager<MarketAPI>(provider: MoyaProvider<MarketAPI>())
+        let router = SearchRouter(view: view)
+        let interactor = SearchInteractor(manager: manager)
+        let presenter = SearchPresenter(
+            view: view,
+            interactor: interactor,
+            router: router
+        )
+        view.presenter = presenter
+        return view
+    }
 }

@@ -12,7 +12,7 @@ import Moya
 final class NetworkTest: XCTestCase {
     
     var manager: NetworkManager!
-    var provider: MoyaProvider<AppAPI>!
+    var provider: MoyaProvider<NewsAPI>!
     
     override func setUp() {
         super.setUp()

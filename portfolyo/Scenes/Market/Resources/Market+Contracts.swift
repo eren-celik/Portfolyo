@@ -10,7 +10,7 @@ import UIKit
 //MARK: - VIEW
 
 protocol MarketViewProtocol: AnyObject {
-    func showCoinList()
+    func showCoinList(coins: CoinListModel)
 }
 
 //MARK: - PRESENTER
@@ -31,7 +31,7 @@ protocol MarketViewInteractorDelegate: AnyObject {
 }
 
 enum MarketViewInteractorOutput {
-    case showCoins
+    case showCoins(coins: CoinListModel)
     case showError
 }
 

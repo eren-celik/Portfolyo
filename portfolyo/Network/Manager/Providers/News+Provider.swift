@@ -7,17 +7,17 @@
 
 import Moya
 
-enum AppAPI {
+enum NewsAPI {
     case everything(keywords: String)
     case topHeadlines(keywords: String)
 }
 
-extension AppAPI: TargetType {
+extension NewsAPI: TargetType {
     
     var baseURL: URL {
         switch self {
         case .everything, .topHeadlines:
-            return URL(string: Constants.baseURL)!
+            return URL(string: Constants.newsBaseURL)!
         }
     }
     

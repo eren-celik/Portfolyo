@@ -6,71 +6,62 @@
 //
 
 import UIKit
-import Charts
 
-class MarketViewController: UIViewController {
+final class MarketViewController: UIViewController {
     
     var presenter: MarketPresenterProtocol!
-    @IBOutlet weak var chartView: LineChartView!
+    @IBOutlet weak var tableView: UITableView!
+    
+    var coinList: CoinListModel = [] {
+        didSet {
+            tableView.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter.getCoinList()
+        tableView.dataSource = self
+        tableView.delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         navigationController?.visibleViewController?.title = "Wallet"
         navigationController?.navigationBar.prefersLargeTitles = true
-        setupChartView()
-        presenter.getCoinList()
     }
 }
 
 extension MarketViewController: MarketViewProtocol {
-    func showCoinList() {
-        print("coins")
+    
+    func showCoinList(coins: CoinListModel) {
+        coinList.append(contentsOf: coins)
     }
 }
 
-extension MarketViewController: ChartViewDelegate {
+extension MarketViewController: UITableViewDataSource {
     
-    func setupChartView() {
-        chartView.delegate = self
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return coinList.count
+    }
+}
+
+extension MarketViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell: UITableViewCell = {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell") else {
+            return UITableViewCell(style: .default, reuseIdentifier: "cell")
+            }
+            return cell
+        }()
         
-        chartView.chartDescription.enabled = false
-        chartView.dragEnabled = true
-        chartView.setScaleEnabled(true)
-        chartView.pinchZoomEnabled = true
+        cell.textLabel?.text = coinList[indexPath.row].name
         
-        let marker = BalloonMarker(color: UIColor(white: 180/255, alpha: 1),
-                                   font: .systemFont(ofSize: 12),
-                                   textColor: .white,
-                                   insets: UIEdgeInsets(top: 8, left: 8, bottom: 20, right: 8))
-        marker.chartView = chartView
-        marker.minimumSize = CGSize(width: 80, height: 40)
-        chartView.marker = marker
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        chartView.legend.form = .line
-        
-        
-        chartView.animate(xAxisDuration: 2.5)
-        
-        let values = (0 ..< 12).map { (i) -> ChartDataEntry in
-            let val = Double(arc4random_uniform(23) + 4)
-            return ChartDataEntry(x: Double(i), y: val, icon: UIImage(systemName: "app"))
-        }
-        
-        let set1 = LineChartDataSet(entries: values, label: "DataSet 1")
-        set1.drawIconsEnabled = false
-        
-        let value = ChartDataEntry(x: Double(3), y: 3)
-        set1.addEntryOrdered(value)
-        let gradientColors = [ChartColorTemplates.colorFromString("#00ff0000").cgColor,
-                              ChartColorTemplates.colorFromString("#ffff0000").cgColor]
-        let gradient = CGGradient(colorsSpace: nil, colors: gradientColors as CFArray, locations: nil)!
-        
-        set1.fillAlpha = 1
-        set1.fill = LinearGradientFill(gradient: gradient, angle: 90)
-        set1.drawFilledEnabled = true
-        
-        let data = LineChartData(dataSet: set1)
-        
-        chartView.data = data
     }
 }

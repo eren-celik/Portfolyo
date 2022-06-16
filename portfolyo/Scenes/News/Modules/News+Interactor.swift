@@ -11,10 +11,10 @@ import Moya
 final class NewsInteractor: NewsInteractorInputProtocol {
     
     weak var delegate: NewsViewInteractorDelegate?
-    private var manager: NetworkManager<AppAPI>?
+    private var manager: NetworkManager<NewsAPI>?
     private var category: String!
     
-    init(manager: NetworkManager<AppAPI>, category: String) {
+    init(manager: NetworkManager<NewsAPI>, category: String) {
         self.manager = manager
         self.category = category
     }

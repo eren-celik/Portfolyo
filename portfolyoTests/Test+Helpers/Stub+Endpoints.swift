@@ -10,7 +10,7 @@ import Moya
 
 struct CustomNetworkEndpoints {
     
-    static let successEndpoint: (AppAPI) -> Endpoint =  { (target: AppAPI) -> Endpoint in
+    static let successEndpoint: (NewsAPI) -> Endpoint =  { (target: NewsAPI) -> Endpoint in
         return Endpoint(url: URL(target: target).absoluteString,
                         sampleResponseClosure: { .networkResponse(200, target.sampleData)},
                         method: target.method,
@@ -18,7 +18,7 @@ struct CustomNetworkEndpoints {
                         httpHeaderFields: target.headers)
     }
     
-    static let errorEndpoint: (AppAPI) -> Endpoint =  { (target: AppAPI) -> Endpoint in
+    static let errorEndpoint: (NewsAPI) -> Endpoint =  { (target: NewsAPI) -> Endpoint in
         let error = NSError(domain: "com.erenccelik.gu", code: 0, userInfo: [NSLocalizedDescriptionKey: "Invalid Input"])
         return Endpoint(url: URL(target: target).absoluteString,
                         sampleResponseClosure: { .networkError(error)},
@@ -27,7 +27,7 @@ struct CustomNetworkEndpoints {
                         httpHeaderFields: target.headers)
     }
     
-    static let emptyDataClosure: (AppAPI) -> Endpoint =  { (target: AppAPI) -> Endpoint in
+    static let emptyDataClosure: (NewsAPI) -> Endpoint =  { (target: NewsAPI) -> Endpoint in
         return Endpoint(url: URL(target: target).absoluteString,
                         sampleResponseClosure: { .networkResponse(204, Data()) },
                         method: target.method,
@@ -35,7 +35,7 @@ struct CustomNetworkEndpoints {
                         httpHeaderFields: target.headers)
     }
     
-    static let networkErrorClosure: (AppAPI) -> Endpoint =  { (target: AppAPI) -> Endpoint in
+    static let networkErrorClosure: (NewsAPI) -> Endpoint =  { (target: NewsAPI) -> Endpoint in
         return Endpoint(url: URL(target: target).absoluteString,
                         sampleResponseClosure: { .networkResponse(404, Data()) },
                         method: target.method,
@@ -50,19 +50,19 @@ enum StubProvider {
     case empty
     case networkError
     
-    var provider: MoyaProvider<AppAPI> {
+    var provider: MoyaProvider<NewsAPI> {
         switch self {
         case .succes:
-            return MoyaProvider<AppAPI>(endpointClosure: CustomNetworkEndpoints.successEndpoint,
+            return MoyaProvider<NewsAPI>(endpointClosure: CustomNetworkEndpoints.successEndpoint,
                                         stubClosure: MoyaProvider.immediatelyStub)
         case .error:
-            return MoyaProvider<AppAPI>(endpointClosure: CustomNetworkEndpoints.errorEndpoint,
+            return MoyaProvider<NewsAPI>(endpointClosure: CustomNetworkEndpoints.errorEndpoint,
                                         stubClosure: MoyaProvider.immediatelyStub)
         case .empty:
-            return MoyaProvider<AppAPI>(endpointClosure: CustomNetworkEndpoints.emptyDataClosure,
+            return MoyaProvider<NewsAPI>(endpointClosure: CustomNetworkEndpoints.emptyDataClosure,
                                         stubClosure: MoyaProvider.immediatelyStub)
         case .networkError:
-            return MoyaProvider<AppAPI>(endpointClosure: CustomNetworkEndpoints.networkErrorClosure,
+            return MoyaProvider<NewsAPI>(endpointClosure: CustomNetworkEndpoints.networkErrorClosure,
                                         stubClosure: MoyaProvider.immediatelyStub)
         }
     }

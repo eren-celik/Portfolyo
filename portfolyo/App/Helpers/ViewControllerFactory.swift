@@ -9,7 +9,7 @@ import Moya
 
 final class StoryboardViewControllerFactory {
     let storyboard: UIStoryboard
-    let manager = NetworkManager<AppAPI>(provider: MoyaProvider<AppAPI>())
+    let manager = NetworkManager<NewsAPI>(provider: MoyaProvider<NewsAPI>())
     
     init(storyboard: UIStoryboard) {
         self.storyboard = storyboard
@@ -33,6 +33,7 @@ extension StoryboardViewControllerFactory {
     
     func createMarketView() -> MarketViewController {
         let view = storyboard.instantiateViewController(identifier: "MarketViewController") as! MarketViewController
+        let manager = NetworkManager<MarketAPI>(provider: MoyaProvider<MarketAPI>())
         let router = MarketRouter(view: view)
         let interactor = MarketInteractor(manager: manager)
         let presenter = MarketPresenter(

@@ -23,7 +23,7 @@ final class MarketPresenter: MarketPresenterProtocol {
     }
     
     func getCoinList() {
-        print("DEBUG: prese")
+        interactor.getCoinList()
     }
 }
 
@@ -31,8 +31,8 @@ extension MarketPresenter: MarketViewInteractorDelegate {
     
     func handleOutput(_ output: MarketViewInteractorOutput) {
         switch output {
-        case .showCoins:
-            break
+        case .showCoins(let coins):
+            view.showCoinList(coins: coins)
         case .showError:
             break
         }

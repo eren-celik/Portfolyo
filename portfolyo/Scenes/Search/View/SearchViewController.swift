@@ -44,7 +44,7 @@ extension SearchViewController: SearchViewProtocol {
     }
     
     func showErrorMessage(_ message: String) {
-        
+        self.showAlert(title: "Error", message)
     }
 }
 

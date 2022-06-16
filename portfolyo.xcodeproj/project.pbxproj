@@ -31,6 +31,7 @@
 		105C507A285B23F9009339E3 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105C5073285B23F9009339E3 /* SearchViewController.swift */; };
 		105C507D285B251E009339E3 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 105C507C285B251E009339E3 /* Search.storyboard */; };
 		105C5082285B4F6E009339E3 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105C5081285B4F6E009339E3 /* Search.swift */; };
+		105C5084285B5425009339E3 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105C5083285B5425009339E3 /* UIViewController+Extension.swift */; };
 		105D350B284E400E000EF063 /* UITableView+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105D3508284E400E000EF063 /* UITableView+Utility.swift */; };
 		105D350C284E400E000EF063 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105D3509284E400E000EF063 /* Array+Extension.swift */; };
 		105D350D284E400E000EF063 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105D350A284E400E000EF063 /* UIFont+Extension.swift */; };
@@ -102,6 +103,7 @@
 		105C5073285B23F9009339E3 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		105C507C285B251E009339E3 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		105C5081285B4F6E009339E3 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
+		105C5083285B5425009339E3 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		105D34FC284E3E9B000EF063 /* portfolyoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = portfolyoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		105D3508284E400E000EF063 /* UITableView+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Utility.swift"; sourceTree = "<group>"; };
 		105D3509284E400E000EF063 /* Array+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
@@ -340,6 +342,7 @@
 				105D350A284E400E000EF063 /* UIFont+Extension.swift */,
 				105D3508284E400E000EF063 /* UITableView+Utility.swift */,
 				105A0E2A285927DC00B4CDF9 /* UIView+Extension.swift */,
+				105C5083285B5425009339E3 /* UIViewController+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -769,6 +772,7 @@
 				105C5082285B4F6E009339E3 /* Search.swift in Sources */,
 				108568B22850C383005EB39B /* AppCoordinator.swift in Sources */,
 				108568B62850D108005EB39B /* NewsViewController+TableView.swift in Sources */,
+				105C5084285B5425009339E3 /* UIViewController+Extension.swift in Sources */,
 				105D351D284E40B3000EF063 /* News+Provider.swift in Sources */,
 				10DEB167285A88040005BC59 /* Market+Interactor.swift in Sources */,
 				1078F1FB285899B700EBA884 /* Market+Contracts.swift in Sources */,

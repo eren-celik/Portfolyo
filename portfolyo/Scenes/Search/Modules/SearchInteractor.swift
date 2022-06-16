@@ -18,6 +18,14 @@ final class SearchInteractor: SearchInteractorProtocol {
     }
     
     func searchCoins(_ keyword: String) {
-        
+        typealias Model = Result<SearchModel, GUNetworkErrors>
+        manager?.request(target: .search(keyword: keyword), completion: { [weak self] (result: Model) in
+            switch result {
+            case .success(let data):
+                self?.delegate?.handleOutput(.showCoins(coins: data))
+            case .failure(let error):
+                self?.delegate?.handleOutput(.showError(error.localizedDescription))
+            }
+        })
     }
 }

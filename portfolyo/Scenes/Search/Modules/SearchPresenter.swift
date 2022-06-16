@@ -24,11 +24,12 @@ final class SearchPresenter: SearchPresenterProtocol {
     }
     
     func searchItem(_ keyword: String) {
-        interactor.searchCoins()
+        interactor.searchCoins(keyword)
     }
 }
 
 extension SearchPresenter: SearchViewInteractorDelegate {
+    
     func handleOutput(_ output: SearchViewInteractorOutput) {
         switch output {
         case .showCoins(let coins):

@@ -10,7 +10,7 @@ import UIKit
 //MARK: - VIEW
 
 protocol SearchViewProtocol: AnyObject {
-    func showCoinList(coins: CoinListModel)
+    func showCoinList(coins: SearchModel)
     func showErrorMessage(_ message: String)
 }
 
@@ -32,7 +32,7 @@ protocol SearchViewInteractorDelegate: AnyObject {
 }
 
 enum SearchViewInteractorOutput {
-    case showCoins(coins: CoinListModel)
+    case showCoins(coins: SearchModel)
     case showError(_ message: String)
 }
 

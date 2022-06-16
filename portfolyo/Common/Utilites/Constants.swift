@@ -10,5 +10,5 @@ import Foundation
 struct Constants {
     
     static let newsBaseURL: String = "https://newsapi.org/v2"
-    static let coinMarketBaseURL: String = "https://api.coingecko.com/api/v3/"
+    static let coinMarketBaseURL: String = "https://api.coingecko.com/api/v3"
 }

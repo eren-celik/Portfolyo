@@ -9,13 +9,14 @@ import Moya
 
 enum MarketAPI {
     case coins(perPage: Int)
+    case search(keyword: String)
 }
 
 extension MarketAPI: TargetType {
     
     var baseURL: URL {
         switch self {
-        case .coins:
+        default:
             return URL(string: Constants.coinMarketBaseURL)!
         }
     }
@@ -23,7 +24,9 @@ extension MarketAPI: TargetType {
     var path: String {
         switch self {
         case .coins:
-            return "coins/markets"
+            return "/coins/markets"
+        case .search:
+            return "/search"
         }
     }
     
@@ -42,6 +45,8 @@ extension MarketAPI: TargetType {
                     "per_page": perPage,
                     "page": 1,
                     "sparkline": "false"]
+        case .search(let keyword):
+            return ["query": keyword]
         }
     }
     

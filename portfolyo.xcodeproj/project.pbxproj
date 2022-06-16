@@ -24,6 +24,12 @@
 		105C06A8284D50EF00B097F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 105C06A6284D50EF00B097F0 /* LaunchScreen.storyboard */; };
 		105C504C285B1C65009339E3 /* MarketViewController+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105C504B285B1C65009339E3 /* MarketViewController+Style.swift */; };
 		105C504E285B1C69009339E3 /* MarketViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105C504D285B1C69009339E3 /* MarketViewController+TableView.swift */; };
+		105C5076285B23F9009339E3 /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105C506F285B23F9009339E3 /* SearchPresenter.swift */; };
+		105C5077285B23F9009339E3 /* SearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105C5070285B23F9009339E3 /* SearchRouter.swift */; };
+		105C5078285B23F9009339E3 /* SearchContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105C5071285B23F9009339E3 /* SearchContracts.swift */; };
+		105C5079285B23F9009339E3 /* SearchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105C5072285B23F9009339E3 /* SearchInteractor.swift */; };
+		105C507A285B23F9009339E3 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105C5073285B23F9009339E3 /* SearchViewController.swift */; };
+		105C507D285B251E009339E3 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 105C507C285B251E009339E3 /* Search.storyboard */; };
 		105D350B284E400E000EF063 /* UITableView+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105D3508284E400E000EF063 /* UITableView+Utility.swift */; };
 		105D350C284E400E000EF063 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105D3509284E400E000EF063 /* Array+Extension.swift */; };
 		105D350D284E400E000EF063 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105D350A284E400E000EF063 /* UIFont+Extension.swift */; };
@@ -88,6 +94,12 @@
 		105C06A9284D50EF00B097F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		105C504B285B1C65009339E3 /* MarketViewController+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MarketViewController+Style.swift"; sourceTree = "<group>"; };
 		105C504D285B1C69009339E3 /* MarketViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MarketViewController+TableView.swift"; sourceTree = "<group>"; };
+		105C506F285B23F9009339E3 /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
+		105C5070285B23F9009339E3 /* SearchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRouter.swift; sourceTree = "<group>"; };
+		105C5071285B23F9009339E3 /* SearchContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchContracts.swift; sourceTree = "<group>"; };
+		105C5072285B23F9009339E3 /* SearchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchInteractor.swift; sourceTree = "<group>"; };
+		105C5073285B23F9009339E3 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		105C507C285B251E009339E3 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		105D34FC284E3E9B000EF063 /* portfolyoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = portfolyoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		105D3508284E400E000EF063 /* UITableView+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Utility.swift"; sourceTree = "<group>"; };
 		105D3509284E400E000EF063 /* Array+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
@@ -246,8 +258,9 @@
 			isa = PBXGroup;
 			children = (
 				105A0E232859214700B4CDF9 /* Home */,
-				105D3533284E4834000EF063 /* News */,
 				1078F1F22858993900EBA884 /* Market */,
+				105D3533284E4834000EF063 /* News */,
+				105C504F285B2375009339E3 /* Search */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -269,6 +282,43 @@
 				105C06A9284D50EF00B097F0 /* Info.plist */,
 			);
 			path = "Support Files";
+			sourceTree = "<group>";
+		};
+		105C504F285B2375009339E3 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				105C507E285B2572009339E3 /* Modules */,
+				105C507F285B2578009339E3 /* Resources */,
+				105C5080285B2589009339E3 /* View */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		105C507E285B2572009339E3 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				105C507C285B251E009339E3 /* Search.storyboard */,
+				105C5071285B23F9009339E3 /* SearchContracts.swift */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		105C507F285B2578009339E3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				105C5072285B23F9009339E3 /* SearchInteractor.swift */,
+				105C506F285B23F9009339E3 /* SearchPresenter.swift */,
+				105C5070285B23F9009339E3 /* SearchRouter.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		105C5080285B2589009339E3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				105C5073285B23F9009339E3 /* SearchViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		105D34FD284E3E9B000EF063 /* portfolyoTests */ = {
@@ -602,6 +652,7 @@
 				1078F1F9285899A600EBA884 /* Market.storyboard in Resources */,
 				105A0E272859217900B4CDF9 /* Home.storyboard in Resources */,
 				103ACCB5284E598E00208AB7 /* News.storyboard in Resources */,
+				105C507D285B251E009339E3 /* Search.storyboard in Resources */,
 				108568BB2850D31B005EB39B /* NewsTableViewCell.xib in Resources */,
 				105C06A5284D50EF00B097F0 /* Assets.xcassets in Resources */,
 			);
@@ -694,6 +745,7 @@
 				103ACCAE284E4B2E00208AB7 /* News+Presenter.swift in Sources */,
 				1003523E2859F40100121730 /* BaloonMarker.swift in Sources */,
 				10DEB16F285A8D5D0005BC59 /* CoinList.swift in Sources */,
+				105C507A285B23F9009339E3 /* SearchViewController.swift in Sources */,
 				105A0E292859218900B4CDF9 /* HomeViewController.swift in Sources */,
 				105C504E285B1C69009339E3 /* MarketViewController+TableView.swift in Sources */,
 				108E393E285137B3002C22DD /* Date+Extension.swift in Sources */,
@@ -702,11 +754,14 @@
 				105D3516284E405E000EF063 /* Analytics+Engine.swift in Sources */,
 				1078F1F42858995D00EBA884 /* MarketViewController.swift in Sources */,
 				108568BA2850D31B005EB39B /* NewsTableViewCell.swift in Sources */,
+				105C5079285B23F9009339E3 /* SearchInteractor.swift in Sources */,
 				1078F1FD28589BBF00EBA884 /* BaseTabBarController.swift in Sources */,
 				105C069C284D50ED00B097F0 /* AppDelegate.swift in Sources */,
 				105D350D284E400E000EF063 /* UIFont+Extension.swift in Sources */,
+				105C5076285B23F9009339E3 /* SearchPresenter.swift in Sources */,
 				105D3525284E414F000EF063 /* Constants.swift in Sources */,
 				1003523A2859DBF600121730 /* NewsViewController+Style.swift in Sources */,
+				105C5077285B23F9009339E3 /* SearchRouter.swift in Sources */,
 				103ACCB2284E4B2E00208AB7 /* NewsViewController.swift in Sources */,
 				108568B22850C383005EB39B /* AppCoordinator.swift in Sources */,
 				108568B62850D108005EB39B /* NewsViewController+TableView.swift in Sources */,
@@ -723,6 +778,7 @@
 				1078F20328589F7E00EBA884 /* TabBarRouter.swift in Sources */,
 				105D350C284E400E000EF063 /* Array+Extension.swift in Sources */,
 				103ACCB1284E4B2E00208AB7 /* News+Interactor.swift in Sources */,
+				105C5078285B23F9009339E3 /* SearchContracts.swift in Sources */,
 				105D3514284E405E000EF063 /* Analytics+Event.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

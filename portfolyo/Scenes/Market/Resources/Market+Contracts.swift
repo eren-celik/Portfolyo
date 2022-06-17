@@ -10,7 +10,7 @@ import UIKit
 //MARK: - VIEW
 
 protocol MarketViewProtocol: AnyObject {
-    func showCoinList(coins: CoinListModel)
+    func showList(section: Array<MarketPresenter.Sections>)
 }
 
 //MARK: - PRESENTER
@@ -24,17 +24,11 @@ protocol MarketPresenterProtocol: AnyObject {
 
 protocol MarketInteractorProtocol: AnyObject {
     var delegate: MarketViewInteractorDelegate? { get set }
-    func getCoinList()
-    func getExchageList()
+    func getAllData()
 }
 
 protocol MarketViewInteractorDelegate: AnyObject {
-    func handleOutput(_ output: MarketViewInteractorOutput)
-}
-
-enum MarketViewInteractorOutput {
-    case showCoins(coins: CoinListModel)
-    case showError
+    func handleOutput(_ output: [String: Any])
 }
 
 //MARK: - Router

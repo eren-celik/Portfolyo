@@ -8,7 +8,7 @@
 import Foundation
 
 final class MarketPresenter: MarketPresenterProtocol {
-
+    
     private unowned var view: MarketViewProtocol
     private var interactor: MarketInteractorProtocol
     private var router: MarketRouterProtocol
@@ -23,8 +23,7 @@ final class MarketPresenter: MarketPresenterProtocol {
     }
     
     func getBaseData() {
-        interactor.getCoinList()
-        interactor.getExchageList()
+        interactor.getAllData()
     }
     
     func showSearch() {
@@ -34,12 +33,39 @@ final class MarketPresenter: MarketPresenterProtocol {
 
 extension MarketPresenter: MarketViewInteractorDelegate {
     
-    func handleOutput(_ output: MarketViewInteractorOutput) {
-        switch output {
-        case .showCoins(let coins):
-            view.showCoinList(coins: coins)
-        case .showError:
-            break
+    func handleOutput(_ output: [String : Any]) {
+        let source = defineDataSource(output)
+        view.showList(section: source)
+    }
+}
+
+extension MarketPresenter {
+    
+    enum Sections {
+        case coinCell(title: String, data: CoinListElement)
+        case exchangeCelll(title: String, value: Double)
+        case textCell(_ text: String)
+    }
+    
+    func defineDataSource(_ data: [String: Any]) -> [Sections] {
+        var section = [Sections]()
+        
+        section.append(.textCell("Coins"))
+        
+        if let coin = data["coin"] as? CoinListModel {
+            coin.forEach { element in
+                section.append(.coinCell(title: element.name ?? "", data: element))
+            }
         }
+        
+        section.append(.textCell("Exchages"))
+        
+        if let exc = data["exchange"] as? ExchangeModel {
+            exc.rates?.forEach({ (key: String, value: Double) in
+                section.append(.exchangeCelll(title: key, value: value))
+            })
+        }
+        
+        return section
     }
 }

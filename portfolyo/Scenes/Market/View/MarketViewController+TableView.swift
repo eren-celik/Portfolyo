@@ -17,8 +17,8 @@ extension MarketViewController {
 
 extension MarketViewController: MarketViewProtocol {
     
-    func showCoinList(coins: CoinListModel) {
-        coinList.append(contentsOf: coins)
+    func showList(section: Array<MarketPresenter.Sections>) {
+        coinList.append(contentsOf: section)
     }
 }
 
@@ -32,6 +32,15 @@ extension MarketViewController: UITableViewDataSource {
 extension MarketViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let sec = coinList[indexPath.row]
+        return setTableViewRow(sec)
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
+    
+    private func setTableViewRow(_ sections: MarketPresenter.Sections) -> UITableViewCell {
         let cell: UITableViewCell = {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell") else {
             return UITableViewCell(style: .default, reuseIdentifier: "cell")
@@ -39,12 +48,14 @@ extension MarketViewController: UITableViewDelegate {
             return cell
         }()
         
-        cell.textLabel?.text = coinList[indexPath.row].name
-        
+        switch sections {
+        case .coinCell(let title, _):
+            cell.textLabel?.text = title
+        case .exchangeCelll(let title, _):
+            cell.textLabel?.text = title
+        case .textCell(let text):
+            cell.textLabel?.text = text
+        }
         return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
     }
 }

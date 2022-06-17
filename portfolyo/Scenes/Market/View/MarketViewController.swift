@@ -12,7 +12,7 @@ final class MarketViewController: UIViewController {
     var presenter: MarketPresenterProtocol!
     @IBOutlet weak var tableView: UITableView!
     
-    var coinList: CoinListModel = [] {
+    var coinList: [MarketPresenter.Sections] = [] {
         didSet {
             tableView.reloadData()
         }

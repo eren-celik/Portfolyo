@@ -11,35 +11,46 @@ final class MarketInteractor: MarketInteractorProtocol {
     
     weak var delegate: MarketViewInteractorDelegate?
     private var manager: NetworkManager<MarketAPI>?
+    private var data = [String: Any]()
+    private let group = DispatchGroup()
     
     init(manager: NetworkManager<MarketAPI>) {
         self.manager = manager
     }
     
+    func getAllData() {
+        getCoinList()
+        getExchageList()
+        group.notify(queue: .main) {
+            self.delegate?.handleOutput(self.data)
+        }
+    }
+    
     func getCoinList() {
         typealias CoinModel = Result<CoinListModel, GUNetworkErrors>
-        manager?.request(target: .coins(perPage: 10), completion: { [weak self] (result: CoinModel) in
+        group.enter()
+        manager?.request(target: .coins(perPage: 2), completion: { [weak self] (result: CoinModel) in
             switch result {
             case .success(let data):
-                self?.delegate?.handleOutput(.showCoins(coins: data))
+                self?.data["coin"] = data
             case .failure(_):
-                self?.delegate?.handleOutput(.showError)
+                self?.delegate?.handleOutput(["err": ""])
             }
+            self?.group.leave()
         })
     }
     
     func getExchageList() {
         typealias ExchangeResult = Result<ExchangeModel, GUNetworkErrors>
+        group.enter()
         manager?.request(target: .exchanges(currency: "TRY"), completion: { [weak self] (result: ExchangeResult) in
             switch result {
             case .success(let data):
-                let dto = data.rates?.compactMap({ (key: String, value: Double) in
-                    return CoinListElement(name: key, currentPrice: value)
-                })
-                self?.delegate?.handleOutput(.showCoins(coins: dto ?? []))
+                self?.data["exchange"] = data
             case .failure(_):
-                self?.delegate?.handleOutput(.showError)
+                self?.delegate?.handleOutput(["error": ""])
             }
+            self?.group.leave()
         })
     }
 }

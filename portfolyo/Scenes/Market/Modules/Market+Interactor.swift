@@ -26,10 +26,16 @@ final class MarketInteractor: MarketInteractorProtocol {
         }
     }
     
+    private func getCurrecyCode() -> String {
+        let locale = Locale.current
+        return locale.currencyCode ?? ""
+    }
+    
     func getCoinList() {
         typealias CoinModel = Result<CoinListModel, GUNetworkErrors>
         group.enter()
-        manager?.request(target: .coins(perPage: 2), completion: { [weak self] (result: CoinModel) in
+        manager?.request(target: .coins(perPage: 2, currency: getCurrecyCode()),
+                         completion: { [weak self] (result: CoinModel) in
             switch result {
             case .success(let data):
                 self?.data["coin"] = data
@@ -43,7 +49,8 @@ final class MarketInteractor: MarketInteractorProtocol {
     func getExchageList() {
         typealias ExchangeResult = Result<CurrencyModel, GUNetworkErrors>
         group.enter()
-        manager?.request(target: .exchanges(currency: "TRY"), completion: { [weak self] (result: ExchangeResult) in
+        manager?.request(target: .exchanges(currency: getCurrecyCode()),
+                         completion: { [weak self] (result: ExchangeResult) in
             switch result {
             case .success(let data):
                 self?.data["currency"] = data

@@ -8,7 +8,7 @@
 import Moya
 
 enum MarketAPI {
-    case coins(perPage: Int)
+    case coins(perPage: Int, currency: String)
     case search(keyword: String)
     case exchanges(currency: String)
 }
@@ -44,8 +44,8 @@ extension MarketAPI: TargetType {
     
     var parameters: [String: Any] {
         switch self {
-        case .coins(let perPage):
-            return ["vs_currency": "try",
+        case .coins(let perPage, let currency):
+            return ["vs_currency": currency,
                     "order": "market_cap_desc",
                     "per_page": perPage,
                     "page": 1,

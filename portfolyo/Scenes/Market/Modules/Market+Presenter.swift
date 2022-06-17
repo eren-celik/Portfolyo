@@ -5,7 +5,7 @@
 //  Created by Eren  Çelik on 16.06.2022.
 //
 
-import Foundation
+import UIKit
 
 final class MarketPresenter: MarketPresenterProtocol {
     
@@ -42,9 +42,18 @@ extension MarketPresenter: MarketViewInteractorDelegate {
 extension MarketPresenter {
     
     enum Sections {
-        case coinCell(title: String, data: CoinListElement)
-        case exchangeCelll(title: String, value: Double)
+        case coinCell(data: CoinListElement)
+        case currencyCell(title: String, value: Double)
         case textCell(_ text: String)
+        
+        var cellHeigth: CGFloat {
+            switch self {
+            case .coinCell, .currencyCell:
+                return 90
+            case .textCell:
+                return 50
+            }
+        }
     }
     
     func defineDataSource(_ data: [String: Any]) -> [Sections] {
@@ -54,15 +63,15 @@ extension MarketPresenter {
         
         if let coin = data["coin"] as? CoinListModel {
             coin.forEach { element in
-                section.append(.coinCell(title: element.name ?? "", data: element))
+                section.append(.coinCell(data: element))
             }
         }
         
-        section.append(.textCell("Exchages"))
+        section.append(.textCell("Currency"))
         
-        if let exc = data["exchange"] as? ExchangeModel {
+        if let exc = data["currency"] as? CurrencyModel {
             exc.rates?.forEach({ (key: String, value: Double) in
-                section.append(.exchangeCelll(title: key, value: value))
+                section.append(.currencyCell(title: key, value: value))
             })
         }
         

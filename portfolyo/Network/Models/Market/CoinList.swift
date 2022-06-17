@@ -13,19 +13,18 @@ public struct CoinListElement: Codable {
     public var id, symbol, name: String?
     public var image: String?
     public var currentPrice: Double?
-    public var marketCap, marketCapRank: Int?
-    public var fullyDilutedValuation: Int?
-    public var totalVolume: Int?
-    public var high24H, low24H, priceChange24H, priceChangePercentage24H: Double?
-    public var marketCapChange24H, marketCapChangePercentage24H, circulatingSupply: Double?
-    public var totalSupply, maxSupply: Double?
-    public var ath, athChangePercentage: Double?
-    public var athDate: String?
-    public var atl, atlChangePercentage: Double?
-    public var atlDate: String?
-    public var roi: Roi?
-    public var lastUpdated: String?
+    public var marketCap: Int?
+    public var priceChange24H, priceChangePercentage24H: Double?
     public var sparklineIn7D: SparklineIn7D?
+    
+    enum CodingKeys: String, CodingKey {
+        case id, symbol, name, image
+        case currentPrice = "current_price"
+        case priceChange24H = "price_change_24h"
+        case priceChangePercentage24H = "price_change_percentage_24h"
+        case sparklineIn7D = "sparkline_in_7d"
+        case marketCap = "market_cap"
+    }
 }
 
 public struct Roi: Codable {

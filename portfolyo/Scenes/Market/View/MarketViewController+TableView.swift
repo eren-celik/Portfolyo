@@ -12,6 +12,16 @@ extension MarketViewController {
     func setTableView() {
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.separatorStyle = .none
+        registerCells()
+    }
+    
+    func registerCells() {
+        let currencyNibName = UINib(nibName: "CurrencyCell", bundle: nil)
+        let textNib = UINib(nibName: "TextCell", bundle: nil)
+        
+        tableView.register(currencyNibName, forCellReuseIdentifier: "CurrencyCell")
+        tableView.register(textNib, forCellReuseIdentifier: "TextCell")
     }
 }
 
@@ -32,8 +42,12 @@ extension MarketViewController: UITableViewDataSource {
 extension MarketViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let sec = coinList[indexPath.row]
-        return setTableViewRow(sec)
+        let section = coinList[indexPath.row]
+        return setTableViewRow(section)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return coinList[indexPath.row].cellHeigth
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -41,21 +55,19 @@ extension MarketViewController: UITableViewDelegate {
     }
     
     private func setTableViewRow(_ sections: MarketPresenter.Sections) -> UITableViewCell {
-        let cell: UITableViewCell = {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell") else {
-            return UITableViewCell(style: .default, reuseIdentifier: "cell")
-            }
-            return cell
-        }()
+        let currencyCell: CurrencyCell = tableView.reusableCell()
+        let textCell: TextCell = tableView.reusableCell()
         
         switch sections {
-        case .coinCell(let title, _):
-            cell.textLabel?.text = title
-        case .exchangeCelll(let title, _):
-            cell.textLabel?.text = title
+        case .coinCell(let data):
+            currencyCell.coinData = data
+            return currencyCell
+        case .currencyCell(let name, let value):
+            currencyCell.setCurrencyData(name: name, value: value)
+            return currencyCell
         case .textCell(let text):
-            cell.textLabel?.text = text
+            textCell.configureLabel(text: text, size: 25, weight: .bold)
+            return textCell
         }
-        return cell
     }
 }

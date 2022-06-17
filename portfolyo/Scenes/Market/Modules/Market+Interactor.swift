@@ -41,12 +41,12 @@ final class MarketInteractor: MarketInteractorProtocol {
     }
     
     func getExchageList() {
-        typealias ExchangeResult = Result<ExchangeModel, GUNetworkErrors>
+        typealias ExchangeResult = Result<CurrencyModel, GUNetworkErrors>
         group.enter()
         manager?.request(target: .exchanges(currency: "TRY"), completion: { [weak self] (result: ExchangeResult) in
             switch result {
             case .success(let data):
-                self?.data["exchange"] = data
+                self?.data["currency"] = data
             case .failure(_):
                 self?.delegate?.handleOutput(["error": ""])
             }

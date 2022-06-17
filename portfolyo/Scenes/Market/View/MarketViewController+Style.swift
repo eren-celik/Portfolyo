@@ -18,7 +18,7 @@ extension MarketViewController {
         navItem?.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .search,
                                                       target: self,
                                                       action: #selector(navigateSearch(_:)))
-        navigationController?.visibleViewController?.title = "Wallet"
+        navigationController?.visibleViewController?.title = "Market"
     }
     
     func resetNavigationBar() {

@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		1003523A2859DBF600121730 /* NewsViewController+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100352392859DBF600121730 /* NewsViewController+Style.swift */; };
 		1003523E2859F40100121730 /* BaloonMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1003523D2859F40100121730 /* BaloonMarker.swift */; };
+		101E401E285C8CCF002506F8 /* CurrencyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101E401C285C8CCF002506F8 /* CurrencyCell.swift */; };
+		101E401F285C8CCF002506F8 /* CurrencyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 101E401D285C8CCF002506F8 /* CurrencyCell.xib */; };
+		101E4021285C9260002506F8 /* CurrencyCell+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101E4020285C9260002506F8 /* CurrencyCell+Style.swift */; };
+		101E4026285CA084002506F8 /* TextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101E4024285CA084002506F8 /* TextCell.swift */; };
+		101E4027285CA084002506F8 /* TextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 101E4025285CA084002506F8 /* TextCell.xib */; };
 		103ACCAE284E4B2E00208AB7 /* News+Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103ACCA7284E4B2E00208AB7 /* News+Presenter.swift */; };
 		103ACCAF284E4B2E00208AB7 /* News+Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103ACCA8284E4B2E00208AB7 /* News+Router.swift */; };
 		103ACCB0284E4B2E00208AB7 /* News+Contracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103ACCA9284E4B2E00208AB7 /* News+Contracts.swift */; };
@@ -32,7 +37,7 @@
 		105C507D285B251E009339E3 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 105C507C285B251E009339E3 /* Search.storyboard */; };
 		105C5082285B4F6E009339E3 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105C5081285B4F6E009339E3 /* Search.swift */; };
 		105C5084285B5425009339E3 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105C5083285B5425009339E3 /* UIViewController+Extension.swift */; };
-		105C5086285B88D6009339E3 /* ExchangeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105C5085285B88D6009339E3 /* ExchangeModel.swift */; };
+		105C5086285B88D6009339E3 /* CurrencyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105C5085285B88D6009339E3 /* CurrencyModel.swift */; };
 		105D350B284E400E000EF063 /* UITableView+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105D3508284E400E000EF063 /* UITableView+Utility.swift */; };
 		105D350C284E400E000EF063 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105D3509284E400E000EF063 /* Array+Extension.swift */; };
 		105D350D284E400E000EF063 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105D350A284E400E000EF063 /* UIFont+Extension.swift */; };
@@ -80,6 +85,11 @@
 /* Begin PBXFileReference section */
 		100352392859DBF600121730 /* NewsViewController+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NewsViewController+Style.swift"; sourceTree = "<group>"; };
 		1003523D2859F40100121730 /* BaloonMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaloonMarker.swift; sourceTree = "<group>"; };
+		101E401C285C8CCF002506F8 /* CurrencyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyCell.swift; sourceTree = "<group>"; };
+		101E401D285C8CCF002506F8 /* CurrencyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrencyCell.xib; sourceTree = "<group>"; };
+		101E4020285C9260002506F8 /* CurrencyCell+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CurrencyCell+Style.swift"; sourceTree = "<group>"; };
+		101E4024285CA084002506F8 /* TextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCell.swift; sourceTree = "<group>"; };
+		101E4025285CA084002506F8 /* TextCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextCell.xib; sourceTree = "<group>"; };
 		103ACCA7284E4B2E00208AB7 /* News+Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "News+Presenter.swift"; sourceTree = "<group>"; };
 		103ACCA8284E4B2E00208AB7 /* News+Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "News+Router.swift"; sourceTree = "<group>"; };
 		103ACCA9284E4B2E00208AB7 /* News+Contracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "News+Contracts.swift"; sourceTree = "<group>"; };
@@ -105,7 +115,7 @@
 		105C507C285B251E009339E3 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		105C5081285B4F6E009339E3 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		105C5083285B5425009339E3 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
-		105C5085285B88D6009339E3 /* ExchangeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeModel.swift; sourceTree = "<group>"; };
+		105C5085285B88D6009339E3 /* CurrencyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyModel.swift; sourceTree = "<group>"; };
 		105D34FC284E3E9B000EF063 /* portfolyoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = portfolyoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		105D3508284E400E000EF063 /* UITableView+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Utility.swift"; sourceTree = "<group>"; };
 		105D3509284E400E000EF063 /* Array+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
@@ -171,6 +181,33 @@
 				1003523D2859F40100121730 /* BaloonMarker.swift */,
 			);
 			path = ViewComponents;
+			sourceTree = "<group>";
+		};
+		101E401A285C8B93002506F8 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				101E401B285C8CB8002506F8 /* CurrencyCell */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		101E401B285C8CB8002506F8 /* CurrencyCell */ = {
+			isa = PBXGroup;
+			children = (
+				101E401C285C8CCF002506F8 /* CurrencyCell.swift */,
+				101E4020285C9260002506F8 /* CurrencyCell+Style.swift */,
+				101E401D285C8CCF002506F8 /* CurrencyCell.xib */,
+			);
+			path = CurrencyCell;
+			sourceTree = "<group>";
+		};
+		101E4023285CA074002506F8 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				101E4024285CA084002506F8 /* TextCell.swift */,
+				101E4025285CA084002506F8 /* TextCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		103ACCBA284E644400208AB7 /* View */ = {
@@ -490,6 +527,7 @@
 		1078F1F72858999400EBA884 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				101E401A285C8B93002506F8 /* Cell */,
 				1078F1F32858995D00EBA884 /* MarketViewController.swift */,
 				105C504B285B1C65009339E3 /* MarketViewController+Style.swift */,
 				105C504D285B1C69009339E3 /* MarketViewController+TableView.swift */,
@@ -500,6 +538,7 @@
 		1078F1FE28589EFC00EBA884 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				101E4023285CA074002506F8 /* Cell */,
 				1078F1FF28589F0100EBA884 /* Tabbar */,
 			);
 			path = Base;
@@ -546,7 +585,7 @@
 			isa = PBXGroup;
 			children = (
 				10DEB16E285A8D5D0005BC59 /* CoinList.swift */,
-				105C5085285B88D6009339E3 /* ExchangeModel.swift */,
+				105C5085285B88D6009339E3 /* CurrencyModel.swift */,
 				105C5081285B4F6E009339E3 /* Search.swift */,
 			);
 			path = Market;
@@ -661,7 +700,9 @@
 				1078F1F9285899A600EBA884 /* Market.storyboard in Resources */,
 				105A0E272859217900B4CDF9 /* Home.storyboard in Resources */,
 				103ACCB5284E598E00208AB7 /* News.storyboard in Resources */,
+				101E401F285C8CCF002506F8 /* CurrencyCell.xib in Resources */,
 				105C507D285B251E009339E3 /* Search.storyboard in Resources */,
+				101E4027285CA084002506F8 /* TextCell.xib in Resources */,
 				108568BB2850D31B005EB39B /* NewsTableViewCell.xib in Resources */,
 				105C06A5284D50EF00B097F0 /* Assets.xcassets in Resources */,
 			);
@@ -745,6 +786,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				101E4026285CA084002506F8 /* TextCell.swift in Sources */,
 				105D3528284E416D000EF063 /* Dummy+Data.swift in Sources */,
 				105D3522284E40DF000EF063 /* NewsModel.swift in Sources */,
 				103ACCB0284E4B2E00208AB7 /* News+Contracts.swift in Sources */,
@@ -760,6 +802,7 @@
 				108E393E285137B3002C22DD /* Date+Extension.swift in Sources */,
 				105D350B284E400E000EF063 /* UITableView+Utility.swift in Sources */,
 				1078F20128589F1A00EBA884 /* BaseTabBarBuilder.swift in Sources */,
+				101E4021285C9260002506F8 /* CurrencyCell+Style.swift in Sources */,
 				105D3516284E405E000EF063 /* Analytics+Engine.swift in Sources */,
 				1078F1F42858995D00EBA884 /* MarketViewController.swift in Sources */,
 				108568BA2850D31B005EB39B /* NewsTableViewCell.swift in Sources */,
@@ -769,7 +812,8 @@
 				105D350D284E400E000EF063 /* UIFont+Extension.swift in Sources */,
 				105C5076285B23F9009339E3 /* SearchPresenter.swift in Sources */,
 				105D3525284E414F000EF063 /* Constants.swift in Sources */,
-				105C5086285B88D6009339E3 /* ExchangeModel.swift in Sources */,
+				101E401E285C8CCF002506F8 /* CurrencyCell.swift in Sources */,
+				105C5086285B88D6009339E3 /* CurrencyModel.swift in Sources */,
 				1003523A2859DBF600121730 /* NewsViewController+Style.swift in Sources */,
 				105C5077285B23F9009339E3 /* SearchRouter.swift in Sources */,
 				103ACCB2284E4B2E00208AB7 /* NewsViewController.swift in Sources */,

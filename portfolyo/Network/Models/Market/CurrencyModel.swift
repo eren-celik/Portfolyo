@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct ExchangeModel: Codable {
+public struct CurrencyModel: Codable {
     public let amount: Int?
     public let base, date: String?
     public let rates: [String: Double]?

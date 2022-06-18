@@ -17,17 +17,17 @@ extension PortfolyoViewController {
     }
     
     private func registerCells() {
-        let currencyNibName = UINib(nibName: "CurrencyCell", bundle: nil)
+        let currencyNibName = UINib(nibName: "PortfolioCell", bundle: nil)
         let textNib = UINib(nibName: "TextCell", bundle: nil)
         let graphNib = UINib(nibName: "GraphCell", bundle: nil)
         
-        tableView.register(currencyNibName, forCellReuseIdentifier: "CurrencyCell")
+        tableView.register(currencyNibName, forCellReuseIdentifier: "PortfolioCell")
         tableView.register(textNib, forCellReuseIdentifier: "TextCell")
         tableView.register(graphNib, forCellReuseIdentifier: "GraphCell")
     }
     
     func setTableViewCell(section: PortfolyoPresenter.Sections) -> UITableViewCell {
-        let currencyCell: CurrencyCell = tableView.reusableCell()
+        let currencyCell: PortfolioCell = tableView.reusableCell()
         let textCell: TextCell = tableView.reusableCell()
         let graphCell: GraphCell = tableView.reusableCell()
         
@@ -42,7 +42,7 @@ extension PortfolyoViewController {
             return textCell
         case .graphCell(let data):
             graphCell.configureChart(data)
-            return graphCell
+            return UITableViewCell()
         }
     }
 }
@@ -50,7 +50,7 @@ extension PortfolyoViewController {
 extension PortfolyoViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

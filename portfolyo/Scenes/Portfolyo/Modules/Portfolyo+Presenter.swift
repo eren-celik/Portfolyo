@@ -58,22 +58,30 @@ extension PortfolyoPresenter {
     func defineDataSource(_ data: [String: Any]) -> [Sections] {
         var section = [Sections]()
         
-        guard let coinItems = data["coinData"] as? CoinListModel else {
+        guard let coinItems = data["coinData"] as? CoinListModel,
+              let items = data["userItems"] as? Results<PortfolyoRealmModel> else {
             section.append(.titleCell("Data Bulunamadı"))
             return section
         }
         
-        if let items = data["userItems"] as? Results<PortfolyoRealmModel>{
-            var arr = [Double]()
-            items.forEach { model in
-                arr.append(contentsOf: model.sparkline.toArray())
-            }
-            section.append(.graphCell(arr))
-        }
+//        var arr = [Double]()
+//        items.forEach { model in
+//            arr.append(contentsOf: model.sparkline.toArray())
+//        }
+//        section.append(.graphCell(arr))
+        
         
         section.append(.titleCell("Varlıklar"))
         
-        coinItems.forEach { element in
+        let arr = coinItems.compactMap { element -> CoinListElement in
+            
+            if let enitiy = items.first(where: { $0.itemId == element.id }) {
+                return element.updateHoldings(amount: Double(enitiy.quantitiy))
+            }
+            return element
+        }
+        
+        arr.forEach { element in
             section.append(.itemCell(data: element))
         }
         

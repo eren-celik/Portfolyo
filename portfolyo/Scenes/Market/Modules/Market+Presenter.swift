@@ -67,14 +67,33 @@ extension MarketPresenter {
             }
         }
         
-        section.append(.textCell("Currency"))
+        if let pop = data["popularCurrency"] as? PopularCurrencyModel {
+            section.append(.textCell("Popular Currencies"))
+            
+            let filtred = pop.data?.filter({ $0.aciklama != "AKTIF TAHVIL - TRT131119T19"}) ?? []
+            
+            for element in filtred {
+                let price = element.alis == 0 ? element.yuksek : element.alis
+                let element = CoinListElement(name: element.aciklama,
+                                              currentPrice: price,
+                                              priceChangePercentage24H: element.yuzdedegisim)
+                section.append(.coinCell(data: element))
+            }
+        }
         
         if let exc = data["currency"] as? CurrencyModel {
-            exc.rates?.forEach({ (key: String, value: Double) in
-                section.append(.currencyCell(title: key, value: value))
-            })
+            defineCurrencySection(&section, data: exc)
         }
         
         return section
+    }
+    
+    func defineCurrencySection(_ section: inout Array<Sections>, data: CurrencyModel) {
+        section.append(.textCell("Currencies"))
+        Array(data.rates ?? [:])
+            .sorted(by: <)
+            .forEach { (key: String, value: Double) in
+                section.append(.currencyCell(title: key, value: value))
+            }
     }
 }

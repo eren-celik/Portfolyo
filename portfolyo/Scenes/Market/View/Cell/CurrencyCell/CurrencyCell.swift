@@ -27,6 +27,11 @@ class CurrencyCell: UITableViewCell {
         setStyle()
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        currencyImage.image = nil
+    }
+    
     func setCoinData() {
         nameLabel.text = coinData?.name ?? ""
         let formatter = NumberFormatter()
@@ -43,11 +48,20 @@ class CurrencyCell: UITableViewCell {
     
     func setCurrencyData(name: String, value: Double) {
         nameLabel.text = name
-        priceLabel.text = String(format: "%.2f", value)
+        priceLabel.text = getSymbol(forCurrencyCode: name) + " " + String(format: "%.2f", value)
         diffrenceLabel.text = ""
         
         let code = name.lowercased()
         guard let imageURL = URL(string: "https://raw.githubusercontent.com/transferwise/currency-flags/master/src/flags/\(code).png") else { return }
         currencyImage.sd_setImage(with: imageURL)
+    }
+    
+    private func getSymbol(forCurrencyCode code: String) -> String {
+       let locale = NSLocale(localeIdentifier: code)
+        return locale.displayName(forKey: NSLocale.Key.currencySymbol, value: code) ?? ""
+    }
+    
+    private func setPopularCurrencyImage() {
+        
     }
 }

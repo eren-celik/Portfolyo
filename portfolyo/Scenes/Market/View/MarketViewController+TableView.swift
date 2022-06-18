@@ -16,12 +16,29 @@ extension MarketViewController {
         registerCells()
     }
     
-    func registerCells() {
+    private func registerCells() {
         let currencyNibName = UINib(nibName: "CurrencyCell", bundle: nil)
         let textNib = UINib(nibName: "TextCell", bundle: nil)
         
         tableView.register(currencyNibName, forCellReuseIdentifier: "CurrencyCell")
         tableView.register(textNib, forCellReuseIdentifier: "TextCell")
+    }
+    
+    private func setTableViewRow(_ sections: MarketPresenter.Sections) -> UITableViewCell {
+        let currencyCell: CurrencyCell = tableView.reusableCell()
+        let textCell: TextCell = tableView.reusableCell()
+        
+        switch sections {
+        case .coinCell(let data):
+            currencyCell.coinData = data
+            return currencyCell
+        case .currencyCell(let name, let value):
+            currencyCell.setCurrencyData(name: name, value: value)
+            return currencyCell
+        case .textCell(let text):
+            textCell.configureLabel(text: text, size: 25, weight: .bold)
+            return textCell
+        }
     }
 }
 
@@ -52,22 +69,5 @@ extension MarketViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-    }
-    
-    private func setTableViewRow(_ sections: MarketPresenter.Sections) -> UITableViewCell {
-        let currencyCell: CurrencyCell = tableView.reusableCell()
-        let textCell: TextCell = tableView.reusableCell()
-        
-        switch sections {
-        case .coinCell(let data):
-            currencyCell.coinData = data
-            return currencyCell
-        case .currencyCell(let name, let value):
-            currencyCell.setCurrencyData(name: name, value: value)
-            return currencyCell
-        case .textCell(let text):
-            textCell.configureLabel(text: text, size: 25, weight: .bold)
-            return textCell
-        }
     }
 }

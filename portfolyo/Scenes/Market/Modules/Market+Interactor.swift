@@ -20,7 +20,8 @@ final class MarketInteractor: MarketInteractorProtocol {
     
     func getAllData() {
         getCoinList()
-        getExchageList()
+        getCurrencyList()
+        getPopularCurrency()
         group.notify(queue: .main) {
             self.delegate?.handleOutput(self.data)
         }
@@ -46,14 +47,29 @@ final class MarketInteractor: MarketInteractorProtocol {
         })
     }
     
-    func getExchageList() {
-        typealias ExchangeResult = Result<CurrencyModel, GUNetworkErrors>
+    func getCurrencyList() {
+        typealias CurrencyResult = Result<CurrencyModel, GUNetworkErrors>
         group.enter()
         manager?.request(target: .exchanges(currency: getCurrecyCode()),
-                         completion: { [weak self] (result: ExchangeResult) in
+                         completion: { [weak self] (result: CurrencyResult) in
             switch result {
             case .success(let data):
                 self?.data["currency"] = data
+            case .failure(_):
+                self?.delegate?.handleOutput(["error": ""])
+            }
+            self?.group.leave()
+        })
+    }
+    
+    func getPopularCurrency() {
+        typealias CurrencyResult = Result<PopularCurrencyModel, GUNetworkErrors>
+        group.enter()
+        manager?.request(target: .popularCurrency,
+                         completion: { [weak self] (result: CurrencyResult) in
+            switch result {
+            case .success(let data):
+                self?.data["popularCurrency"] = data
             case .failure(_):
                 self?.delegate?.handleOutput(["error": ""])
             }

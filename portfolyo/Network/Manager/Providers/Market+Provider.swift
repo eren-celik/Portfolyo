@@ -11,6 +11,7 @@ enum MarketAPI {
     case coins(perPage: Int, currency: String)
     case search(keyword: String)
     case exchanges(currency: String)
+    case popularCurrency
 }
 
 extension MarketAPI: TargetType {
@@ -19,6 +20,8 @@ extension MarketAPI: TargetType {
         switch self {
         case .exchanges:
             return URL(string: "https://api.frankfurter.app")!
+        case .popularCurrency:
+            return URL(string: "https://api.bigpara.hurriyet.com.tr")!
         default:
             return URL(string: Constants.coinMarketBaseURL)!
         }
@@ -32,6 +35,8 @@ extension MarketAPI: TargetType {
             return "/search"
         case .exchanges:
             return "/latest"
+        case .popularCurrency:
+            return "/doviz/headerlist/"
         }
     }
     
@@ -54,6 +59,8 @@ extension MarketAPI: TargetType {
             return ["query": keyword]
         case .exchanges(let currency):
             return ["from": currency]
+        default:
+            return [:]
         }
     }
     

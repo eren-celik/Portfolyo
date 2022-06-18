@@ -33,7 +33,7 @@ final class PortfolyoInteractor: PortfolyoInteractorProtocol {
     
     private func getUserItems() -> [String] {
         group.enter()
-        let item = RealmManager.get(fromEntity: PortfolyoRealmModel.self)
+        let item = realm.get(fromEntity: PortfolyoRealmModel.self)
         data["userItems"] = item
         group.leave()
         return item.compactMap({ $0.itemId })

@@ -44,13 +44,13 @@ extension MarketPresenter {
     enum Sections {
         case coinCell(data: CoinListElement)
         case currencyCell(title: String, value: Double)
-        case textCell(_ text: String)
+        case titleCell(_ text: String)
         
         var cellHeigth: CGFloat {
             switch self {
             case .coinCell, .currencyCell:
                 return 90
-            case .textCell:
+            case .titleCell:
                 return 50
             }
         }
@@ -59,7 +59,7 @@ extension MarketPresenter {
     func defineDataSource(_ data: [String: Any]) -> [Sections] {
         var section = [Sections]()
         
-        section.append(.textCell("Coins"))
+        section.append(.titleCell("Coins"))
         
         if let coin = data["coin"] as? CoinListModel {
             coin.forEach { element in
@@ -68,7 +68,7 @@ extension MarketPresenter {
         }
         
         if let pop = data["popularCurrency"] as? PopularCurrencyModel {
-            section.append(.textCell("Popular Currencies"))
+            section.append(.titleCell("Popular Currencies"))
             
             for element in pop.response ?? [] {
                 let element = CoinListElement(name: element.symbol,
@@ -86,7 +86,7 @@ extension MarketPresenter {
     }
     
     func defineCurrencySection(_ section: inout Array<Sections>, data: CurrencyModel) {
-        section.append(.textCell("Currencies"))
+        section.append(.titleCell("Currencies"))
         Array(data.rates ?? [:])
             .sorted(by: <)
             .forEach { (key: String, value: Double) in

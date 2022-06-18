@@ -7,18 +7,21 @@
 
 import UIKit
 
-class PortfolyoViewController: UIViewController {
-
+final class PortfolyoViewController: UIViewController {
+    
+    @IBOutlet weak var tableView: UITableView!
+    
     var presenter: PortfolyoPresenterProtocol!
+    var sectionList: [PortfolyoPresenter.Sections] = [] {
+        didSet {
+            tableView.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.preparePortfolyoData()
-    }
-}
-
-extension PortfolyoViewController: PortfolyoViewProtocol {
-    
-    func showList(section: Array<PortfolyoPresenter.Sections>) {
+        setTableView()
+        setStyle()
     }
 }

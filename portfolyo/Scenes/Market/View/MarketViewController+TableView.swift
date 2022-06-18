@@ -35,7 +35,7 @@ extension MarketViewController {
         case .currencyCell(let name, let value):
             currencyCell.setCurrencyData(name: name, value: value)
             return currencyCell
-        case .textCell(let text):
+        case .titleCell(let text):
             textCell.configureLabel(text: text, size: 25, weight: .bold)
             return textCell
         }
@@ -54,14 +54,14 @@ extension MarketViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return coinList.count
     }
-}
-
-extension MarketViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let section = coinList[indexPath.row]
         return setTableViewRow(section)
     }
+}
+
+extension MarketViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return coinList[indexPath.row].cellHeigth

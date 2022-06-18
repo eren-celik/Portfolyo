@@ -24,6 +24,10 @@ extension NewsViewController: UITableViewDataSource {
         cell.newsData = news[indexPath.row]
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return news.count
+    }
 }
 
 extension NewsViewController: UITableViewDelegate {
@@ -31,10 +35,6 @@ extension NewsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let news = news[indexPath.row]
         presenter.showDetail(news)
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return news.count
     }
 }
 

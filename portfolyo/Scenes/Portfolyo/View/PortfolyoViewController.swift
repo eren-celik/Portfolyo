@@ -9,6 +9,8 @@ import UIKit
 
 class PortfolyoViewController: UIViewController {
 
+    var presenter: PortfolyoPresenterProtocol!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

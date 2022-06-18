@@ -50,6 +50,20 @@ extension StoryboardViewControllerFactory {
         return view
     }
     
+    func createPortfolyoView() -> PortfolyoViewController {
+        let view = storyboard.instantiateViewController(identifier: "PortfolyoViewController") as! PortfolyoViewController
+        let manager = NetworkManager<MarketAPI>(provider: MoyaProvider<MarketAPI>())
+        let router = PortfolyoRouter(view: view)
+        let interactor = PortfolyoInteractor(manager: manager)
+        let presenter = PortfolyoPresenter(
+            view: view,
+            interactor: interactor,
+            router: router
+        )
+        view.presenter = presenter
+        return view
+    }
+    
     func createSeachView() -> SearchViewController {
         let view = storyboard.instantiateViewController(identifier: "SearchViewController") as! SearchViewController
         let manager = NetworkManager<MarketAPI>(provider: MoyaProvider<MarketAPI>())

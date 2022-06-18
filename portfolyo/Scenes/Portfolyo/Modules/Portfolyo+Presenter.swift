@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 final class PortfolyoPresenter: PortfolyoPresenterProtocol {
     
@@ -22,12 +23,59 @@ final class PortfolyoPresenter: PortfolyoPresenterProtocol {
         self.interactor.delegate = self
     }
     
+    func preparePortfolyoData() {
+        interactor.getPorfolyoData()
+    }
 }
 
 extension PortfolyoPresenter: PortfolyoViewInteractorDelegate {
     
-    func handleOutput(_ output: [String : Any]) {
-        
+    func handleOutput(_ output: [String: Any]) {
+        let sec = defineDataSource(output)
+        view?.showList(section: sec)
     }
 }
 
+extension PortfolyoPresenter {
+    
+    enum Sections {
+        case itemCell(data: CoinListElement)
+        case titleCell(_ text: String)
+        case graphCell(_ data: PortfolyoRealmModel)
+        
+        var cellHeigth: CGFloat {
+            switch self {
+            case .itemCell:
+                return 90
+            case .graphCell:
+                return 300
+            case .titleCell:
+                return 50
+            }
+        }
+    }
+    
+    func defineDataSource(_ data: [String: Any]) -> [Sections] {
+        var section = [Sections]()
+        
+        guard let coinItems = data["coinData"] as? CoinListModel else {
+            section.append(.titleCell("Data Bulunamadı"))
+            return section
+        }
+        
+        if let items = data["userItems"] as? Results<PortfolyoRealmModel>{
+            items.forEach { model in
+                section.append(.graphCell(model))
+            }
+        }
+        
+        section.append(.titleCell("Varlıklar"))
+        
+        coinItems.forEach { element in
+            section.append(.itemCell(data: element))
+        }
+        
+        
+        return section
+    }
+}

@@ -13,10 +13,12 @@ class PortfolyoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        presenter.preparePortfolyoData()
     }
 }
 
 extension PortfolyoViewController: PortfolyoViewProtocol {
     
+    func showList(section: Array<PortfolyoPresenter.Sections>) {
+    }
 }

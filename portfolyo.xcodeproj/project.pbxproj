@@ -69,6 +69,10 @@
 		10A355A7285DFE800056CDB9 /* Portfolyo+Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A355A6285DFE800056CDB9 /* Portfolyo+Interactor.swift */; };
 		10A355A9285DFE8A0056CDB9 /* Portfolyo+Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A355A8285DFE8A0056CDB9 /* Portfolyo+Presenter.swift */; };
 		10A355AB285DFE940056CDB9 /* Portfolyo+Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A355AA285DFE940056CDB9 /* Portfolyo+Router.swift */; };
+		10A355AE285E0B020056CDB9 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A355AD285E0B020056CDB9 /* RealmManager.swift */; };
+		10A355B0285E103B0056CDB9 /* RealmManager+Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A355AF285E103B0056CDB9 /* RealmManager+Protocols.swift */; };
+		10A355B2285E10680056CDB9 /* RealmManager+Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A355B1285E10680056CDB9 /* RealmManager+Operations.swift */; };
+		10A355B5285E15E70056CDB9 /* PortfolyoRealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A355B4285E15E70056CDB9 /* PortfolyoRealmModel.swift */; };
 		10DEB165285A86D90005BC59 /* Market+Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DEB164285A86D90005BC59 /* Market+Router.swift */; };
 		10DEB167285A88040005BC59 /* Market+Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DEB166285A88040005BC59 /* Market+Interactor.swift */; };
 		10DEB169285A888E0005BC59 /* Market+Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DEB168285A888E0005BC59 /* Market+Presenter.swift */; };
@@ -154,6 +158,10 @@
 		10A355A6285DFE800056CDB9 /* Portfolyo+Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Portfolyo+Interactor.swift"; sourceTree = "<group>"; };
 		10A355A8285DFE8A0056CDB9 /* Portfolyo+Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Portfolyo+Presenter.swift"; sourceTree = "<group>"; };
 		10A355AA285DFE940056CDB9 /* Portfolyo+Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Portfolyo+Router.swift"; sourceTree = "<group>"; };
+		10A355AD285E0B020056CDB9 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		10A355AF285E103B0056CDB9 /* RealmManager+Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RealmManager+Protocols.swift"; sourceTree = "<group>"; };
+		10A355B1285E10680056CDB9 /* RealmManager+Operations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RealmManager+Operations.swift"; sourceTree = "<group>"; };
+		10A355B4285E15E70056CDB9 /* PortfolyoRealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolyoRealmModel.swift; sourceTree = "<group>"; };
 		10DEB164285A86D90005BC59 /* Market+Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Market+Router.swift"; sourceTree = "<group>"; };
 		10DEB166285A88040005BC59 /* Market+Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Market+Interactor.swift"; sourceTree = "<group>"; };
 		10DEB168285A888E0005BC59 /* Market+Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Market+Presenter.swift"; sourceTree = "<group>"; };
@@ -415,6 +423,7 @@
 		105D350F284E4041000EF063 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				10A355AC285E0AF80056CDB9 /* Realm */,
 				105D3510284E404A000EF063 /* LogManager */,
 			);
 			path = Manager;
@@ -588,6 +597,7 @@
 		10A3559C285DFD990056CDB9 /* Portfolyo */ = {
 			isa = PBXGroup;
 			children = (
+				10A355B3285E15DC0056CDB9 /* Entity */,
 				10A3559D285DFDB50056CDB9 /* Modules */,
 				10A3559E285DFDBC0056CDB9 /* Resources */,
 				10A3559F285DFDC50056CDB9 /* View */,
@@ -620,6 +630,24 @@
 				10A355A0285DFDF20056CDB9 /* PortfolyoViewController.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		10A355AC285E0AF80056CDB9 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				10A355AD285E0B020056CDB9 /* RealmManager.swift */,
+				10A355B1285E10680056CDB9 /* RealmManager+Operations.swift */,
+				10A355AF285E103B0056CDB9 /* RealmManager+Protocols.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
+		10A355B3285E15DC0056CDB9 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				10A355B4285E15E70056CDB9 /* PortfolyoRealmModel.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 		10DEB16A285A8B9E0005BC59 /* Providers */ = {
@@ -848,6 +876,7 @@
 				1003523E2859F40100121730 /* BaloonMarker.swift in Sources */,
 				10DEB16F285A8D5D0005BC59 /* CoinList.swift in Sources */,
 				10A355AB285DFE940056CDB9 /* Portfolyo+Router.swift in Sources */,
+				10A355B0285E103B0056CDB9 /* RealmManager+Protocols.swift in Sources */,
 				105C507A285B23F9009339E3 /* SearchViewController.swift in Sources */,
 				105A0E292859218900B4CDF9 /* HomeViewController.swift in Sources */,
 				10A355A1285DFDF20056CDB9 /* PortfolyoViewController.swift in Sources */,
@@ -867,9 +896,12 @@
 				105C5076285B23F9009339E3 /* SearchPresenter.swift in Sources */,
 				105D3525284E414F000EF063 /* Constants.swift in Sources */,
 				101E401E285C8CCF002506F8 /* CurrencyCell.swift in Sources */,
+				10A355B2285E10680056CDB9 /* RealmManager+Operations.swift in Sources */,
 				105C5086285B88D6009339E3 /* CurrencyModel.swift in Sources */,
 				1003523A2859DBF600121730 /* NewsViewController+Style.swift in Sources */,
 				105C5077285B23F9009339E3 /* SearchRouter.swift in Sources */,
+				10A355B5285E15E70056CDB9 /* PortfolyoRealmModel.swift in Sources */,
+				10A355AE285E0B020056CDB9 /* RealmManager.swift in Sources */,
 				103ACCB2284E4B2E00208AB7 /* NewsViewController.swift in Sources */,
 				105C5082285B4F6E009339E3 /* Search.swift in Sources */,
 				108568B22850C383005EB39B /* AppCoordinator.swift in Sources */,

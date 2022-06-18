@@ -9,6 +9,7 @@ target 'portfolyo' do
   pod 'JGProgressHUD'
   pod 'Parchment', '~> 3.2'
   pod 'Charts'
+  pod 'RealmSwift', '~>10'
 
   target 'portfolyoTests' do
     inherit! :search_paths

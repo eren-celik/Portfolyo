@@ -21,7 +21,7 @@ final class MarketInteractor: MarketInteractorProtocol {
     func getAllData() {
         getCoinList()
         getCurrencyList()
-        getPopularCurrency()
+//        getPopularCurrency()
         group.notify(queue: .main) {
             self.delegate?.handleOutput(self.data)
         }

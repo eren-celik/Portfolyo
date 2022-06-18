@@ -14,21 +14,23 @@ public struct CurrencyModel: Codable {
 }
 
 public struct PopularCurrencyModel: Codable {
-    public let data: [CurrencyData]?
+    public let status: Bool?
+    public let code: Int?
+    public let msg: String?
+    public let response: [PopularCurrencyData]?
 }
 
-public struct CurrencyData: Codable {
-    public let aciklama: String?
-    public let yuzdedegisim: Double?
-    public let yuksek, dusuk: Double?
-    public let alis, satis: Double?
+public struct PopularCurrencyData: Codable {
+    public let high, low: String?
+    public let changePretenge: String?
+    public let symbol: String?
+    public let currentPrice: String?
     
     enum CodingKeys: String, CodingKey {
-        case aciklama = "ACIKLAMA"
-        case yuzdedegisim = "YUZDEDEGISIM"
-        case yuksek = "YUKSEK"
-        case dusuk = "DUSUK"
-        case alis = "ALIS"
-        case satis = "SATIS"
+        case high = "h"
+        case low = "l"
+        case currentPrice = "c"
+        case changePretenge = "ch"
+        case symbol = "s"
     }
 }

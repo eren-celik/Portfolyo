@@ -21,7 +21,7 @@ extension MarketAPI: TargetType {
         case .exchanges:
             return URL(string: "https://api.frankfurter.app")!
         case .popularCurrency:
-            return URL(string: "https://api.bigpara.hurriyet.com.tr")!
+            return URL(string: "https://fcsapi.com/api-v3/forex/latest")!
         default:
             return URL(string: Constants.coinMarketBaseURL)!
         }
@@ -59,8 +59,9 @@ extension MarketAPI: TargetType {
             return ["query": keyword]
         case .exchanges(let currency):
             return ["from": currency]
-        default:
-            return [:]
+        case .popularCurrency:
+            return ["symbol": "USD/TRY,EUR/TRY,GBP/TRY,CAD/TRY",
+                    "access_key": "1wnBEfw8liiUNVhGLNYZVtBN"]
         }
     }
     

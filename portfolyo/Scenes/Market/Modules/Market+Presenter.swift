@@ -70,13 +70,10 @@ extension MarketPresenter {
         if let pop = data["popularCurrency"] as? PopularCurrencyModel {
             section.append(.textCell("Popular Currencies"))
             
-            let filtred = pop.data?.filter({ $0.aciklama != "AKTIF TAHVIL - TRT131119T19"}) ?? []
-            
-            for element in filtred {
-                let price = element.alis == 0 ? element.yuksek : element.alis
-                let element = CoinListElement(name: element.aciklama,
-                                              currentPrice: price,
-                                              priceChangePercentage24H: element.yuzdedegisim)
+            for element in pop.response ?? [] {
+                let element = CoinListElement(name: element.symbol,
+                                              currentPrice: Double(element.currentPrice ?? "0"),
+                                              priceChangePercentage24H: Double(element.changePretenge ?? "0"))
                 section.append(.coinCell(data: element))
             }
         }

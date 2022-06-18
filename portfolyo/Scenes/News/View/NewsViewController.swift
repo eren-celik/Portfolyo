@@ -21,6 +21,7 @@ final class NewsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter.loadNews()
         setView()
     }
     

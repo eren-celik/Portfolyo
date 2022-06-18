@@ -9,11 +9,11 @@ import RealmSwift
 
 final class RealmManager {
     
-    private static func realmConfig() -> Realm.Configuration {
+    private func realmConfig() -> Realm.Configuration {
         return Realm.Configuration(schemaVersion: 1)
     }
     
-    static func realmInstance() -> Realm {
+    func realmInstance() -> Realm {
         do {
             let newRealm = try Realm(configuration: realmConfig())
             return newRealm

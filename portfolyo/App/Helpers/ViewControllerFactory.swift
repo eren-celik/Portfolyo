@@ -53,8 +53,9 @@ extension StoryboardViewControllerFactory {
     func createPortfolyoView() -> PortfolyoViewController {
         let view = storyboard.instantiateViewController(identifier: "PortfolyoViewController") as! PortfolyoViewController
         let manager = NetworkManager<MarketAPI>(provider: MoyaProvider<MarketAPI>())
+        let realmManager: RealmManager = RealmManager()
         let router = PortfolyoRouter(view: view)
-        let interactor = PortfolyoInteractor(manager: manager)
+        let interactor = PortfolyoInteractor(manager: manager, realmManager: realmManager)
         let presenter = PortfolyoPresenter(
             view: view,
             interactor: interactor,

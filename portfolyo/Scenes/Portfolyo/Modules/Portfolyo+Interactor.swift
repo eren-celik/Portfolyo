@@ -11,12 +11,15 @@ import RealmSwift
 final class PortfolyoInteractor: PortfolyoInteractorProtocol {
     
     weak var delegate: PortfolyoViewInteractorDelegate?
-    private var manager: NetworkManager<MarketAPI>?
+    private let manager: NetworkManager<MarketAPI>?
+    private let realm: RealmManager!
     private let group = DispatchGroup()
     private var data = [String: Any]()
     
-    init(manager: NetworkManager<MarketAPI>) {
+    init(manager: NetworkManager<MarketAPI>,
+         realmManager: RealmManager) {
         self.manager = manager
+        self.realm = realmManager
     }
     
     func getPorfolyoData() {

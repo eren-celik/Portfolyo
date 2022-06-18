@@ -35,7 +35,7 @@ final class MarketInteractor: MarketInteractorProtocol {
     func getCoinList() {
         typealias CoinModel = Result<CoinListModel, GUNetworkErrors>
         group.enter()
-        manager?.request(target: .coins(perPage: 2, currency: getCurrecyCode()),
+        manager?.request(target: .coins(perPage: 2, currency: getCurrecyCode(), coinIDs: ""),
                          completion: { [weak self] (result: CoinModel) in
             switch result {
             case .success(let data):

@@ -5,7 +5,6 @@
 //  Created by Eren  Çelik on 18.06.2022.
 //
 
-import Foundation
 import UIKit
 
 extension PortfolyoViewController {
@@ -20,14 +19,17 @@ extension PortfolyoViewController {
     private func registerCells() {
         let currencyNibName = UINib(nibName: "CurrencyCell", bundle: nil)
         let textNib = UINib(nibName: "TextCell", bundle: nil)
+        let graphNib = UINib(nibName: "GraphCell", bundle: nil)
         
         tableView.register(currencyNibName, forCellReuseIdentifier: "CurrencyCell")
         tableView.register(textNib, forCellReuseIdentifier: "TextCell")
+        tableView.register(graphNib, forCellReuseIdentifier: "GraphCell")
     }
     
     func setTableViewCell(section: PortfolyoPresenter.Sections) -> UITableViewCell {
         let currencyCell: CurrencyCell = tableView.reusableCell()
         let textCell: TextCell = tableView.reusableCell()
+        let graphCell: GraphCell = tableView.reusableCell()
         
         switch section {
         case .itemCell(let data):
@@ -38,8 +40,9 @@ extension PortfolyoViewController {
                                     size: 25,
                                     weight: .semibold)
             return textCell
-        case .graphCell(_):
-            return UITableViewCell()
+        case .graphCell(let data):
+            graphCell.configureChart(data)
+            return graphCell
         }
     }
 }

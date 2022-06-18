@@ -75,6 +75,8 @@
 		10A355B5285E15E70056CDB9 /* PortfolyoRealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A355B4285E15E70056CDB9 /* PortfolyoRealmModel.swift */; };
 		10A355B7285E37330056CDB9 /* PortfolyoViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A355B6285E37330056CDB9 /* PortfolyoViewController+TableView.swift */; };
 		10A355BA285E39670056CDB9 /* PortfolyoViewController+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A355B9285E39670056CDB9 /* PortfolyoViewController+Style.swift */; };
+		10A355BF285E412A0056CDB9 /* GraphCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A355BD285E412A0056CDB9 /* GraphCell.swift */; };
+		10A355C0285E412A0056CDB9 /* GraphCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10A355BE285E412A0056CDB9 /* GraphCell.xib */; };
 		10DEB165285A86D90005BC59 /* Market+Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DEB164285A86D90005BC59 /* Market+Router.swift */; };
 		10DEB167285A88040005BC59 /* Market+Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DEB166285A88040005BC59 /* Market+Interactor.swift */; };
 		10DEB169285A888E0005BC59 /* Market+Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DEB168285A888E0005BC59 /* Market+Presenter.swift */; };
@@ -166,6 +168,8 @@
 		10A355B4285E15E70056CDB9 /* PortfolyoRealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolyoRealmModel.swift; sourceTree = "<group>"; };
 		10A355B6285E37330056CDB9 /* PortfolyoViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PortfolyoViewController+TableView.swift"; sourceTree = "<group>"; };
 		10A355B9285E39670056CDB9 /* PortfolyoViewController+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PortfolyoViewController+Style.swift"; sourceTree = "<group>"; };
+		10A355BD285E412A0056CDB9 /* GraphCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphCell.swift; sourceTree = "<group>"; };
+		10A355BE285E412A0056CDB9 /* GraphCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GraphCell.xib; sourceTree = "<group>"; };
 		10DEB164285A86D90005BC59 /* Market+Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Market+Router.swift"; sourceTree = "<group>"; };
 		10DEB166285A88040005BC59 /* Market+Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Market+Interactor.swift"; sourceTree = "<group>"; };
 		10DEB168285A888E0005BC59 /* Market+Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Market+Presenter.swift"; sourceTree = "<group>"; };
@@ -631,6 +635,7 @@
 		10A3559F285DFDC50056CDB9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				10A355BB285E3B4F0056CDB9 /* Cells */,
 				10A355A0285DFDF20056CDB9 /* PortfolyoViewController.swift */,
 				10A355B9285E39670056CDB9 /* PortfolyoViewController+Style.swift */,
 				10A355B6285E37330056CDB9 /* PortfolyoViewController+TableView.swift */,
@@ -654,6 +659,15 @@
 				10A355B4285E15E70056CDB9 /* PortfolyoRealmModel.swift */,
 			);
 			path = Entity;
+			sourceTree = "<group>";
+		};
+		10A355BB285E3B4F0056CDB9 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				10A355BD285E412A0056CDB9 /* GraphCell.swift */,
+				10A355BE285E412A0056CDB9 /* GraphCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		10DEB16A285A8B9E0005BC59 /* Providers */ = {
@@ -780,6 +794,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10A355C0285E412A0056CDB9 /* GraphCell.xib in Resources */,
 				105C06A8284D50EF00B097F0 /* LaunchScreen.storyboard in Resources */,
 				1078F1F9285899A600EBA884 /* Market.storyboard in Resources */,
 				105A0E272859217900B4CDF9 /* Home.storyboard in Resources */,
@@ -905,6 +920,7 @@
 				105D3525284E414F000EF063 /* Constants.swift in Sources */,
 				101E401E285C8CCF002506F8 /* CurrencyCell.swift in Sources */,
 				10A355B2285E10680056CDB9 /* RealmManager+Operations.swift in Sources */,
+				10A355BF285E412A0056CDB9 /* GraphCell.swift in Sources */,
 				105C5086285B88D6009339E3 /* CurrencyModel.swift in Sources */,
 				1003523A2859DBF600121730 /* NewsViewController+Style.swift in Sources */,
 				105C5077285B23F9009339E3 /* SearchRouter.swift in Sources */,

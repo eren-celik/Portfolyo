@@ -5,7 +5,7 @@
 //  Created by Eren  Çelik on 17.03.2022.
 //
 
-import Foundation
+import RealmSwift
 
 //O(n): Big O notation
 extension Sequence where Element: Hashable {
@@ -15,3 +15,11 @@ extension Sequence where Element: Hashable {
         return filter { set.insert($0).inserted }
     }
 }
+
+extension List {
+    func toArray() -> [Element] {
+      return compactMap {
+        $0
+      }
+    }
+ }

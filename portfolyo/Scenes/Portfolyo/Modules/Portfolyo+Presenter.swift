@@ -41,7 +41,7 @@ extension PortfolyoPresenter {
     enum Sections {
         case itemCell(data: CoinListElement)
         case titleCell(_ text: String)
-        case graphCell(_ data: PortfolyoRealmModel)
+        case graphCell(_ data: [Double])
         
         var cellHeigth: CGFloat {
             switch self {
@@ -64,9 +64,11 @@ extension PortfolyoPresenter {
         }
         
         if let items = data["userItems"] as? Results<PortfolyoRealmModel>{
+            var arr = [Double]()
             items.forEach { model in
-                section.append(.graphCell(model))
+                arr.append(contentsOf: model.sparkline.toArray())
             }
+            section.append(.graphCell(arr))
         }
         
         section.append(.titleCell("Varlıklar"))

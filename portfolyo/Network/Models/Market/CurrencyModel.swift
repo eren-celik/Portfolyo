@@ -21,11 +21,11 @@ public struct PopularCurrencyModel: Codable {
 }
 
 public struct PopularCurrencyData: Codable {
-    public let id: String?
-    public let high, low: String?
-    public let changePretenge: String?
-    public let symbol: String?
-    public let currentPrice: String?
+    public var id: String?
+    public var high, low: String?
+    public var changePretenge: String?
+    public var symbol: String?
+    public var currentPrice: String?
     public var currentHoldings: Double?
     
     enum CodingKeys: String, CodingKey {

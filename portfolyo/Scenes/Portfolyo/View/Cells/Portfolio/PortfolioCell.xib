@@ -29,16 +29,16 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Wst-nc-YjH">
-                                <rect key="frame" x="65" y="14.5" width="65" height="41"/>
+                                <rect key="frame" x="65" y="14.5" width="101" height="41"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Uniswap" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Okg-90-feA">
-                                        <rect key="frame" x="0.0" y="0.0" width="65" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Uniswap" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Okg-90-feA">
+                                        <rect key="frame" x="0.0" y="0.0" width="101" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Uni" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="APR-v7-iNc">
-                                        <rect key="frame" x="0.0" y="20.5" width="65" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="20.5" width="101" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -90,6 +90,7 @@
                             <constraint firstItem="WzP-gv-rWH" firstAttribute="centerX" secondItem="Xjl-zg-7QU" secondAttribute="centerX" constant="15" id="dP4-FW-K4w"/>
                             <constraint firstItem="Wst-nc-YjH" firstAttribute="centerY" secondItem="Xjl-zg-7QU" secondAttribute="centerY" id="hbf-7A-eyV"/>
                             <constraint firstItem="Kd5-Nu-0Wa" firstAttribute="leading" secondItem="Xjl-zg-7QU" secondAttribute="leading" constant="10" id="mAN-Zh-TkO"/>
+                            <constraint firstItem="WzP-gv-rWH" firstAttribute="leading" secondItem="Wst-nc-YjH" secondAttribute="trailing" constant="5" id="p7j-D9-e0f"/>
                         </constraints>
                     </view>
                 </subviews>

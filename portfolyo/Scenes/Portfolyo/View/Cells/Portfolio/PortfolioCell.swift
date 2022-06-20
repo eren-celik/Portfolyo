@@ -39,7 +39,7 @@ class PortfolioCell: UITableViewCell {
     func setCoinData() {
         formatPrice()
         
-        let itemCode = coinData?.symbol?.uppercased() ?? "n/a"
+        let itemCode = coinData?.symbol?.uppercased() ?? ""
         nameLabel.text = coinData?.name ?? ""
         itemCodeLabel.text = itemCode
         totalAmountLabel.text = "\(Int(coinData?.currentHoldings ?? 0)) \(itemCode)"

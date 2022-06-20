@@ -25,7 +25,7 @@ final class PortfolyoInteractor: PortfolyoInteractorProtocol {
     func getPorfolyoData() {
         let id = getUserItems()
         getCoinInfo(coinIDs: id)
-//        getPopularCurrency()
+        getPopularCurrency()
         group.notify(queue: .main) {
             self.delegate?.handleOutput(self.data)
         }

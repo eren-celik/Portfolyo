@@ -63,6 +63,29 @@ extension PortfolyoPresenter {
         }
     }
     
+    enum GoldTypes: CaseIterable {
+        case gramGold
+        case quarterGold
+        case halfGold
+        case cumhurGold
+        case onsGold
+        
+        var name: String {
+            switch self {
+            case .gramGold:
+                return "Gram Altın"
+            case .quarterGold:
+                return "Çeyrek Altın"
+            case .halfGold:
+                return "Yarım Altın"
+            case .cumhurGold:
+                return "Cumhuriyet Altın"
+            case .onsGold:
+                return "Ons Altın"
+            }
+        }
+    }
+    
     func defineDataSource(_ data: [String: Any]) -> [Sections] {
         var section = [Sections]()
         
@@ -70,12 +93,6 @@ extension PortfolyoPresenter {
             section.append(.titleCell("Data Bulunamadı"))
             return section
         }
-        
-        var arr = [Double]()
-        userItems.forEach { model in
-            arr.append(contentsOf: model.sparkline.toArray())
-        }
-        section.append(.graphCell(arr))
         
         section.append(.titleCell("Varlıklar"))
         section.append(.itemHeader)
@@ -100,22 +117,68 @@ extension PortfolyoPresenter {
     private func currencySection(_ section: inout Array<Sections>,
                                  data: PopularCurrencyModel,
                                  userData: Results<PortfolyoRealmModel>) {
-        let arr = data.response?.compactMap({ element -> PopularCurrencyData in
-            if let enitiy = userData.first(where: { $0.itemId == element.id }) {
-                totalBalance.append(Double(enitiy.quantitiy) * Double(element.currentPrice ?? "0.0")!)
-                return element.updateHoldings(amount: Double(enitiy.quantitiy))
+        for userItem in userData {
+            guard let currencys = data.response?.filter({ $0.id == userItem.itemId && userItem.quantitiy > 0 }) else {
+                return
             }
-            return element
-        })
+            
+            for element in currencys {
+                if element.id == "1983" {
+                    let dto = PopularCurrencyData(id: element.id,
+                                                  symbol: userItem.name,
+                                                  currentPrice: element.currentPrice,
+                                                  currentHoldings: Double(userItem.quantitiy))
+                    goldSectionSetter(&section, element: dto)
+                }else {
+                    let dto = CoinListElement(id: element.id,
+                                              name: element.symbol,
+                                              currentPrice: Double(element.currentPrice ?? "0.0")!,
+                                              high24H: Double(element.high ?? "0.0")!,
+                                              low24H: Double(element.low ?? "0.0")!,
+                                              priceChangePercentage24H: Double(element.changePretenge ?? "0.0")!,
+                                              currentHoldings: Double(userItem.quantitiy))
+                    section.append(.itemCell(data: dto))
+                }
+            }
+        }
+    }
+    
+    func goldSectionSetter(_ section: inout Array<Sections>,
+                           element: PopularCurrencyData) {
         
-        for element in (arr ?? []) {
-            let dto = CoinListElement(id: element.id,
-                                      name: element.symbol,
-                                      currentPrice: Double(element.currentPrice ?? "0.0")!,
-                                      high24H: Double(element.high ?? "0.0")!,
-                                      low24H: Double(element.low ?? "0.0")!,
-                                      priceChangePercentage24H: Double(element.changePretenge ?? "0.0")!,
+        
+        let price = Double(element.currentPrice ?? "0.0")!
+        let gramPrice = price / 31.1034768
+        var dto = CoinListElement()
+        for goldType in GoldTypes.allCases where goldType.name == element.symbol {
+            switch goldType {
+            case .gramGold:
+                dto = CoinListElement(id: element.id,
+                                      name: goldType.name,
+                                      currentPrice: gramPrice,
                                       currentHoldings: element.currentHoldings)
+                
+            case .quarterGold:
+                dto = CoinListElement(id: element.id,
+                                      name: goldType.name,
+                                      currentPrice: (gramPrice * 1.75),
+                                      currentHoldings: element.currentHoldings)
+            case .halfGold:
+                dto = CoinListElement(id: element.id,
+                                      name: goldType.name,
+                                      currentPrice: (gramPrice * 3.6),
+                                      currentHoldings: element.currentHoldings)
+            case .cumhurGold:
+                dto = CoinListElement(id: element.id,
+                                      name: goldType.name,
+                                      currentPrice: (gramPrice * 7),
+                                      currentHoldings: element.currentHoldings)
+            case .onsGold:
+                dto = CoinListElement(id: element.id,
+                                      name: goldType.name,
+                                      currentPrice: price,
+                                      currentHoldings: element.currentHoldings)
+            }
             section.append(.itemCell(data: dto))
         }
     }

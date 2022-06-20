@@ -22,6 +22,8 @@
 		103ACCB5284E598E00208AB7 /* News.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 103ACCB4284E598E00208AB7 /* News.storyboard */; };
 		103ACCBE284E680100208AB7 /* Network+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103ACCBD284E680100208AB7 /* Network+Helper.swift */; };
 		10589C1C2860A43800165F32 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10589C1B2860A43800165F32 /* Double+Extension.swift */; };
+		10589C202860A7C300165F32 /* CoinInfoHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10589C1E2860A7C300165F32 /* CoinInfoHeaderCell.swift */; };
+		10589C212860A7C300165F32 /* CoinInfoHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10589C1F2860A7C300165F32 /* CoinInfoHeaderCell.xib */; };
 		105A0E272859217900B4CDF9 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 105A0E262859217900B4CDF9 /* Home.storyboard */; };
 		105A0E292859218900B4CDF9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105A0E282859218900B4CDF9 /* HomeViewController.swift */; };
 		105A0E2B285927DC00B4CDF9 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105A0E2A285927DC00B4CDF9 /* UIView+Extension.swift */; };
@@ -118,6 +120,8 @@
 		103ACCB4284E598E00208AB7 /* News.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = News.storyboard; sourceTree = "<group>"; };
 		103ACCBD284E680100208AB7 /* Network+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Network+Helper.swift"; sourceTree = "<group>"; };
 		10589C1B2860A43800165F32 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
+		10589C1E2860A7C300165F32 /* CoinInfoHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinInfoHeaderCell.swift; sourceTree = "<group>"; };
+		10589C1F2860A7C300165F32 /* CoinInfoHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoinInfoHeaderCell.xib; sourceTree = "<group>"; };
 		105A0E262859217900B4CDF9 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		105A0E282859218900B4CDF9 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		105A0E2A285927DC00B4CDF9 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
@@ -278,6 +282,15 @@
 				103ACCA9284E4B2E00208AB7 /* News+Contracts.swift */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		10589C1D2860A7B100165F32 /* CoinInfoHeader */ = {
+			isa = PBXGroup;
+			children = (
+				10589C1E2860A7C300165F32 /* CoinInfoHeaderCell.swift */,
+				10589C1F2860A7C300165F32 /* CoinInfoHeaderCell.xib */,
+			);
+			path = CoinInfoHeader;
 			sourceTree = "<group>";
 		};
 		105A0E232859214700B4CDF9 /* Home */ = {
@@ -677,6 +690,7 @@
 		10A355BB285E3B4F0056CDB9 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				10589C1D2860A7B100165F32 /* CoinInfoHeader */,
 				10A355CC285E61E50056CDB9 /* PortfolioInfoHeader */,
 				10A355C5285E56810056CDB9 /* Portfolio */,
 				10A355C4285E56770056CDB9 /* Graph */,
@@ -839,6 +853,7 @@
 				10A355C0285E412A0056CDB9 /* GraphCell.xib in Resources */,
 				105C06A8284D50EF00B097F0 /* LaunchScreen.storyboard in Resources */,
 				1078F1F9285899A600EBA884 /* Market.storyboard in Resources */,
+				10589C212860A7C300165F32 /* CoinInfoHeaderCell.xib in Resources */,
 				105A0E272859217900B4CDF9 /* Home.storyboard in Resources */,
 				103ACCB5284E598E00208AB7 /* News.storyboard in Resources */,
 				101E401F285C8CCF002506F8 /* CurrencyCell.xib in Resources */,
@@ -944,6 +959,7 @@
 				10DEB16F285A8D5D0005BC59 /* CoinList.swift in Sources */,
 				10A355AB285DFE940056CDB9 /* Portfolyo+Router.swift in Sources */,
 				10A355C8285E56BE0056CDB9 /* PortfolioCell.swift in Sources */,
+				10589C202860A7C300165F32 /* CoinInfoHeaderCell.swift in Sources */,
 				10A355B0285E103B0056CDB9 /* RealmManager+Protocols.swift in Sources */,
 				105C507A285B23F9009339E3 /* SearchViewController.swift in Sources */,
 				105A0E292859218900B4CDF9 /* HomeViewController.swift in Sources */,

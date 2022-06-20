@@ -41,6 +41,7 @@ extension PortfolyoPresenter: PortfolyoViewInteractorDelegate {
 extension PortfolyoPresenter {
     
     enum Sections {
+        case itemHeader
         case itemCell(data: CoinListElement)
         case titleCell(_ text: String)
         case graphCell(_ data: [Double])
@@ -48,6 +49,8 @@ extension PortfolyoPresenter {
         
         var cellHeigth: CGFloat {
             switch self {
+            case .itemHeader:
+                return 40
             case .itemCell:
                 return 90
             case .graphCell:
@@ -75,6 +78,7 @@ extension PortfolyoPresenter {
         section.append(.graphCell(arr))
         
         section.append(.titleCell("Varlıklar"))
+        section.append(.itemHeader)
         
         if let currency = data["popularCurrency"] as? PopularCurrencyModel {
             currencySection(&section, data: currency, userData: userItems)

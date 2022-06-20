@@ -21,11 +21,13 @@ extension PortfolyoViewController {
         let textNib = UINib(nibName: "TextCell", bundle: nil)
         let graphNib = UINib(nibName: "GraphCell", bundle: nil)
         let headerNib = UINib(nibName: "PortfolioInfoHeaderCell", bundle: nil)
+        let itemHeaderNib = UINib(nibName: "CoinInfoHeaderCell", bundle: nil)
         
         tableView.register(currencyNibName, forCellReuseIdentifier: "PortfolioCell")
         tableView.register(textNib, forCellReuseIdentifier: "TextCell")
         tableView.register(graphNib, forCellReuseIdentifier: "GraphCell")
         tableView.register(headerNib, forCellReuseIdentifier: "PortfolioInfoHeaderCell")
+        tableView.register(itemHeaderNib, forCellReuseIdentifier: "CoinInfoHeaderCell")
     }
     
     func setTableViewCell(section: PortfolyoPresenter.Sections) -> UITableViewCell {
@@ -33,6 +35,7 @@ extension PortfolyoViewController {
         let textCell: TextCell = tableView.reusableCell()
         let graphCell: GraphCell = tableView.reusableCell()
         let headerCell: PortfolioInfoHeaderCell = tableView.reusableCell()
+        let currencyHeader: CoinInfoHeaderCell = tableView.reusableCell()
         
         switch section {
         case .itemCell(let data):
@@ -49,6 +52,8 @@ extension PortfolyoViewController {
         case .headerCell(let balance):
             headerCell.setupCell(balance: balance)
             return headerCell
+        case .itemHeader:
+            return currencyHeader
         }
     }
 }

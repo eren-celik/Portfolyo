@@ -8,11 +8,12 @@
 import Foundation
 
 extension PortfolyoViewController {
+    
     func setStyle() {
         setNavigationBar()
     }
     
     func setNavigationBar() {
-        navigationController?.title = "Portfolyo"
+        navigationController?.visibleViewController?.title = "Portfolyo"
     }
 }

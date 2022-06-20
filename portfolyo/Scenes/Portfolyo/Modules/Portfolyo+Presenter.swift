@@ -14,6 +14,8 @@ final class PortfolyoPresenter: PortfolyoPresenterProtocol {
     private var interactor: PortfolyoInteractorProtocol
     private var router: PortfolyoRouterProtocol
     
+    private var totalBalance = [Double]()
+    
     init(view: PortfolyoViewProtocol,
          interactor: PortfolyoInteractorProtocol,
          router: PortfolyoRouterProtocol) {
@@ -42,6 +44,7 @@ extension PortfolyoPresenter {
         case itemCell(data: CoinListElement)
         case titleCell(_ text: String)
         case graphCell(_ data: [Double])
+        case headerCell(_ balance: String)
         
         var cellHeigth: CGFloat {
             switch self {
@@ -51,6 +54,8 @@ extension PortfolyoPresenter {
                 return 300
             case .titleCell:
                 return 50
+            case .headerCell:
+                return 70
             }
         }
     }
@@ -79,6 +84,12 @@ extension PortfolyoPresenter {
             coinSection(&section, data: coinItems, userData: userItems)
         }
         
+        if totalBalance.count > 0 {
+            let sum = totalBalance.reduce(0, +)
+            let price = sum.convertPrice()
+            section.insert(.headerCell("\(price)"), at: 0)
+        }
+        
         return section
     }
     
@@ -87,6 +98,7 @@ extension PortfolyoPresenter {
                                  userData: Results<PortfolyoRealmModel>) {
         let arr = data.response?.compactMap({ element -> PopularCurrencyData in
             if let enitiy = userData.first(where: { $0.itemId == element.id }) {
+                totalBalance.append(Double(enitiy.quantitiy) * Double(element.currentPrice ?? "0.0")!)
                 return element.updateHoldings(amount: Double(enitiy.quantitiy))
             }
             return element
@@ -109,6 +121,7 @@ extension PortfolyoPresenter {
                              userData: Results<PortfolyoRealmModel>) {
         let newCoinElements = data.compactMap { element -> CoinListElement in
             if let enitiy = userData.first(where: { $0.itemId == element.id }) {
+                totalBalance.append(Double(enitiy.quantitiy) * (element.currentPrice ?? 0))
                 return element.updateHoldings(amount: Double(enitiy.quantitiy))
             }
             return element

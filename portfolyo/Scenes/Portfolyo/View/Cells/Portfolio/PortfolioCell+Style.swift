@@ -19,17 +19,8 @@ extension PortfolioCell {
     }
     
     func formatPrice() {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .currency
-        
-        let price = NSNumber(value: coinData?.currentPrice ?? 0)
-        let formattedPrice = formatter.string(from: price)!
-        
-        let amountPrice = NSNumber(value: coinData?.currentHoldingsValue ?? 0)
-        let formattedAmountPrice = formatter.string(from: amountPrice)!
-        
-        priceLabel.text = formattedPrice
-        totalPriceLabel.text = formattedAmountPrice
+        priceLabel.text = coinData?.currentPrice?.convertPrice()
+        totalPriceLabel.text = coinData?.currentHoldingsValue.convertPrice()
     }
     
     private func setShadow() {

@@ -58,34 +58,64 @@ extension PortfolyoPresenter {
     func defineDataSource(_ data: [String: Any]) -> [Sections] {
         var section = [Sections]()
         
-        guard let coinItems = data["coinData"] as? CoinListModel,
-              let items = data["userItems"] as? Results<PortfolyoRealmModel> else {
+        guard let userItems = data["userItems"] as? Results<PortfolyoRealmModel> else {
             section.append(.titleCell("Data Bulunamadı"))
             return section
         }
         
-//        var arr = [Double]()
-//        items.forEach { model in
-//            arr.append(contentsOf: model.sparkline.toArray())
-//        }
-//        section.append(.graphCell(arr))
-        
+        var arr = [Double]()
+        userItems.forEach { model in
+            arr.append(contentsOf: model.sparkline.toArray())
+        }
+        section.append(.graphCell(arr))
         
         section.append(.titleCell("Varlıklar"))
         
-        let arr = coinItems.compactMap { element -> CoinListElement in
-            
-            if let enitiy = items.first(where: { $0.itemId == element.id }) {
+        if let currency = data["popularCurrency"] as? PopularCurrencyModel {
+            currencySection(&section, data: currency, userData: userItems)
+        }
+        
+        if let coinItems = data["coinData"] as? CoinListModel {
+            coinSection(&section, data: coinItems, userData: userItems)
+        }
+        
+        return section
+    }
+    
+    private func currencySection(_ section: inout Array<Sections>,
+                                 data: PopularCurrencyModel,
+                                 userData: Results<PortfolyoRealmModel>) {
+        let arr = data.response?.compactMap({ element -> PopularCurrencyData in
+            if let enitiy = userData.first(where: { $0.itemId == element.id }) {
+                return element.updateHoldings(amount: Double(enitiy.quantitiy))
+            }
+            return element
+        })
+        
+        for element in (arr ?? []) {
+            let dto = CoinListElement(id: element.id,
+                                      name: element.symbol,
+                                      currentPrice: Double(element.currentPrice ?? "0.0")!,
+                                      high24H: Double(element.high ?? "0.0")!,
+                                      low24H: Double(element.low ?? "0.0")!,
+                                      priceChangePercentage24H: Double(element.changePretenge ?? "0.0")!,
+                                      currentHoldings: element.currentHoldings)
+            section.append(.itemCell(data: dto))
+        }
+    }
+    
+    private func coinSection(_ section: inout Array<Sections>,
+                             data: CoinListModel,
+                             userData: Results<PortfolyoRealmModel>) {
+        let newCoinElements = data.compactMap { element -> CoinListElement in
+            if let enitiy = userData.first(where: { $0.itemId == element.id }) {
                 return element.updateHoldings(amount: Double(enitiy.quantitiy))
             }
             return element
         }
         
-        arr.forEach { element in
+        newCoinElements.forEach { element in
             section.append(.itemCell(data: element))
         }
-        
-        
-        return section
     }
 }

@@ -10,6 +10,7 @@ import Foundation
 typealias CoinListModel = [CoinListElement]
 
 struct CoinListElement: Identifiable, Codable {
+    
     var id, symbol, name: String?
     var image: String?
     var currentPrice: Double?
@@ -67,6 +68,37 @@ struct CoinListElement: Identifiable, Codable {
     
     var rank: Int {
         return Int(marketCapRank ?? 0)
+    }
+    
+    init(id: String? = nil, symbol: String? = nil, name: String? = nil, image: String? = nil, currentPrice: Double? = nil, marketCap: Double? = nil, marketCapRank: Double? = nil, fullyDilutedValuation: Double? = nil, totalVolume: Double? = nil, high24H: Double? = nil, low24H: Double? = nil, priceChange24H: Double? = nil, priceChangePercentage24H: Double? = nil, marketCapChange24H: Double? = nil, marketCapChangePercentage24H: Double? = nil, circulatingSupply: Double? = nil, totalSupply: Double? = nil, maxSupply: Double? = nil, ath: Double? = nil, athChangePercentage: Double? = nil, athDate: String? = nil, atl: Double? = nil, atlChangePercentage: Double? = nil, atlDate: String? = nil, lastUpdated: String? = nil, sparklineIn7D: SparklineIn7D? = nil, priceChangePercentage24HInCurrency: Double? = nil, currentHoldings: Double? = nil) {
+        self.id = id
+        self.symbol = symbol
+        self.name = name
+        self.image = image
+        self.currentPrice = currentPrice
+        self.marketCap = marketCap
+        self.marketCapRank = marketCapRank
+        self.fullyDilutedValuation = fullyDilutedValuation
+        self.totalVolume = totalVolume
+        self.high24H = high24H
+        self.low24H = low24H
+        self.priceChange24H = priceChange24H
+        self.priceChangePercentage24H = priceChangePercentage24H
+        self.marketCapChange24H = marketCapChange24H
+        self.marketCapChangePercentage24H = marketCapChangePercentage24H
+        self.circulatingSupply = circulatingSupply
+        self.totalSupply = totalSupply
+        self.maxSupply = maxSupply
+        self.ath = ath
+        self.athChangePercentage = athChangePercentage
+        self.athDate = athDate
+        self.atl = atl
+        self.atlChangePercentage = atlChangePercentage
+        self.atlDate = atlDate
+        self.lastUpdated = lastUpdated
+        self.sparklineIn7D = sparklineIn7D
+        self.priceChangePercentage24HInCurrency = priceChangePercentage24HInCurrency
+        self.currentHoldings = currentHoldings
     }
     
 }

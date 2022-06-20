@@ -25,7 +25,7 @@ final class PortfolyoInteractor: PortfolyoInteractorProtocol {
     func getPorfolyoData() {
         let id = getUserItems()
         getCoinInfo(coinIDs: id)
-        
+//        getPopularCurrency()
         group.notify(queue: .main) {
             self.delegate?.handleOutput(self.data)
         }
@@ -50,6 +50,21 @@ final class PortfolyoInteractor: PortfolyoInteractorProtocol {
                 self?.data["coinData"] = data
             case .failure(_):
                 self?.delegate?.handleOutput(["err": ""])
+            }
+            self?.group.leave()
+        })
+    }
+    
+    private func getPopularCurrency() {
+        typealias CurrencyResult = Result<PopularCurrencyModel, GUNetworkErrors>
+        group.enter()
+        manager?.request(target: .popularCurrency,
+                         completion: { [weak self] (result: CurrencyResult) in
+            switch result {
+            case .success(let data):
+                self?.data["popularCurrency"] = data
+            case .failure(_):
+                self?.delegate?.handleOutput(["error": ""])
             }
             self?.group.leave()
         })

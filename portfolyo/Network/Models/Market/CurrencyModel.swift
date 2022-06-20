@@ -21,10 +21,12 @@ public struct PopularCurrencyModel: Codable {
 }
 
 public struct PopularCurrencyData: Codable {
+    public let id: String?
     public let high, low: String?
     public let changePretenge: String?
     public let symbol: String?
     public let currentPrice: String?
+    public var currentHoldings: Double?
     
     enum CodingKeys: String, CodingKey {
         case high = "h"
@@ -32,5 +34,21 @@ public struct PopularCurrencyData: Codable {
         case currentPrice = "c"
         case changePretenge = "ch"
         case symbol = "s"
+        case id
+        case currentHoldings
+    }
+    
+    func updateHoldings(amount: Double) -> Self {
+        return PopularCurrencyData(id: id,
+                                   high: high,
+                                   low: low,
+                                   changePretenge: changePretenge,
+                                   symbol: symbol,
+                                   currentPrice: currentPrice,
+                                   currentHoldings: amount)
+    }
+    
+    var currentHoldingsValue: Double {
+        return (currentHoldings ?? 0) * Double(currentPrice ?? "0.0")!
     }
 }

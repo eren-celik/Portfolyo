@@ -18,8 +18,8 @@ final class MarketRouter: MarketRouterProtocol {
     func navigate(to route: MarketViewRoute) {
         switch route {
         case .search:
-            let searchfactory = StoryboardViewControllerFactory(storyboard: UIStoryboard(name: "Search", bundle: nil))
-            let newsViewController = searchfactory.createSeachView()
+            let searchfactory = StoryboardViewControllerFactory(storyboard: UIStoryboard(name: "Portfolyo", bundle: nil))
+            let newsViewController = searchfactory.createPortfolyoView()
             view.navigationController?.pushViewController(newsViewController, animated: true)
             break
         }

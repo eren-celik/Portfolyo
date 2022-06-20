@@ -24,6 +24,7 @@
 		10589C1C2860A43800165F32 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10589C1B2860A43800165F32 /* Double+Extension.swift */; };
 		10589C202860A7C300165F32 /* CoinInfoHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10589C1E2860A7C300165F32 /* CoinInfoHeaderCell.swift */; };
 		10589C212860A7C300165F32 /* CoinInfoHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10589C1F2860A7C300165F32 /* CoinInfoHeaderCell.xib */; };
+		10589C232860DAB200165F32 /* GoldValueConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10589C222860DAB200165F32 /* GoldValueConverter.swift */; };
 		105A0E272859217900B4CDF9 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 105A0E262859217900B4CDF9 /* Home.storyboard */; };
 		105A0E292859218900B4CDF9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105A0E282859218900B4CDF9 /* HomeViewController.swift */; };
 		105A0E2B285927DC00B4CDF9 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105A0E2A285927DC00B4CDF9 /* UIView+Extension.swift */; };
@@ -122,6 +123,7 @@
 		10589C1B2860A43800165F32 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 		10589C1E2860A7C300165F32 /* CoinInfoHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinInfoHeaderCell.swift; sourceTree = "<group>"; };
 		10589C1F2860A7C300165F32 /* CoinInfoHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoinInfoHeaderCell.xib; sourceTree = "<group>"; };
+		10589C222860DAB200165F32 /* GoldValueConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoldValueConverter.swift; sourceTree = "<group>"; };
 		105A0E262859217900B4CDF9 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		105A0E282859218900B4CDF9 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		105A0E2A285927DC00B4CDF9 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
@@ -683,6 +685,7 @@
 			isa = PBXGroup;
 			children = (
 				10A355B4285E15E70056CDB9 /* PortfolyoRealmModel.swift */,
+				10589C222860DAB200165F32 /* GoldValueConverter.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -975,6 +978,7 @@
 				10A355A9285DFE8A0056CDB9 /* Portfolyo+Presenter.swift in Sources */,
 				105C5079285B23F9009339E3 /* SearchInteractor.swift in Sources */,
 				1078F1FD28589BBF00EBA884 /* BaseTabBarController.swift in Sources */,
+				10589C232860DAB200165F32 /* GoldValueConverter.swift in Sources */,
 				105C069C284D50ED00B097F0 /* AppDelegate.swift in Sources */,
 				105D350D284E400E000EF063 /* UIFont+Extension.swift in Sources */,
 				105C5076285B23F9009339E3 /* SearchPresenter.swift in Sources */,

@@ -15,13 +15,16 @@ final class PortfolyoPresenter: PortfolyoPresenterProtocol {
     private var router: PortfolyoRouterProtocol
     
     private var totalBalance = [Double]()
+    private var goldConverter: GoldValueConverter
     
     init(view: PortfolyoViewProtocol,
          interactor: PortfolyoInteractorProtocol,
-         router: PortfolyoRouterProtocol) {
+         router: PortfolyoRouterProtocol,
+         goldConverter: GoldValueConverter) {
         self.view = view
         self.router = router
         self.interactor = interactor
+        self.goldConverter = goldConverter
         self.interactor.delegate = self
     }
     
@@ -62,29 +65,7 @@ extension PortfolyoPresenter {
             }
         }
     }
-    
-    enum GoldTypes: CaseIterable {
-        case gramGold
-        case quarterGold
-        case halfGold
-        case cumhurGold
-        case onsGold
-        
-        var name: String {
-            switch self {
-            case .gramGold:
-                return "Gram Altın"
-            case .quarterGold:
-                return "Çeyrek Altın"
-            case .halfGold:
-                return "Yarım Altın"
-            case .cumhurGold:
-                return "Cumhuriyet Altın"
-            case .onsGold:
-                return "Ons Altın"
-            }
-        }
-    }
+
     
     func defineDataSource(_ data: [String: Any]) -> [Sections] {
         var section = [Sections]()
@@ -128,7 +109,9 @@ extension PortfolyoPresenter {
                                                   symbol: userItem.name,
                                                   currentPrice: element.currentPrice,
                                                   currentHoldings: Double(userItem.quantitiy))
-                    goldSectionSetter(&section, element: dto)
+                    let value = goldConverter.goldSectionSetter(element: dto)
+                    totalBalance.append(Double(userItem.quantitiy) * (value.currentPrice ?? 0.0))
+                    section.append(.itemCell(data: value))
                 }else {
                     totalBalance.append(Double(userItem.quantitiy) * Double(element.currentPrice ?? "0.0")!)
                     let dto = CoinListElement(id: element.id,
@@ -141,53 +124,6 @@ extension PortfolyoPresenter {
                     section.append(.itemCell(data: dto))
                 }
             }
-        }
-    }
-    
-    func goldSectionSetter(_ section: inout Array<Sections>, element: PopularCurrencyData) {
-        
-        
-        let price = Double(element.currentPrice ?? "0.0")!
-        let gramPrice = price / 31.1034768
-        var goldPrice = Double()
-        var dto = CoinListElement()
-        
-        for goldType in GoldTypes.allCases where goldType.name == element.symbol {
-            switch goldType {
-            case .gramGold:
-                goldPrice = gramPrice
-                dto = CoinListElement(id: element.id,
-                                      name: goldType.name,
-                                      currentPrice: gramPrice,
-                                      currentHoldings: element.currentHoldings)
-                
-            case .quarterGold:
-                goldPrice = (gramPrice * 1.75)
-                dto = CoinListElement(id: element.id,
-                                      name: goldType.name,
-                                      currentPrice: goldPrice,
-                                      currentHoldings: element.currentHoldings)
-            case .halfGold:
-                goldPrice = (gramPrice * 3.6)
-                dto = CoinListElement(id: element.id,
-                                      name: goldType.name,
-                                      currentPrice: (gramPrice * 3.6),
-                                      currentHoldings: element.currentHoldings)
-            case .cumhurGold:
-                goldPrice = (gramPrice * 7)
-                dto = CoinListElement(id: element.id,
-                                      name: goldType.name,
-                                      currentPrice: (gramPrice * 7),
-                                      currentHoldings: element.currentHoldings)
-            case .onsGold:
-                goldPrice = price
-                dto = CoinListElement(id: element.id,
-                                      name: goldType.name,
-                                      currentPrice: price,
-                                      currentHoldings: element.currentHoldings)
-            }
-            totalBalance.append((element.currentHoldings ?? 0.0) * goldPrice)
-            section.append(.itemCell(data: dto))
         }
     }
     

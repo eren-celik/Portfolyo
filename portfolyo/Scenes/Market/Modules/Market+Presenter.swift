@@ -13,12 +13,16 @@ final class MarketPresenter: MarketPresenterProtocol {
     private var interactor: MarketInteractorProtocol
     private var router: MarketRouterProtocol
     
+    private let goldConverter: GoldValueConverter
+    
     init(view: MarketViewProtocol,
          interactor: MarketInteractorProtocol,
-         router: MarketRouterProtocol) {
+         router: MarketRouterProtocol,
+         goldConverter: GoldValueConverter) {
         self.view = view
         self.router = router
         self.interactor = interactor
+        self.goldConverter = goldConverter
         self.interactor.delegate = self
     }
     
@@ -71,10 +75,21 @@ extension MarketPresenter {
             section.append(.titleCell("Popular Currencies"))
             
             for element in pop.response ?? [] {
-                let element = CoinListElement(name: element.symbol,
-                                              currentPrice: Double(element.currentPrice ?? "0"),
-                                              priceChangePercentage24H: Double(element.changePretenge ?? "0"))
-                section.append(.coinCell(data: element))
+                
+                if element.id == "1983" {
+                    for goldType in GoldValueConverter.GoldTypes.allCases {
+                        let dto = PopularCurrencyData(symbol: goldType.name,
+                                                      currentPrice: element.currentPrice)
+                        let value = goldConverter.goldSectionSetter(element: dto)
+                        section.append(.coinCell(data: value))
+                    }
+                }else {
+                    let element = CoinListElement(id: element.id,
+                                                  name: element.symbol,
+                                                  currentPrice: Double(element.currentPrice ?? "0"),
+                                                  priceChangePercentage24H: Double(element.changePretenge ?? "0"))
+                    section.append(.coinCell(data: element))
+                }
             }
         }
         

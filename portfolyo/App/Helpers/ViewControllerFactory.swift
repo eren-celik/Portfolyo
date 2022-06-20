@@ -36,10 +36,12 @@ extension StoryboardViewControllerFactory {
         let manager = NetworkManager<MarketAPI>(provider: MoyaProvider<MarketAPI>())
         let router = MarketRouter(view: view)
         let interactor = MarketInteractor(manager: manager)
+        let converter = GoldValueConverter()
         let presenter = MarketPresenter(
             view: view,
             interactor: interactor,
-            router: router
+            router: router,
+            goldConverter: converter
         )
         view.presenter = presenter
         return view
@@ -56,10 +58,12 @@ extension StoryboardViewControllerFactory {
         let realmManager: RealmManager = RealmManager()
         let router = PortfolyoRouter(view: view)
         let interactor = PortfolyoInteractor(manager: manager, realmManager: realmManager)
+        let converter = GoldValueConverter()
         let presenter = PortfolyoPresenter(
             view: view,
             interactor: interactor,
-            router: router
+            router: router,
+            goldConverter: converter
         )
         view.presenter = presenter
         return view

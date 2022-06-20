@@ -25,6 +25,12 @@
 		10589C202860A7C300165F32 /* CoinInfoHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10589C1E2860A7C300165F32 /* CoinInfoHeaderCell.swift */; };
 		10589C212860A7C300165F32 /* CoinInfoHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10589C1F2860A7C300165F32 /* CoinInfoHeaderCell.xib */; };
 		10589C232860DAB200165F32 /* GoldValueConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10589C222860DAB200165F32 /* GoldValueConverter.swift */; };
+		10589C2B2860EBC600165F32 /* TransactionsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10589C262860EBC600165F32 /* TransactionsPresenter.swift */; };
+		10589C2C2860EBC600165F32 /* TransactionsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10589C272860EBC600165F32 /* TransactionsRouter.swift */; };
+		10589C2D2860EBC600165F32 /* TransactionsContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10589C282860EBC600165F32 /* TransactionsContracts.swift */; };
+		10589C2E2860EBC600165F32 /* TransactionsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10589C292860EBC600165F32 /* TransactionsInteractor.swift */; };
+		10589C2F2860EBC600165F32 /* TransactionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10589C2A2860EBC600165F32 /* TransactionsViewController.swift */; };
+		10589C312860EC0C00165F32 /* Transactions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10589C302860EC0C00165F32 /* Transactions.storyboard */; };
 		105A0E272859217900B4CDF9 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 105A0E262859217900B4CDF9 /* Home.storyboard */; };
 		105A0E292859218900B4CDF9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105A0E282859218900B4CDF9 /* HomeViewController.swift */; };
 		105A0E2B285927DC00B4CDF9 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105A0E2A285927DC00B4CDF9 /* UIView+Extension.swift */; };
@@ -124,6 +130,12 @@
 		10589C1E2860A7C300165F32 /* CoinInfoHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinInfoHeaderCell.swift; sourceTree = "<group>"; };
 		10589C1F2860A7C300165F32 /* CoinInfoHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoinInfoHeaderCell.xib; sourceTree = "<group>"; };
 		10589C222860DAB200165F32 /* GoldValueConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoldValueConverter.swift; sourceTree = "<group>"; };
+		10589C262860EBC600165F32 /* TransactionsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsPresenter.swift; sourceTree = "<group>"; };
+		10589C272860EBC600165F32 /* TransactionsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsRouter.swift; sourceTree = "<group>"; };
+		10589C282860EBC600165F32 /* TransactionsContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsContracts.swift; sourceTree = "<group>"; };
+		10589C292860EBC600165F32 /* TransactionsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsInteractor.swift; sourceTree = "<group>"; };
+		10589C2A2860EBC600165F32 /* TransactionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewController.swift; sourceTree = "<group>"; };
+		10589C302860EC0C00165F32 /* Transactions.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Transactions.storyboard; sourceTree = "<group>"; };
 		105A0E262859217900B4CDF9 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		105A0E282859218900B4CDF9 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		105A0E2A285927DC00B4CDF9 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
@@ -295,6 +307,43 @@
 			path = CoinInfoHeader;
 			sourceTree = "<group>";
 		};
+		10589C242860EB9500165F32 /* Transactions */ = {
+			isa = PBXGroup;
+			children = (
+				10589C322860EC6600165F32 /* Modules */,
+				10589C332860EC6B00165F32 /* Resources */,
+				10589C342860EC7800165F32 /* View */,
+			);
+			path = Transactions;
+			sourceTree = "<group>";
+		};
+		10589C322860EC6600165F32 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				10589C292860EBC600165F32 /* TransactionsInteractor.swift */,
+				10589C262860EBC600165F32 /* TransactionsPresenter.swift */,
+				10589C272860EBC600165F32 /* TransactionsRouter.swift */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		10589C332860EC6B00165F32 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				10589C302860EC0C00165F32 /* Transactions.storyboard */,
+				10589C282860EBC600165F32 /* TransactionsContracts.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		10589C342860EC7800165F32 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				10589C2A2860EBC600165F32 /* TransactionsViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		105A0E232859214700B4CDF9 /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -360,6 +409,7 @@
 				105D3533284E4834000EF063 /* News */,
 				10A3559C285DFD990056CDB9 /* Portfolyo */,
 				105C504F285B2375009339E3 /* Search */,
+				10589C242860EB9500165F32 /* Transactions */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -862,6 +912,7 @@
 				101E401F285C8CCF002506F8 /* CurrencyCell.xib in Resources */,
 				105C507D285B251E009339E3 /* Search.storyboard in Resources */,
 				101E4027285CA084002506F8 /* TextCell.xib in Resources */,
+				10589C312860EC0C00165F32 /* Transactions.storyboard in Resources */,
 				10A355D0285E62030056CDB9 /* PortfolioInfoHeaderCell.xib in Resources */,
 				10A355C9285E56BE0056CDB9 /* PortfolioCell.xib in Resources */,
 				10A355A5285DFE140056CDB9 /* Portfolyo.storyboard in Resources */,
@@ -951,9 +1002,11 @@
 				101E4026285CA084002506F8 /* TextCell.swift in Sources */,
 				10A355B7285E37330056CDB9 /* PortfolyoViewController+TableView.swift in Sources */,
 				105D3528284E416D000EF063 /* Dummy+Data.swift in Sources */,
+				10589C2D2860EBC600165F32 /* TransactionsContracts.swift in Sources */,
 				105D3522284E40DF000EF063 /* NewsModel.swift in Sources */,
 				103ACCB0284E4B2E00208AB7 /* News+Contracts.swift in Sources */,
 				10A355BA285E39670056CDB9 /* PortfolyoViewController+Style.swift in Sources */,
+				10589C2F2860EBC600165F32 /* TransactionsViewController.swift in Sources */,
 				103ACCAF284E4B2E00208AB7 /* News+Router.swift in Sources */,
 				10DEB165285A86D90005BC59 /* Market+Router.swift in Sources */,
 				10DEB16C285A8BE10005BC59 /* Market+Provider.swift in Sources */,
@@ -963,6 +1016,7 @@
 				10A355AB285DFE940056CDB9 /* Portfolyo+Router.swift in Sources */,
 				10A355C8285E56BE0056CDB9 /* PortfolioCell.swift in Sources */,
 				10589C202860A7C300165F32 /* CoinInfoHeaderCell.swift in Sources */,
+				10589C2C2860EBC600165F32 /* TransactionsRouter.swift in Sources */,
 				10A355B0285E103B0056CDB9 /* RealmManager+Protocols.swift in Sources */,
 				105C507A285B23F9009339E3 /* SearchViewController.swift in Sources */,
 				105A0E292859218900B4CDF9 /* HomeViewController.swift in Sources */,
@@ -983,11 +1037,13 @@
 				105D350D284E400E000EF063 /* UIFont+Extension.swift in Sources */,
 				105C5076285B23F9009339E3 /* SearchPresenter.swift in Sources */,
 				10A355CF285E62030056CDB9 /* PortfolioInfoHeaderCell.swift in Sources */,
+				10589C2B2860EBC600165F32 /* TransactionsPresenter.swift in Sources */,
 				105D3525284E414F000EF063 /* Constants.swift in Sources */,
 				101E401E285C8CCF002506F8 /* CurrencyCell.swift in Sources */,
 				10A355B2285E10680056CDB9 /* RealmManager+Operations.swift in Sources */,
 				10A355BF285E412A0056CDB9 /* GraphCell.swift in Sources */,
 				105C5086285B88D6009339E3 /* CurrencyModel.swift in Sources */,
+				10589C2E2860EBC600165F32 /* TransactionsInteractor.swift in Sources */,
 				10589C1C2860A43800165F32 /* Double+Extension.swift in Sources */,
 				1003523A2859DBF600121730 /* NewsViewController+Style.swift in Sources */,
 				105C5077285B23F9009339E3 /* SearchRouter.swift in Sources */,

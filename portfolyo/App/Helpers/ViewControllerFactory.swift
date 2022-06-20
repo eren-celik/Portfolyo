@@ -10,6 +10,7 @@ import Moya
 final class StoryboardViewControllerFactory {
     let storyboard: UIStoryboard
     let manager = NetworkManager<NewsAPI>(provider: MoyaProvider<NewsAPI>())
+    let realmManager: RealmManager = RealmManager()
     
     init(storyboard: UIStoryboard) {
         self.storyboard = storyboard
@@ -55,7 +56,6 @@ extension StoryboardViewControllerFactory {
     func createPortfolyoView() -> PortfolyoViewController {
         let view = storyboard.instantiateViewController(identifier: "PortfolyoViewController") as! PortfolyoViewController
         let manager = NetworkManager<MarketAPI>(provider: MoyaProvider<MarketAPI>())
-        let realmManager: RealmManager = RealmManager()
         let router = PortfolyoRouter(view: view)
         let interactor = PortfolyoInteractor(manager: manager, realmManager: realmManager)
         let converter = GoldValueConverter()

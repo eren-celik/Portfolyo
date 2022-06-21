@@ -12,6 +12,8 @@ final class PortfolyoRouter: VIPERRouter, PortfolyoRouterProtocol {
     func navigate(to route: PortfolyoViewRoute) {
         switch route {
         case .coinDetail:
+            let view = StoryboardedFactory.createView(.transaction, storyboard: "Transactions")
+            controller?.present(view, animated: true)
             break
         }
     }

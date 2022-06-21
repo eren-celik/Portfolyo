@@ -15,6 +15,7 @@ protocol PortfolyoViewProtocol: AnyObject {
 
 protocol PortfolyoPresenterProtocol: AnyObject {
     func preparePortfolyoData()
+    func addTransaction()
 }
 
 //MARK: - INTERACTOR

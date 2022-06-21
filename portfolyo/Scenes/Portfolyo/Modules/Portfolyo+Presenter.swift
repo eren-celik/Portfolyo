@@ -19,12 +19,20 @@ final class PortfolyoPresenter: VIPERPresenter, PortfolyoPresenterProtocol {
         interactora?.delegate = self
         return interactora
     }
+    
+    var portfolyoRouter: PortfolyoRouter? {
+        return router as? PortfolyoRouter
+    }
 
     private var totalBalance = [Double]()
     let goldPriceConverter = GoldValueConverter()
     
     func preparePortfolyoData() {
         portfolyoInteractor?.getPorfolyoData()
+    }
+    
+    func addTransaction() {
+        portfolyoRouter?.navigate(to: .coinDetail)
     }
 }
 

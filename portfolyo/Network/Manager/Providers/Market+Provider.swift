@@ -61,7 +61,7 @@ extension MarketAPI: TargetType {
         case .exchanges(let currency):
             return ["from": currency]
         case .popularCurrency:
-            return ["symbol": "USD/TRY,EUR/TRY,GBP/TRY,CAD/TRY",
+            return ["symbol": "USD/TRY,EUR/TRY,GBP/TRY,CAD/TRY,XAU/TRY",
                     "access_key": "1wnBEfw8liiUNVhGLNYZVtBN"]
         }
     }

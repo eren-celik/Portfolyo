@@ -62,6 +62,8 @@
 		105D352F284E41D4000EF063 /* Network+Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105D352E284E41D4000EF063 /* Network+Test.swift */; };
 		105D3532284E41F7000EF063 /* Stub+Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105D3531284E41F7000EF063 /* Stub+Endpoints.swift */; };
 		10632ACD2861AA8B0088A369 /* ViperBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10632ACC2861AA8B0088A369 /* ViperBuilder.swift */; };
+		10632AD02861E6E20088A369 /* UIStoryboard+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10632ACF2861E6E20088A369 /* UIStoryboard+Extension.swift */; };
+		10632AD22861E7080088A369 /* ViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10632AD12861E7080088A369 /* ViewType.swift */; };
 		1078F1F42858995D00EBA884 /* MarketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1078F1F32858995D00EBA884 /* MarketViewController.swift */; };
 		1078F1F9285899A600EBA884 /* Market.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1078F1F8285899A600EBA884 /* Market.storyboard */; };
 		1078F1FB285899B700EBA884 /* Market+Contracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1078F1FA285899B700EBA884 /* Market+Contracts.swift */; };
@@ -171,6 +173,8 @@
 		105D352E284E41D4000EF063 /* Network+Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Network+Test.swift"; sourceTree = "<group>"; };
 		105D3531284E41F7000EF063 /* Stub+Endpoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Stub+Endpoints.swift"; sourceTree = "<group>"; };
 		10632ACC2861AA8B0088A369 /* ViperBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViperBuilder.swift; sourceTree = "<group>"; };
+		10632ACF2861E6E20088A369 /* UIStoryboard+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Extension.swift"; sourceTree = "<group>"; };
+		10632AD12861E7080088A369 /* ViewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewType.swift; sourceTree = "<group>"; };
 		1078F1F32858995D00EBA884 /* MarketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketViewController.swift; sourceTree = "<group>"; };
 		1078F1F8285899A600EBA884 /* Market.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Market.storyboard; sourceTree = "<group>"; };
 		1078F1FA285899B700EBA884 /* Market+Contracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Market+Contracts.swift"; sourceTree = "<group>"; };
@@ -488,6 +492,7 @@
 				108E393D285137B3002C22DD /* Date+Extension.swift */,
 				10589C1B2860A43800165F32 /* Double+Extension.swift */,
 				105D350A284E400E000EF063 /* UIFont+Extension.swift */,
+				10632ACF2861E6E20088A369 /* UIStoryboard+Extension.swift */,
 				105D3508284E400E000EF063 /* UITableView+Utility.swift */,
 				105A0E2A285927DC00B4CDF9 /* UIView+Extension.swift */,
 				105C5083285B5425009339E3 /* UIViewController+Extension.swift */,
@@ -609,6 +614,7 @@
 			isa = PBXGroup;
 			children = (
 				108568B32850C393005EB39B /* ViewControllerFactory.swift */,
+				10632AD12861E7080088A369 /* ViewType.swift */,
 				10632ACC2861AA8B0088A369 /* ViperBuilder.swift */,
 			);
 			path = Builder;
@@ -1040,6 +1046,7 @@
 				101E4021285C9260002506F8 /* CurrencyCell+Style.swift in Sources */,
 				105D3516284E405E000EF063 /* Analytics+Engine.swift in Sources */,
 				1078F1F42858995D00EBA884 /* MarketViewController.swift in Sources */,
+				10632AD22861E7080088A369 /* ViewType.swift in Sources */,
 				108568BA2850D31B005EB39B /* NewsTableViewCell.swift in Sources */,
 				10A355A9285DFE8A0056CDB9 /* Portfolyo+Presenter.swift in Sources */,
 				105C5079285B23F9009339E3 /* SearchInteractor.swift in Sources */,
@@ -1054,6 +1061,7 @@
 				101E401E285C8CCF002506F8 /* CurrencyCell.swift in Sources */,
 				10A355B2285E10680056CDB9 /* RealmManager+Operations.swift in Sources */,
 				10A355BF285E412A0056CDB9 /* GraphCell.swift in Sources */,
+				10632AD02861E6E20088A369 /* UIStoryboard+Extension.swift in Sources */,
 				105C5086285B88D6009339E3 /* CurrencyModel.swift in Sources */,
 				10589C2E2860EBC600165F32 /* TransactionsInteractor.swift in Sources */,
 				10589C1C2860A43800165F32 /* Double+Extension.swift in Sources */,

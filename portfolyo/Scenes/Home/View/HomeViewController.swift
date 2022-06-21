@@ -43,9 +43,9 @@ extension HomeViewController: PagingViewControllerDataSource {
     }
     
     func pagingViewController(_: PagingViewController, viewControllerAt index: Int) -> UIViewController {
-        let newsfactory = StoryboardedFactory("News")
-        let data = categories[index]
-        let viewController = newsfactory.createNewsView(category: data)
-        return viewController
+//        let newsfactory = StoryboardedFactory("News")
+//        let data = categories[index]
+//        let viewController = newsfactory.createNewsView(category: data)
+        return UIViewController()
     }
 }

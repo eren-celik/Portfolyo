@@ -12,8 +12,8 @@ final class TabBarRouter {
     var viewController: UIViewController
     
     typealias SubModules = (
-        news: HomeViewController,
-        market: MarketViewController
+        news: UIViewController,
+        market: UIViewController
     )
     
     init(viewController: UIViewController) {

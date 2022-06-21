@@ -8,8 +8,8 @@
 import UIKit
 
 typealias BaseTabs = (
-    news: HomeViewController,
-    market: MarketViewController
+    news: UIViewController,
+    market: UIViewController
 )
 
 final class BaseTabBarController: UITabBarController {

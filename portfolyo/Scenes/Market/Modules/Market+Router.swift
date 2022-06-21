@@ -12,10 +12,8 @@ final class MarketRouter: VIPERRouter, MarketRouterProtocol {
     func navigate(to route: MarketViewRoute) {
         switch route {
         case .search:
-            let searchfactory = StoryboardedFactory("Portfolyo")
-            let newsViewController = searchfactory.createPortfolyoView()
-            controller?.navigationController?.pushViewController(newsViewController, animated: true)
-            break
+            let view = StoryboardedFactory.createView(.transaction, storyboard: "Transactions")
+            controller?.navigationController?.pushViewController(view, animated: true)
         }
     }
 }

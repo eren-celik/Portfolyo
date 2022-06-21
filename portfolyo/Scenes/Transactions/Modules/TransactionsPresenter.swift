@@ -8,23 +8,21 @@
 
 import UIKit
 
-class TransactionsPresenter: TransactionsPresenterProtocol {
+final class TransactionsPresenter: VIPERPresenter, TransactionsPresenterProtocol {
     
-    private unowned var view: TransactionsViewProtocol
-    private var interactor: TransactionsInteractorProtocol
-    private var router: TransactionsRouterProtocol
+    private var view: TransactionsViewProtocol? {
+        return controller as? TransactionsViewProtocol
+    }
     
-    init(view: TransactionsViewProtocol,
-         interactor: TransactionsInteractorProtocol,
-         router: TransactionsRouterProtocol) {
-        self.view = view
-        self.router = router
-        self.interactor = interactor
-        self.interactor.delegate = self
+    private var transactionsInteractor: TransactionsInteractor? {
+        let interactora = interactor as? TransactionsInteractor
+        interactora?.delegate = self
+        return interactora
     }
 }
 
 extension TransactionsPresenter: TransactionsInteractorDelegate {
+    
     func handleOutput(_ output: [String : Any]) {
         
     }

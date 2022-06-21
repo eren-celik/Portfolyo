@@ -16,11 +16,8 @@ final class AppCoordinator {
     }
     
     func start() {
-        let newsfactory = StoryboardedFactory("Home")
-        let marketfactory = StoryboardedFactory("Market")
-        
-        let newsViewController = newsfactory.createHomeView()
-        let marketViewContoller = marketfactory.createMarketView()
+        let newsViewController = StoryboardedFactory.createView(.home, storyboard: "Home")
+        let marketViewContoller = StoryboardedFactory.createView(.market, storyboard: "Market")
         
         let modules = (
             news: newsViewController,

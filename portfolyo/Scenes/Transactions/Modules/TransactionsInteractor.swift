@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class TransactionsInteractor: TransactionsInteractorProtocol {
+final class TransactionsInteractor: VIPERInteractor, TransactionsInteractorProtocol {
     
     weak var delegate: TransactionsInteractorDelegate?
     private var manager: NetworkManager<MarketAPI>?
@@ -16,4 +16,6 @@ final class TransactionsInteractor: TransactionsInteractorProtocol {
     init(manager: NetworkManager<MarketAPI>) {
         self.manager = manager
     }
+    
+    required init() {}
 }

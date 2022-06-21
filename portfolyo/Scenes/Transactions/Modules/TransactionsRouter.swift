@@ -8,13 +8,7 @@
 
 import UIKit
 
-final class TransactionsRouter: TransactionsRouterProtocol {
-    
-    unowned let view: UIViewController
-
-    init(view: UIViewController) {
-        self.view = view
-    }
+final class TransactionsRouter: VIPERRouter, TransactionsRouterProtocol {
     
     func navigate(to route: TransactionsRoute) {
         

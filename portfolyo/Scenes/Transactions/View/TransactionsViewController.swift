@@ -10,10 +10,11 @@ import UIKit
 
 final class TransactionsViewController: UIViewController {
     
-    var presenter: TransactionsPresenterProtocol!
+    var viperBuilder: VIPERBuilder<TransactionsInteractor, TransactionsPresenter, TransactionsRouter>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .red
     }
 }
 

@@ -7,20 +7,14 @@
 
 import UIKit
 
-final class MarketRouter: MarketRouterProtocol {
-    
-    unowned let view: UIViewController
-    
-    init(view: UIViewController) {
-        self.view = view
-    }
+final class MarketRouter: VIPERRouter, MarketRouterProtocol {
     
     func navigate(to route: MarketViewRoute) {
         switch route {
         case .search:
-            let searchfactory = StoryboardViewControllerFactory(storyboard: UIStoryboard(name: "Portfolyo", bundle: nil))
+            let searchfactory = StoryboardedFactory("Portfolyo")
             let newsViewController = searchfactory.createPortfolyoView()
-            view.navigationController?.pushViewController(newsViewController, animated: true)
+            controller?.navigationController?.pushViewController(newsViewController, animated: true)
             break
         }
     }

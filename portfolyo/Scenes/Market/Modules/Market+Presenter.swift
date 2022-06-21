@@ -7,30 +7,26 @@
 
 import UIKit
 
-final class MarketPresenter: MarketPresenterProtocol {
+final class MarketPresenter: VIPERPresenter, MarketPresenterProtocol {
     
-    private unowned var view: MarketViewProtocol
-    private var interactor: MarketInteractorProtocol
-    private var router: MarketRouterProtocol
+    private let goldConverter = GoldValueConverter()
     
-    private let goldConverter: GoldValueConverter
+    var view: MarketViewProtocol? {
+        return controller as? MarketViewProtocol
+    }
     
-    init(view: MarketViewProtocol,
-         interactor: MarketInteractorProtocol,
-         router: MarketRouterProtocol,
-         goldConverter: GoldValueConverter) {
-        self.view = view
-        self.router = router
-        self.interactor = interactor
-        self.goldConverter = goldConverter
-        self.interactor.delegate = self
+    var marketInteractor: MarketInteractor? {
+        let interactora = interactor as? MarketInteractor
+        interactora?.delegate = self
+        return interactora
     }
     
     func getBaseData() {
-        interactor.getAllData()
+        marketInteractor?.getAllData()
     }
     
     func showSearch() {
+        guard let router = router as? MarketRouter else { return }
         router.navigate(to: .search)
     }
 }
@@ -39,7 +35,7 @@ extension MarketPresenter: MarketViewInteractorDelegate {
     
     func handleOutput(_ output: [String : Any]) {
         let source = defineDataSource(output)
-        view.showList(section: source)
+        view?.showList(section: source)
     }
 }
 

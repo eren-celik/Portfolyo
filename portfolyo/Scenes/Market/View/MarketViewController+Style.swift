@@ -28,6 +28,6 @@ extension MarketViewController {
     
     @objc
     private func navigateSearch(_ sender: UIBarButtonItem) {
-        presenter.showSearch()
+        viperBuilder.presenter.showSearch()
     }
 }

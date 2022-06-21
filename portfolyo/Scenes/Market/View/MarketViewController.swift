@@ -9,8 +9,8 @@ import UIKit
 
 final class MarketViewController: UIViewController {
     
-    var presenter: MarketPresenterProtocol!
     @IBOutlet weak var tableView: UITableView!
+    var viperBuilder: VIPERBuilder<MarketInteractor, MarketPresenter, MarketRouter>!
     
     var coinList: [MarketPresenter.Sections] = [] {
         didSet {
@@ -20,7 +20,7 @@ final class MarketViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter.getBaseData()
+        viperBuilder.presenter.getBaseData()
         setTableView()
     }
     

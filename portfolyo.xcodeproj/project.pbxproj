@@ -61,6 +61,7 @@
 		105D3528284E416D000EF063 /* Dummy+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105D3527284E416D000EF063 /* Dummy+Data.swift */; };
 		105D352F284E41D4000EF063 /* Network+Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105D352E284E41D4000EF063 /* Network+Test.swift */; };
 		105D3532284E41F7000EF063 /* Stub+Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105D3531284E41F7000EF063 /* Stub+Endpoints.swift */; };
+		10632ACD2861AA8B0088A369 /* ViperBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10632ACC2861AA8B0088A369 /* ViperBuilder.swift */; };
 		1078F1F42858995D00EBA884 /* MarketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1078F1F32858995D00EBA884 /* MarketViewController.swift */; };
 		1078F1F9285899A600EBA884 /* Market.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1078F1F8285899A600EBA884 /* Market.storyboard */; };
 		1078F1FB285899B700EBA884 /* Market+Contracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1078F1FA285899B700EBA884 /* Market+Contracts.swift */; };
@@ -169,6 +170,7 @@
 		105D3527284E416D000EF063 /* Dummy+Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dummy+Data.swift"; sourceTree = "<group>"; };
 		105D352E284E41D4000EF063 /* Network+Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Network+Test.swift"; sourceTree = "<group>"; };
 		105D3531284E41F7000EF063 /* Stub+Endpoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Stub+Endpoints.swift"; sourceTree = "<group>"; };
+		10632ACC2861AA8B0088A369 /* ViperBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViperBuilder.swift; sourceTree = "<group>"; };
 		1078F1F32858995D00EBA884 /* MarketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketViewController.swift; sourceTree = "<group>"; };
 		1078F1F8285899A600EBA884 /* Market.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Market.storyboard; sourceTree = "<group>"; };
 		1078F1FA285899B700EBA884 /* Market+Contracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Market+Contracts.swift"; sourceTree = "<group>"; };
@@ -417,8 +419,8 @@
 		105C06B0284D512400B097F0 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				105C069B284D50ED00B097F0 /* AppDelegate.swift */,
-				108568B02850C374005EB39B /* Helpers */,
+				10632ACE2861BE6A0088A369 /* Core */,
+				10632ACB2861AA740088A369 /* Builder */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -603,6 +605,24 @@
 			path = News;
 			sourceTree = "<group>";
 		};
+		10632ACB2861AA740088A369 /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+				108568B32850C393005EB39B /* ViewControllerFactory.swift */,
+				10632ACC2861AA8B0088A369 /* ViperBuilder.swift */,
+			);
+			path = Builder;
+			sourceTree = "<group>";
+		};
+		10632ACE2861BE6A0088A369 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				108568B12850C383005EB39B /* AppCoordinator.swift */,
+				105C069B284D50ED00B097F0 /* AppDelegate.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
 		1078F1F22858993900EBA884 /* Market */ = {
 			isa = PBXGroup;
 			children = (
@@ -660,15 +680,6 @@
 				1078F20228589F7E00EBA884 /* TabBarRouter.swift */,
 			);
 			path = Tabbar;
-			sourceTree = "<group>";
-		};
-		108568B02850C374005EB39B /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				108568B12850C383005EB39B /* AppCoordinator.swift */,
-				108568B32850C393005EB39B /* ViewControllerFactory.swift */,
-			);
-			path = Helpers;
 			sourceTree = "<group>";
 		};
 		108568B72850D308005EB39B /* Cells */ = {
@@ -1010,6 +1021,7 @@
 				103ACCAF284E4B2E00208AB7 /* News+Router.swift in Sources */,
 				10DEB165285A86D90005BC59 /* Market+Router.swift in Sources */,
 				10DEB16C285A8BE10005BC59 /* Market+Provider.swift in Sources */,
+				10632ACD2861AA8B0088A369 /* ViperBuilder.swift in Sources */,
 				103ACCAE284E4B2E00208AB7 /* News+Presenter.swift in Sources */,
 				1003523E2859F40100121730 /* BaloonMarker.swift in Sources */,
 				10DEB16F285A8D5D0005BC59 /* CoinList.swift in Sources */,

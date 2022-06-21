@@ -7,20 +7,21 @@
 
 import Moya
 
-final class StoryboardViewControllerFactory {
+final class StoryboardedFactory {
     let storyboard: UIStoryboard
-    let manager = NetworkManager<NewsAPI>(provider: MoyaProvider<NewsAPI>())
+    let manager = NetworkManager<MarketAPI>(provider: MoyaProvider<MarketAPI>())
     let realmManager: RealmManager = RealmManager()
     
-    init(storyboard: UIStoryboard) {
-        self.storyboard = storyboard
+    init(_ storyboardName: String) {
+        self.storyboard = UIStoryboard(name: storyboardName, bundle: nil)
     }
 }
 
-extension StoryboardViewControllerFactory {
+extension StoryboardedFactory {
     
     func createNewsView(category: String) -> NewsViewController {
         let view = storyboard.instantiateViewController(identifier: "NewsViewController") as! NewsViewController
+        let manager = NetworkManager<NewsAPI>(provider: MoyaProvider<NewsAPI>())
         let router = NewsRouter(view: view)
         let interactor = NewsInteractor(manager: manager, category: category)
         let presenter = NewsPresenter(
@@ -32,24 +33,16 @@ extension StoryboardViewControllerFactory {
         return view
     }
     
-    func createMarketView() -> MarketViewController {
-        let view = storyboard.instantiateViewController(identifier: "MarketViewController") as! MarketViewController
-        let manager = NetworkManager<MarketAPI>(provider: MoyaProvider<MarketAPI>())
-        let router = MarketRouter(view: view)
-        let interactor = MarketInteractor(manager: manager)
-        let converter = GoldValueConverter()
-        let presenter = MarketPresenter(
-            view: view,
-            interactor: interactor,
-            router: router,
-            goldConverter: converter
-        )
-        view.presenter = presenter
+    func createHomeView() -> HomeViewController {
+        let view = storyboard.instantiateViewController(identifier: "HomeViewController") as! HomeViewController
         return view
     }
     
-    func createHomeView() -> HomeViewController {
-        let view = storyboard.instantiateViewController(identifier: "HomeViewController") as! HomeViewController
+    func createMarketView() -> MarketViewController {
+        let view = storyboard.instantiateViewController(identifier: "MarketViewController") as! MarketViewController
+        let interactor = MarketInteractor(manager: manager)
+        let viperBuilder: VIPERBuilder<MarketInteractor, MarketPresenter, MarketRouter> = VIPERBuilder(controller: view, interactor: interactor)
+        view.viperBuilder = viperBuilder
         return view
     }
     

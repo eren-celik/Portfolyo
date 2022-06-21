@@ -7,16 +7,20 @@
 
 import Foundation
 
-final class MarketInteractor: MarketInteractorProtocol {
+final class MarketInteractor: VIPERInteractor, MarketInteractorProtocol {
     
     weak var delegate: MarketViewInteractorDelegate?
     private var manager: NetworkManager<MarketAPI>?
+    
     private var data = [String: Any]()
     private let group = DispatchGroup()
     
     init(manager: NetworkManager<MarketAPI>) {
+        super.init()
         self.manager = manager
     }
+    
+    required init() {}
     
     func getAllData() {
         getCoinList()

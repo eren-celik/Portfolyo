@@ -8,7 +8,7 @@
 
 import Moya
 
-final class NewsInteractor: NewsInteractorInputProtocol {
+final class NewsInteractor: VIPERInteractor, NewsInteractorInputProtocol {
     
     weak var delegate: NewsViewInteractorDelegate?
     private var manager: NetworkManager<NewsAPI>?
@@ -17,6 +17,10 @@ final class NewsInteractor: NewsInteractorInputProtocol {
     init(manager: NetworkManager<NewsAPI>, category: String) {
         self.manager = manager
         self.category = category
+    }
+    
+    required override init() {
+        fatalError("init() has not been implemented")
     }
     
     func getNews() {

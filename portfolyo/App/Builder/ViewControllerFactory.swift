@@ -24,6 +24,8 @@ struct StoryboardedFactory {
             viperBuilder.createTransactionView(view)
         case .portfolyo:
             viperBuilder.createPortfolyoView(view)
+        case .news(let category):
+            viperBuilder.createNewsView(view, category: category)
         default:
             break
         }
@@ -54,6 +56,14 @@ struct ViewViperBuilder {
         guard let view = view as? PortfolyoViewController else { return }
         let interactor = PortfolyoInteractor(manager: manager, realmManager: realmManager)
         let viperBuilder: VIPERBuilder<PortfolyoInteractor, PortfolyoPresenter, PortfolyoRouter> = VIPERBuilder(controller: view, interactor: interactor)
+        view.viperBuilder = viperBuilder
+    }
+    
+    func createNewsView(_ view: UIViewController, category: String) {
+        guard let view = view as? NewsViewController else { return }
+        let manager = NetworkManager<NewsAPI>(provider: MoyaProvider<NewsAPI>())
+        let interactor = NewsInteractor(manager: manager, category: category)
+        let viperBuilder: VIPERBuilder<NewsInteractor, NewsPresenter, NewsRouter> = VIPERBuilder(controller: view, interactor: interactor)
         view.viperBuilder = viperBuilder
     }
 }

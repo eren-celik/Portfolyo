@@ -34,7 +34,7 @@ extension NewsViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let news = news[indexPath.row]
-        presenter.showDetail(news)
+        viperBuilder.presenter.showDetail(news)
     }
 }
 

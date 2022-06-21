@@ -9,7 +9,7 @@ import UIKit.UIView
 
 enum ViewType {
     case market
-    case news
+    case news(category: String)
     case home
     case portfolyo
     case search

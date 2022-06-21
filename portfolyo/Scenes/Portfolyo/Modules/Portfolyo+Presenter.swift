@@ -8,28 +8,23 @@
 import UIKit
 import RealmSwift
 
-final class PortfolyoPresenter: PortfolyoPresenterProtocol {
+final class PortfolyoPresenter: VIPERPresenter, PortfolyoPresenterProtocol {
     
-    private unowned var view: PortfolyoViewProtocol?
-    private var interactor: PortfolyoInteractorProtocol
-    private var router: PortfolyoRouterProtocol
-    
-    private var totalBalance = [Double]()
-    private var goldConverter: GoldValueConverter
-    
-    init(view: PortfolyoViewProtocol,
-         interactor: PortfolyoInteractorProtocol,
-         router: PortfolyoRouterProtocol,
-         goldConverter: GoldValueConverter) {
-        self.view = view
-        self.router = router
-        self.interactor = interactor
-        self.goldConverter = goldConverter
-        self.interactor.delegate = self
+    var view: PortfolyoViewProtocol? {
+        return controller as? PortfolyoViewProtocol
     }
     
+    var portfolyoInteractor: PortfolyoInteractor? {
+        let interactora = interactor as? PortfolyoInteractor
+        interactora?.delegate = self
+        return interactora
+    }
+
+    private var totalBalance = [Double]()
+    let goldPriceConverter = GoldValueConverter()
+    
     func preparePortfolyoData() {
-        interactor.getPorfolyoData()
+        portfolyoInteractor?.getPorfolyoData()
     }
 }
 
@@ -109,7 +104,7 @@ extension PortfolyoPresenter {
                                                   symbol: userItem.name,
                                                   currentPrice: element.currentPrice,
                                                   currentHoldings: Double(userItem.quantitiy))
-                    let value = goldConverter.goldSectionSetter(element: dto)
+                    let value = goldPriceConverter.goldSectionSetter(element: dto)
                     totalBalance.append(Double(userItem.quantitiy) * (value.currentPrice ?? 0.0))
                     section.append(.itemCell(data: value))
                 }else {

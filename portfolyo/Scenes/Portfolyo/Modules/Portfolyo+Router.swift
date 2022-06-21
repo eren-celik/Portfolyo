@@ -7,13 +7,7 @@
 
 import UIKit
 
-final class PortfolyoRouter: PortfolyoRouterProtocol {
-    
-    unowned let view: UIViewController
-    
-    init(view: UIViewController) {
-        self.view = view
-    }
+final class PortfolyoRouter: VIPERRouter, PortfolyoRouterProtocol {
     
     func navigate(to route: PortfolyoViewRoute) {
         switch route {

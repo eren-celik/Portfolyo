@@ -10,8 +10,8 @@ import UIKit
 final class PortfolyoViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    var viperBuilder: VIPERBuilder<PortfolyoInteractor, PortfolyoPresenter, PortfolyoRouter>!
     
-    var presenter: PortfolyoPresenterProtocol!
     var sectionList: [PortfolyoPresenter.Sections] = [] {
         didSet {
             tableView.reloadData()
@@ -20,7 +20,7 @@ final class PortfolyoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter.preparePortfolyoData()
+        viperBuilder.presenter.preparePortfolyoData()
         setTableView()
         setStyle()
     }

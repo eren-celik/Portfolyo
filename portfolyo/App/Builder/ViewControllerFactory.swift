@@ -22,6 +22,8 @@ struct StoryboardedFactory {
             viperBuilder.createMarketView(view)
         case .transaction:
             viperBuilder.createTransactionView(view)
+        case .portfolyo:
+            viperBuilder.createPortfolyoView(view)
         default:
             break
         }
@@ -45,6 +47,13 @@ struct ViewViperBuilder {
         guard let view = view as? TransactionsViewController else { return }
         let interactor = TransactionsInteractor(manager: manager)
         let viperBuilder: VIPERBuilder<TransactionsInteractor, TransactionsPresenter, TransactionsRouter> = VIPERBuilder(controller: view, interactor: interactor)
+        view.viperBuilder = viperBuilder
+    }
+    
+    func createPortfolyoView(_ view: UIViewController) {
+        guard let view = view as? PortfolyoViewController else { return }
+        let interactor = PortfolyoInteractor(manager: manager, realmManager: realmManager)
+        let viperBuilder: VIPERBuilder<PortfolyoInteractor, PortfolyoPresenter, PortfolyoRouter> = VIPERBuilder(controller: view, interactor: interactor)
         view.viperBuilder = viperBuilder
     }
 }

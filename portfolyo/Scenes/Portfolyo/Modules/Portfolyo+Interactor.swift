@@ -8,7 +8,7 @@
 import Foundation
 import RealmSwift
 
-final class PortfolyoInteractor: PortfolyoInteractorProtocol {
+final class PortfolyoInteractor: VIPERInteractor, PortfolyoInteractorProtocol {
     
     weak var delegate: PortfolyoViewInteractorDelegate?
     private let manager: NetworkManager<MarketAPI>?
@@ -20,6 +20,10 @@ final class PortfolyoInteractor: PortfolyoInteractorProtocol {
          realmManager: RealmManager) {
         self.manager = manager
         self.realm = realmManager
+    }
+    
+    required init() {
+        fatalError("init() has not been implemented")
     }
     
     func getPorfolyoData() {

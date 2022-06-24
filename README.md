@@ -10,5 +10,6 @@ In inside
 • Paging View
 • Search
 • Moya - Network Layer
+• Charts(data source is not ready)
 
 ![alt text](https://github.com/eren-celik/Portfolyo/blob/development/Readme%20Source/ezgif-1-f1d10ac45b.gif?raw=true)

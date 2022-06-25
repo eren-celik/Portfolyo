@@ -1,6 +1,6 @@
 //
 //  NewsView.swift
-//  portfolyo
+//  News
 //
 //  Created Eren  Çelik on 6.06.2022.
 //  Copyright © 2022. All rights reserved.
@@ -11,7 +11,7 @@ import UIKit
 final class NewsViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    var presenter: NewsPresenterProtocol!
+    var viperBuilder: VIPERBuilder<NewsInteractor, NewsPresenter, NewsRouter>!
     
     var news: [Article] = [] {
         didSet {
@@ -21,7 +21,7 @@ final class NewsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter.loadNews()
+        viperBuilder.presenter.loadNews()
         setView()
     }
     

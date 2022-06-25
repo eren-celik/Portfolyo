@@ -1,6 +1,6 @@
 //
 //  NewsPresenter.swift
-//  portfolyo
+//  News
 //
 //  Created Eren  Çelik on 6.06.2022.
 //  Copyright © 2022. All rights reserved.
@@ -8,27 +8,28 @@
 
 import UIKit
 
-final class NewsPresenter: NewsPresenterProtocol {
+final class NewsPresenter: VIPERPresenter, NewsPresenterProtocol {
     
-    private unowned var view: NewsViewProtocol
-    private var interactor: NewsInteractorInputProtocol
-    private var router: NewsRouterProtocol
+    var view: NewsViewProtocol? {
+        return controller as? NewsViewProtocol
+    }
     
-    init(view: NewsViewProtocol,
-         interactor: NewsInteractorInputProtocol,
-         router: NewsRouterProtocol) {
-        self.view = view
-        self.router = router
-        self.interactor = interactor
-        self.interactor.delegate = self
+    var newsInteractor: NewsInteractor? {
+        let interactora = interactor as? NewsInteractor
+        interactora?.delegate = self
+        return interactora
+    }
+    
+    var newsRouter: NewsRouter? {
+        return router as? NewsRouter
     }
     
     func loadNews() {
-        interactor.getNews()
+        newsInteractor?.getNews()
     }
     
     func showDetail(_ news: Article) {
-        router.navigate(to: .detail(news))
+        newsRouter?.navigate(to: .detail(news))
     }
 }
 
@@ -37,9 +38,9 @@ extension NewsPresenter: NewsViewInteractorDelegate {
     func handleOutput(_ output: HomeViewInteractorOutput) {
         switch output {
         case .showNews(let news):
-            view.showNews(news)
+            view?.showNews(news)
         case .showError(let message):
-            view.showErrorMessage(message)
+            view?.showErrorMessage(message)
         }
     }
 }

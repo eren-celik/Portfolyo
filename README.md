@@ -10,6 +10,7 @@ In inside
 <li>Sectioned TableView</li>
 <li>Generic VC Builder</li>
 <li>Paging View</li>
+<li>Realm</li>
 <li>Search</li>
 <li>Moya - Network Layer</li>
 <li>Charts(data source is not ready)</li>  
